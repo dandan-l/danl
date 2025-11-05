@@ -3790,7 +3790,7 @@ function Frame1773() {
     <div id="featured-projects" className="absolute bg-[#09543d] box-border content-stretch flex flex-col gap-[32px] items-center justify-center left-1/2 px-0 py-[56px] rounded-[8px] top-[800px] translate-x-[-50%] w-[100%]">
       <p className="css-4tff24 font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[36px] text-white tracking-[-0.5px] w-[1220px]">Featured projects 👀</p>
       <CardsGroup />
-      <p className="flex css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] left-[calc(50%-328px)] not-italic text-white text-[18px] text-nowrap top-[32px] tracking-[-0.5px] whitespace-pre mt-[32px] mr-[0px] mb-[56px] ml-[0px]">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
+      <p className="flex css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] left-[calc(50%-328px)] not-italic text-white text-[18px] text-nowrap top-[32px] tracking-[-0.5px] whitespace-pre mt-[32px] mr-[0px]  ml-[0px]">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
     </div>
   );
 }
@@ -3965,7 +3965,7 @@ export default function Home() {
       <CatDoodle />
       <Frame1770 />
       <Frame1772 />
-      <p className="absolute css-l3z3w9 font-['Sora:Light',_sans-serif] font-light leading-[normal] left-[313px] text-[#09543d] text-[16px] text-nowrap top-[695px] tracking-[-0.5px] whitespace-pre">I make things easier, even your tax</p>
+      <p className="absolute css-l3z3w9 font-['Sora:Light',_sans-serif] font-light leading-[normal] left-[313px] text-[#09543d] text-[16px] text-nowrap top-[695px] tracking-[-0.5px] whitespace-pre">I make things easier, even your taxes.</p>
       <div className="absolute flex h-[43px] items-center justify-center left-[197px] top-[664px] w-[104px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
           <div className="h-[43px] relative w-[104px]">

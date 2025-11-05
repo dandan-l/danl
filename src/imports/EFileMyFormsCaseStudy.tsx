@@ -264,7 +264,7 @@ function ContextDetailsContainer() {
         <a href="https://1099pro.com/" target="_blank" className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid underline">1099 Pro</a>
         <span>{`, to expand services from its traditionally high-touch enterprise solutions to self-service e-commerce solutions. `}</span>
         <a href="https://efilemyforms.com/" target="_blank" className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid underline">{`eFileMyForms `}</a>
-        <span>{`was 1099 Pro's signature web-based software that helped small business owners and accountants to manage their 1099 tax forms for employees, vendors, and customers. eFileMyForms urgently needed new brand strategies to promote Sovos in the e-commerce market and upgrade of its experience for its seasonal customer base. `}</span>
+        <span>{`was 1099 Pro's signature web-based software that helped small business owners and accountants to manage their 1099 tax forms for employees, vendors, and customers. eFileMyForms urgently needed new brand strategies to promote Sovos in the e-commerce market and upgrade its experience for its seasonal customer base. `}</span>
       </p>
     </div>
   );
@@ -410,7 +410,7 @@ function PersonaContainer() {
     <div className="content-stretch flex flex-col gap-[40px] md:gap-[64px] items-start w-full max-w-[1200px] relative shrink-0" data-name="Persona container">
       <p className="font-['Sora:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[#2c2c2c] text-[24px] md:text-[32px] tracking-[-0.5px] w-full">Persona</p>
       <PersonaDetailsContainer />
-      <p className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#51596d] text-[16px] md:text-[18px] w-full">{`As the gig economy grows and tax filing gets more complex, it's important to simplify the tax filing experience for small business owners who may not be knowledgeable in taxes. Simplifying the experience for them also helps power users like accountants to get their job done faster, especially working during busy tax season and with a large quantity of clients. `}</p>
+      <p className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#51596d] text-[16px] md:text-[18px] w-full">{`As the gig economy grows and tax filing gets more complex, it's important to simplify the tax filing experience for small business owners who may not be knowledgeable in taxes. Simplifying the experience for them also helps power users like accountants to get their job done faster, especially working during the busy tax season and with a large quantity of clients. `}</p>
     </div>
   );
 }
@@ -1407,7 +1407,7 @@ function Container28() {
     <div className="basis-0 content-stretch flex flex-col gap-[24px] md:gap-[40px] grow items-start min-h-px min-w-px relative shrink-0" data-name="Container">
       <div className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[0] not-italic relative shrink-0 text-[#51596d] text-[0px] tracking-[-0.5px] w-full">
         <p className="leading-[normal] mb-0 text-[16px] md:text-[18px] whitespace-pre-wrap">
-          <span className="font-['Source_Sans_Pro:Regular',sans-serif] not-italic">{`In 4 months, we delivered the phase 1 redesign - a design MVP.  5 months later, we delivered the phase 2 - the checkout experience upgrade. In total, we redesigned 50+ pages with many major experience improvements, all within tight timeline and resources. This is unprecedented at Sovos, especially for a newly formed team`}</span>.<span className="font-['Source_Sans_Pro:Regular',sans-serif] not-italic"> </span>
+          <span className="font-['Source_Sans_Pro:Regular',sans-serif] not-italic">{`In 4 months, we delivered the phase 1 redesign - a design MVP.  5 months later, we delivered the phase 2 - the checkout experience upgrade. In total, we redesigned 50+ pages with many major experience improvements, all within tight timeline and resource constraints. This is unprecedented at Sovos, especially for a newly formed team`}</span>.<span className="font-['Source_Sans_Pro:Regular',sans-serif] not-italic"> </span>
         </p>
         <p className="leading-[normal] mb-0 text-[16px] md:text-[18px]">&nbsp;</p>
         <p className="leading-[normal] mb-0 text-[16px] md:text-[18px]">Customers reacted positively to this release, and the business metrics reflected it:</p>
@@ -1547,7 +1547,7 @@ function Container34() {
 function Footer() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center px-4 relative shrink-0 w-full" data-name="Footer">
-      <p className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#09543d] text-[16px] md:text-[18px] text-center tracking-[-0.5px] w-full">{`❤️ Designed and built by Dan to share the joy of creativity & works that she's proud of`}</p>
+      <p className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#09543d] text-[16px] md:text-[18px] text-center tracking-[-0.5px] w-full">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
     </div>
   );
 }

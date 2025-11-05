@@ -59,7 +59,7 @@ function Frame70() {
         </p>
         <p className="leading-[normal] mb-0 text-[24px]">&nbsp;</p>
         <p className="leading-[normal] text-[24px]">
-          <span className="font-['Source_Sans_Pro:Regular',_sans-serif] not-italic">{`Currently, I am shaping the future for compliance softwares at `}</span>
+          <span className="font-['Source_Sans_Pro:Regular',_sans-serif] not-italic">{`Currently, I am shaping the future for compliance software at `}</span>
           <a href="https://sovos.com/" target="_blank" rel="noopener noreferrer" className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid font-['Source_Sans_Pro:Regular',_sans-serif] not-italic underline hover:text-[#09543d]/80">Sovos</a>
           <span className="font-['Source_Sans_Pro:Regular',_sans-serif] not-italic"> to make conventionally boring tax pleasant and easy.</span>
         </p>
@@ -281,7 +281,7 @@ export default function AboutMe() {
         <PolaroidPictureGroup />
         <Frame70 />
       </div>
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-[18px] text-center tracking-[-0.5px] px-8 py-8">{`❤️ Designed and built by Dan to share the joy of creativity & show off works that she's proud of`}</p>
+      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-[18px] text-center tracking-[-0.5px] px-8 py-8">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
     </div>
         </>
   );

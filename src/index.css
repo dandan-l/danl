@@ -2144,6 +2144,11 @@
     border-color: var(--color-white);
   }
 
+
+  .bg-\[\#ffd4f5\] {
+    background-color: #ffd4f5;
+  }
+  
   .bg-\[\#232f33\] {
     background-color: #232f33;
   }
@@ -2187,6 +2192,7 @@
   .bg-\[\#fffdf7\] {
     background-color: #fffdf7;
   }
+
 
   .bg-black {
     background-color: var(--color-black);

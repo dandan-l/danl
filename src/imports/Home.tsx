@@ -380,7 +380,7 @@ function ArrowUpward() {
 
 function Pill() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[4px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[4px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">NPS 15</p>
       <ArrowUpward />
     </div>
@@ -407,7 +407,7 @@ function ArrowUpward1() {
 
 function Pill1() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[4px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[4px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">ARR 23%</p>
       <ArrowUpward1 />
     </div>
@@ -416,7 +416,7 @@ function Pill1() {
 
 function Pill2() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">E-commerce</p>
     </div>
   );
@@ -424,7 +424,7 @@ function Pill2() {
 
 function Pill3() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">Tax filing</p>
     </div>
   );
@@ -1243,7 +1243,7 @@ function Timestamp1() {
 
 function Pill4() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">B2B</p>
     </div>
   );
@@ -1251,7 +1251,7 @@ function Pill4() {
 
 function Pill5() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">Unclaimed Property</p>
     </div>
   );
@@ -1259,7 +1259,7 @@ function Pill5() {
 
 function Pill6() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">Design strategy</p>
     </div>
   );
@@ -1267,7 +1267,7 @@ function Pill6() {
 
 function Pill7() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">Growth</p>
     </div>
   );
@@ -2103,7 +2103,7 @@ function Timestamp2() {
 
 function Pill8() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">B2B</p>
     </div>
   );
@@ -2111,7 +2111,7 @@ function Pill8() {
 
 function Pill9() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">AI</p>
     </div>
   );
@@ -2119,7 +2119,7 @@ function Pill9() {
 
 function Pill10() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">Vision strategy</p>
     </div>
   );
@@ -2127,7 +2127,7 @@ function Pill10() {
 
 function Pill11() {
   return (
-    <div className="bg-[#ffa9eb] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
+    <div className="bg-[#ffd4f5] box-border content-stretch flex gap-[10px] items-center justify-center px-[8px] py-[4px] relative rounded-[4px] shrink-0" data-name="Pill">
       <p className="css-l4h1oz font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#451e0e] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">Large data</p>
     </div>
   );
@@ -3787,7 +3787,7 @@ function CardsGroup() {
 
 function Frame1773() {
   return (
-    <div id="featured-projects" className="absolute bg-[#09543d] box-border content-stretch flex flex-col gap-[32px] items-center justify-center left-1/2 px-0 py-[56px] rounded-[8px] top-[800px] translate-x-[-50%] w-[100%]">
+    <div id="featured-projects" className="absolute bg-[#09543d] box-border content-stretch flex flex-col gap-[32px] items-center justify-center left-1/2 px-0 py-[56px] rounded-t-lg top-[800px] translate-x-[-50%] w-[100%]">
       <p className="css-4tff24 font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[36px] text-white tracking-[-0.5px] w-[1220px]">Featured projects 👀</p>
       <CardsGroup />
       <p className="flex css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] left-[calc(50%-328px)] not-italic text-white text-[18px] text-nowrap top-[32px] tracking-[-0.5px] whitespace-pre mt-[32px] mr-[0px]  ml-[0px]">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>

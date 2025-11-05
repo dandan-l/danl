@@ -45,7 +45,7 @@ export function WorkButton() {
         </div>
       </div>
       <p className={`font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre transition-colors ${isHovered ? 'text-[#feca05]' : 'text-[#09543d]'}`}>
-        project
+        projects
       </p>
     </Link>
   );

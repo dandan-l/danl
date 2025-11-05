@@ -95,7 +95,7 @@ function Group1770() {
 function Button() {
   return (
     <div className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[8px] relative rounded-[50px] shrink-0" data-name="Button">
-      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[24px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View my work</p>
+      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[24px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View my projects</p>
     </div>
   );
 }
@@ -235,7 +235,7 @@ function PillGroup() {
 function Button1() {
   return (
     <div className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[24px] py-[8px] relative rounded-[50px] shrink-0" data-name="Button">
-      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View work</p>
+      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View project</p>
     </div>
   );
 }
@@ -1078,7 +1078,7 @@ function PillGroup1() {
 function Button3() {
   return (
     <div className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[24px] py-[8px] relative rounded-[50px] shrink-0" data-name="Button">
-      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View work</p>
+      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View project</p>
     </div>
   );
 }
@@ -1917,7 +1917,7 @@ function PillGroup2() {
 function Button5() {
   return (
     <div className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[24px] py-[8px] relative rounded-[50px] shrink-0" data-name="Button">
-      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View work</p>
+      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View project</p>
     </div>
   );
 }
@@ -3599,7 +3599,7 @@ function NavBarButton() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Nav-bar-button">
       <DesignDoodle />
-      <p className="css-l5mhoc font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[#09543d] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">work</p>
+      <p className="css-l5mhoc font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[#09543d] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">projects</p>
     </div>
   );
 }

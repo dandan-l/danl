@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, createContext, useContext } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import Home from "./imports/Home";
 import AboutMe from "./imports/AboutMe";
 import EFileMyFormsCaseStudy from "./imports/EFileMyFormsCaseStudy";
@@ -19,16 +20,19 @@ export default function App() {
   const [customCursorVisible, setCustomCursorVisible] = useState(true);
 
   return (
-    <Router>
+    <HelmetProvider>
+ <Router>
       <CustomCursorContext.Provider value={{ setCustomCursorVisible }}>
         <CustomCursor isVisible={customCursorVisible} />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />}  />
           <Route path="/about" element={<AboutMe />} />
-          <Route path="/work/efilemyforms" element={<EFileMyFormsCaseStudy />} />
+          <Route path="/projects/efilemyforms" element={<EFileMyFormsCaseStudy />} />
         </Routes>
       </CustomCursorContext.Provider>
     </Router>
+    </HelmetProvider>
+   
   );
 }

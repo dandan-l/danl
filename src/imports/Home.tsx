@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import SEO from '../components/SEO';
 import svgPaths from "./svg-relpazhn2a";
 import svgNewTabPaths from "./svg-fmk4nn8rsv";
 import { WorkButton, AboutButton, ResumeButton, ContactButton } from "../components/NavBarButtons";
@@ -293,7 +294,7 @@ function Button() {
       className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[8px] relative rounded-[50px] shrink-0 cursor-pointer" 
       data-name="Button"
     >
-      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[24px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View my project</p>
+      <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[24px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View my projects</p>
     </div>
   );
 }
@@ -434,7 +435,7 @@ function PillGroup() {
 
 function Button1() {
   return (
-    <Link to="/work/efilemyforms">
+    <Link to="/projects/efilemyforms">
       <div className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[24px] py-[8px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0a6349] transition-colors" data-name="Button">
         <p className="css-na0cd8 font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-nowrap text-white tracking-[-0.5px] whitespace-pre">View project</p>
       </div>
@@ -3818,7 +3819,7 @@ function NavBarButton() {
   return (
     <Link to="/" className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Nav-bar-button">
       <DesignDoodle />
-      <p className="css-l5mhoc font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[#09543d] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">work</p>
+      <p className="css-l5mhoc font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[#09543d] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">projects</p>
     </Link>
   );
 }
@@ -3943,6 +3944,14 @@ function NavBar() {
 
 export default function Home() {
   return (
+      <>
+      <SEO 
+        title="Home"
+        description="Dan Liu - Senior Product Designer. Learn more about me and my projects."
+        url="https://danliu.one"
+        image="https://danliu.one/images/home-preview.png"
+      />
+
     <div className="bg-[#fffdf7] relative size-full" data-name="Home">
       <div className="absolute bg-[#fffdf7] h-[1024px] left-0 top-0 w-screen" data-name="pure color" />
       <CatDoodle />
@@ -3964,5 +3973,6 @@ export default function Home() {
       
       <NavBar />
     </div>
+        </>
   );
 }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import svgPaths from "./svg-fmk4nn8rsv";
+import SEO from '../components/SEO';
 import imgPaperTextureImage1 from "figma:asset/a165f702eb8536a182db393404e4bd3a0cd38dca.png";
 import imgImage44 from "figma:asset/e8341189375e5810aa27634f35766489f08c8b52.png";
 import { imgPaperTextureImage, imgImage43 } from "./svg-74rnk";
@@ -141,7 +142,7 @@ function NavBarButton() {
   return (
     <Link to="/" className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Nav-bar-button">
       <DesignDoodle />
-      <p className="css-l5mhoc font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[#09543d] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">work</p>
+      <p className="css-l5mhoc font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[#09543d] text-[16px] text-nowrap tracking-[-0.2px] whitespace-pre">projects</p>
     </Link>
   );
 }
@@ -266,6 +267,14 @@ function NavBar() {
 
 export default function AboutMe() {
   return (
+      <>
+      <SEO 
+        title="About"
+        description="Dan Liu - Senior Product Designer. Learn more about me and my projects."
+        url="https://danliu.one/about"
+
+      />
+
     <div className="bg-[#fffdf7] relative min-h-screen flex flex-col" data-name="About me">
       <NavBar />
       <div className="flex-1 flex flex-col lg:flex-row gap-8 lg:gap-16 items-start px-8 lg:px-16 py-12 lg:py-20 max-w-[1440px] mx-auto w-full">
@@ -274,5 +283,6 @@ export default function AboutMe() {
       </div>
       <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-[18px] text-center tracking-[-0.5px] px-8 py-8">{`❤️ Designed and built by Dan to share the joy of creativity & show off works that she's proud of`}</p>
     </div>
+        </>
   );
 }

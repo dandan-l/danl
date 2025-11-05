@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import ScrollCursor from "./ScrollCursor";
 import { useCustomCursor } from "../App";
+import SEO from '../components/SEO';
+
 import imgHeaderBgImg from "figma:asset/79a513c7c3d8cec8728c3b81edbb45ad0753eafc.png";
 import imgJustinImage from "figma:asset/c059298f299b79c70e002cc398771b22a429b587.png";
 import imgLeilaImage from "figma:asset/b197013400b37ac04a959f947440f73c4645c796.png";
@@ -1602,9 +1604,19 @@ function NavBar() {
 
 export default function EFileMyFormsCaseStudy() {
   return (
+    <>
+          <SEO 
+            title="eFileMyForms Case Study"
+            description="How Dan Liu redesigned eFileMyForms to improve user experience and made business impact"
+            url="https://danliu.one/projects/efileMyForms"
+            type="article"
+    
+          />
+    
     <div className="relative size-full" data-name="eFileMyForms case study">
       <NavBar />
       <MainFrame />
     </div>
+        </>
   );
 }

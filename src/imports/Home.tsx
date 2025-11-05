@@ -265,19 +265,27 @@ function Frame1770() {
 
 function Group1770() {
   return (
-    <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-      <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-[47px] mt-0 w-[488px]" />
-      <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-0 mt-[66px] w-[243px]" />
-      <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-[292px] mt-[66px] w-[204px]" />
-      <p className="[grid-area:1_/_1] css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] ml-0 mt-0 relative text-[#09543d] text-[0px] text-[52px] tracking-[-0.5px] w-[580px]">
-        <span>{`A `}</span>
-        <span className="text-[#451e0e]">full</span>
-        <span className="text-[#451e0e]">-stack Product</span> <span className="text-[#451e0e]">Designer</span>
-        <span>{` & `}</span>
-        <span className="text-[#451e0e]">{`mentor `}</span>
-      </p>
-    </div>
+    //Figma AI code to add manual color block behind h1 heading with absolute position
+    // <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+    //   <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-[47px] mt-0 w-[488px]" />
+    //   <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-0 mt-[66px] w-[243px]" />
+    //   <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-[292px] mt-[66px] w-[204px]" />
+    //   <p className="[grid-area:1_/_1] css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] ml-0 mt-0 relative text-[#09543d] text-[0px] text-[52px] tracking-[-0.5px] w-[580px]">
+    //     <span>{`A `}</span>
+    //     <span className="text-[#451e0e]">full</span>
+    //     <span className="text-[#451e0e]">-stack Product</span> <span className="text-[#451e0e]">Designer</span>
+    //     <span>{` & `}</span>
+    //     <span className="text-[#451e0e]">{`mentor `}</span>
+    //   </p>
+    // </div>
+
+     <h1 className="hero-heading">
+      A <mark>full-stack Product Designer</mark>
+      {' & '}
+      <mark>mentor</mark>
+    </h1>
   );
+
 }
 
 function Button() {
@@ -3947,7 +3955,7 @@ export default function Home() {
       <>
       <SEO 
         title="Home"
-        description="Dan Liu - Senior Product Designer. Learn more about me and my projects."
+        description="Dan Liu - Senior Product Designer. Learn more about me and my design."
         url="https://danliu.one"
         image="https://danliu.one/images/home-preview.png"
       />

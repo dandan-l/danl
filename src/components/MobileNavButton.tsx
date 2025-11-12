@@ -35,7 +35,7 @@ export function MobileNav() {
                     : "text-[#09543d] hover:bg-[#09543d]/10"
                 }`}
               >
-                Work
+                projects
               </Link>
               <Link
                 to="/about"
@@ -46,7 +46,7 @@ export function MobileNav() {
                     : "text-[#09543d] hover:bg-[#09543d]/10"
                 }`}
               >
-                About
+                about
               </Link>
               <a
                 href="https://drive.google.com/file/d/1JO-R64jB19TKg1hGg1WkPBn2s9xMcAM-/view?usp=sharing"
@@ -55,14 +55,14 @@ export function MobileNav() {
                 onClick={closeMenu}
                 className="px-6 py-3 text-[#09543d] hover:bg-[#09543d]/10 transition-colors"
               >
-                Resume
+                resume
               </a>
               <a
                 href="mailto:danliudesigner@gmail.com?subject=Beep-boop%2C%20contact%20from%20Dan's%20website!&body=Hi%20Dan%2C%0A%0AI%20wanted%20to%20reach%20out%20to%20you%20about..."
                 onClick={closeMenu}
                 className="px-6 py-3 text-[#09543d] hover:bg-[#09543d]/10 rounded-lg transition-colors"
               >
-                Contact
+                contact
               </a>
             </nav>
           </div>

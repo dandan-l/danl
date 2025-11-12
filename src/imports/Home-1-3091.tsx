@@ -81,7 +81,7 @@ function Group1770() {
       <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-[47px] mt-0 w-[488px]" />
       <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-0 mt-[66px] w-[243px]" />
       <div className="[grid-area:1_/_1] bg-[#ffa9eb] h-[60px] ml-[331px] mt-[66px] w-[204px]" />
-      <p className="[grid-area:1_/_1] css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] ml-0 mt-0 relative text-[#09543d] text-[0px] text-[52px] tracking-[-0.5px] w-[580px]">
+      <p className="[grid-area:1_/_1] css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] ml-0 mt-0 relative text-[#09543d] text-[0px] text-3xl md:text-4xl lg:text-[52px] tracking-[-0.5px] w-full max-w-[580px] px-4">
         <span>{`A `}</span>
         <span className="text-[#451e0e]">full</span>
         <span className="text-[#451e0e]">-stack Product</span> <span className="text-[#451e0e]">Designer</span>
@@ -132,10 +132,10 @@ function Frame1771() {
 
 function Frame1772() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start left-[32px] top-[219px] w-[580px]">
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-[28px] tracking-[-0.5px] w-[min-content]">👋🏼 Hellooooo, my name is Dan Liu.</p>
+    <div className="relative content-stretch flex flex-col gap-[32px] items-start md:px-8 top-[219px] w-full max-w-[580px] px-4">
+      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-xl md:text-2xl lg:text-[28px] tracking-[-0.5px] w-[min-content]">👋🏼 Hellooooo, my name is Dan Liu.</p>
       <Group1770 />
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-[28px] tracking-[-0.5px] w-[min-content]">I transform complex concepts into simple experiences that users and businesses appreciate. Creativity powered by passion to design, vivid imagination and (more than) occasional silliness.</p>
+      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-xl md:text-2xl lg:text-[28px] tracking-[-0.5px] w-[min-content]">I transform complex concepts into simple experiences that users and businesses appreciate. Creativity powered by passion to design, vivid imagination and (more than) occasional silliness.</p>
       <Frame1771 />
     </div>
   );
@@ -242,7 +242,7 @@ function Button1() {
 
 function DescriptionGroup() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Redesign that made tax filing easy and modern for stressed small business owners</p>
       <PillGroup />
@@ -1085,7 +1085,7 @@ function Button3() {
 
 function DescriptionGroup1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp1 />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Migrate enterprise users to a new self-serve product (and how we have pivoted)</p>
       <PillGroup1 />
@@ -1924,7 +1924,7 @@ function Button5() {
 
 function DescriptionGroup2() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp2 />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Transform a taxing compliance obligation to an advantage for businesses to uncover personalized insights</p>
       <PillGroup2 />
@@ -2767,7 +2767,7 @@ function Button7() {
 
 function DescriptionGroup3() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp3 />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Save statements prepares money and time....</p>
       <PillGroup3 />
@@ -3561,7 +3561,7 @@ function CardsGroup() {
 function Frame1773() {
   return (
     <div className="absolute bg-[#09543d] box-border content-stretch flex flex-col gap-[32px] items-center justify-center left-1/2 px-0 py-[56px] rounded-[8px] top-[925px] translate-x-[-50%] w-[1440px]">
-      <p className="css-4tff24 font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[36px] text-white tracking-[-0.5px] w-[1220px]">Featured work 👀</p>
+      <p className="css-4tff24 font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[36px] text-white tracking-[-0.5px] w-full max-w-[1220px] px-4">Featured work 👀</p>
       <CardsGroup />
     </div>
   );

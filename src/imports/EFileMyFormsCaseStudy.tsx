@@ -1547,7 +1547,7 @@ function Container34() {
 function Footer() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center px-4 relative shrink-0 w-full" data-name="Footer">
-      <p className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#09543d] text-[16px] md:text-[18px] text-center tracking-[-0.5px] w-full">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
+      <p className="font-['Source_Sans_Pro:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#09543d] text-[16px] md:text-[18px] text-center tracking-[-0.5px] w-full">{`❤️ Designed and built by Dan to share the joy of creativity`}</p>
     </div>
   );
 }

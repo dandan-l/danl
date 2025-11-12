@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import SEO from '../components/SEO';
 import svgPaths from "./svg-relpazhn2a";
 import svgNewTabPaths from "./svg-fmk4nn8rsv";
+import { MobileNav } from "../components/MobileNavButton";
 import { WorkButton, AboutButton, ResumeButton, ContactButton } from "../components/NavBarButtons";
-import Button from "./Button";
 import imgScreenshot20251002At91804Pm1 from "figma:asset/3d7027870b9712cfcdd37b904d38824f2ec370b3.png";
 import imgScreenshot20231015At16001 from "figma:asset/2c987d16ec9a0bf679429b41c23a467849f92244.png";
 import imgScreenshot20231015At16002 from "figma:asset/34a9cea467df21520f94d18cb73cf483899443fa.png";
@@ -41,6 +41,7 @@ function CatDoodle() {
   const kittyHeight = 76;
   const earsHeight = 10; // Only show this much initially
   const maxReveal = kittyHeight - earsHeight; // Maximum distance to move up (66px)
+  const baseOffset = maxReveal; // start mostly hidden so only ears peek
   
   // Calculate how much of the kitty should be revealed
   // Start revealing when scroll reaches around 100px, fully revealed by ~200px
@@ -49,12 +50,12 @@ function CatDoodle() {
   const scrollProgress = Math.max(0, Math.min(1, (scrollY - scrollStart) / (scrollEnd - scrollStart)));
   
   // Calculate the translateY value (negative to move up and reveal)
-  const translateY = -scrollProgress * maxReveal;
+  const translateY = baseOffset - scrollProgress * maxReveal;
 
   return (
     <div 
       ref={kittyRef}
-      className="absolute h-[75.581px] left-[119px] top-[787px] w-[112.735px] transition-transform duration-300 ease-out" 
+      className="h-[75.581px] w-[112.735px] transition-transform duration-300 ease-out" 
       data-name="cat-doodle"
       style={{
         transform: `translateY(${translateY}px)`
@@ -144,7 +145,7 @@ function AbstractCatDoodle({ onClick, isPoofing, showQuote }: AbstractCatDoodleP
 
   return (
     <div 
-      className="h-[19.83vw] max-h-[285.535px] relative shrink-0 w-[19.57vw] max-w-[281.802px] cursor-pointer transition-all duration-500 flex items-center justify-center" 
+      className="relative w-full aspect-square cursor-pointer transition-all duration-500 flex items-center justify-center" 
       data-name="abstract-cat-doodle"
       onClick={onClick}
       style={{
@@ -154,7 +155,7 @@ function AbstractCatDoodle({ onClick, isPoofing, showQuote }: AbstractCatDoodleP
       }}
     >
       {showQuote ? (
-        <p className="font-['Sora',_sans-serif] text-[16px] text-[#09543d] text-center px-4 leading-relaxed">
+        <p className="font-['Sora',_sans-serif] text-[clamp(10px,2.5vw,16px)] text-[#09543d] text-center px-2 sm:px-4 leading-relaxed">
           {showQuote}
         </p>
       ) : (
@@ -194,9 +195,9 @@ interface CatState {
   quote: string | null;
 }
 
-function Frame1770() {
+function CatGrid() {
   const [cats, setCats] = useState<CatState[]>(() =>
-    Array.from({ length: 25 }, (_, i) => ({
+    Array.from({ length: 9 }, (_, i) => ({
       id: i,
       isPoofing: false,
       quote: null
@@ -250,13 +251,14 @@ function Frame1770() {
   };
 
   return (
-    <div className="absolute content-start flex flex-wrap gap-[1.33vw] h-[55.56vw] items-start right-0 overflow-clip top-[125px] w-[64.72vw] max-w-[932px]">
+    <div className="relative grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 items-stretch w-full">
       {cats.map((cat, i) => (
         <AbstractCatDoodle 
           key={cat.id} 
           onClick={() => handleCatClick(i)}
           isPoofing={cat.isPoofing}
-          showQuote={cat.quote}
+          // Coerce null to undefined to satisfy optional prop type
+          showQuote={cat.quote ?? undefined}
         />
       ))}
     </div>
@@ -288,7 +290,7 @@ function Group1770() {
 
 }
 
-function Button() {
+function Button({ buttonRef }: { buttonRef?: React.RefObject<HTMLDivElement | null> | React.MutableRefObject<HTMLDivElement | null> }) {
   const scrollToProjects = () => {
     const element = document.getElementById('featured-projects');
     if (element) {
@@ -298,6 +300,7 @@ function Button() {
 
   return (
     <div 
+      ref={buttonRef}
       onClick={scrollToProjects}
       className="bg-[#09543d] box-border content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[8px] relative rounded-[50px] shrink-0 cursor-pointer" 
       data-name="Button"
@@ -307,43 +310,72 @@ function Button() {
   );
 }
 
-function RadioButton() {
-  return (
-    <div className="relative shrink-0 size-[32px]" data-name="Radio button">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-        <g id="Radio button">
-          <path clipRule="evenodd" d={svgPaths.p2802a080} fill="var(--fill-0, #33FE00)" fillRule="evenodd" id="Mask" />
-        </g>
-      </svg>
-    </div>
-  );
-}
+// function RadioButton() {
+//   return (
+//     <div className="relative shrink-0 size-[32px]" data-name="Radio button">
+//       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
+//         <g id="Radio button">
+//           <path clipRule="evenodd" d={svgPaths.p2802a080} fill="var(--fill-0, #33FE00)" fillRule="evenodd" id="Mask" />
+//         </g>
+//       </svg>
+//     </div>
+//   );
+// }
 
-function StatusTextLabel() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Status text label">
-      <RadioButton />
-      <p className="css-bqxx5z font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#09543d] text-[24px] text-nowrap tracking-[-0.5px] whitespace-pre">Available for work</p>
-    </div>
-  );
-}
+// function StatusTextLabel() {
+//   return (
+//     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Status text label">
+//       <RadioButton />
+//       <p className="css-bqxx5z font-['Source_Sans_Pro:SemiBold',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[#09543d] text-[24px] text-nowrap tracking-[-0.5px] whitespace-pre">Available for work</p>
+//     </div>
+//   );
+// }
 
-function Frame1771() {
+function Frame1771({ buttonRef }: { buttonRef?: React.RefObject<HTMLDivElement | null> | React.MutableRefObject<HTMLDivElement | null> }) {
   return (
     <div className="content-stretch flex gap-[32px] items-center relative shrink-0">
-      <Button />
-      <StatusTextLabel />
+      <Button buttonRef={buttonRef} />
+      {/* <StatusTextLabel /> */}
     </div>
   );
 }
 
-function Frame1772() {
+function HeroTextGroup() {
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const [buttonHeight, setButtonHeight] = useState(0);
+
+  useEffect(() => {
+    const measure = () => {
+      if (buttonRef.current) {
+        const rect = buttonRef.current.getBoundingClientRect();
+        setButtonHeight(rect.height);
+      }
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  const arrowLift = Math.max(0, buttonHeight / 2 - 4); // keep a small gap below center
+
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start left-[32px] top-[189px] w-[580px]">
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-[28px] tracking-[-0.5px] w-[min-content]">👋🏼 Hellooooo, my name is Dan Liu.</p>
+    <div className="content-stretch flex flex-col gap-[40px] items-start md:px-8 w-full max-w-[580px] px-4">
+      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-xl md:text-2xl lg:text-[28px] tracking-[-0.5px] w-[min-content]">👋🏼 Hellooooo, my name is Dan Liu.</p>
       <Group1770 />
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-[28px] tracking-[-0.5px] w-[min-content]">I transform complex concepts into simple experiences that users and businesses appreciate. Creativity powered by passion to design, vivid imagination and (more than) occasional silliness.</p>
-      <Frame1771 />
+      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-xl md:text-2xl lg:text-[28px] tracking-[-0.5px] w-[min-content]">I transform complex concepts into simple experiences that users and businesses appreciate. Creativity powered by passion to design, vivid imagination and (more than) occasional silliness.</p>
+      <Frame1771 buttonRef={buttonRef} />
+       {/* <div className="flex items-end gap-4" style={{ marginTop: -arrowLift }}>
+                <div className="flex-none rotate-[180deg] scale-y-[-100%]">
+                  <div className="h-[43px] relative w-[104px]">
+                    <div className="absolute inset-[-0.3%_-0.46%_-7.86%_-0.48%]" style={{ "--stroke-0": "rgba(9, 84, 61, 1)" } as React.CSSProperties}>
+                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 106 48">
+                        <path d={svgPaths.p18824200} fill="var(--stroke-0, #09543D)" id="Vector 3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p className="css-l3z3w9 font-['Sora:Light',_sans-serif] font-light leading-[normal] text-[#09543d] text-[16px] text-nowrap tracking-[-0.5px] whitespace-pre self-end">I make things easier, even your taxes.</p>
+              </div> */}
     </div>
   );
 }
@@ -453,7 +485,7 @@ function Button1() {
 
 function DescriptionGroup() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Made tax filing easy and modern for stressed small business owners</p>
       <PillGroup />
@@ -1206,7 +1238,7 @@ function PutScreenInHere4() {
 
 function PrototypeReview() {
   return (
-    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-[579px]" data-name="Prototype review">
+    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-full max-w-[579px]" data-name="Prototype review">
       <img 
         src={imgPrototypeReview} 
         alt="Prototype review showing eFileMyForms interface" 
@@ -1218,9 +1250,9 @@ function PrototypeReview() {
 
 function HomeCardEfmf() {
   return (
-    <div className="bg-[#fffdf7] relative rounded-[8px] shrink-0 w-full" data-name="Home - card - EFMF">
+    <div className="bg-[#fffdf7] relative rounded-[8px] shrink-0 w-full overflow-hidden" data-name="Home - card - EFMF">
       <div className="flex flex-row items-center size-full">
-        <div className="box-border content-stretch flex gap-[80px] items-center px-[62px] py-[56px] relative w-full">
+        <div className="box-border content-stretch flex gap-6 md:gap-12 lg:gap-20 items-center px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:py-14 relative w-full">
           <DescriptionGroup />
           <PrototypeReview />
         </div>
@@ -1317,7 +1349,7 @@ function Button3() {
 
 function DescriptionGroup1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp1 />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Migrate enterprise users to a new self-serve product (and how we have pivoted)</p>
       <PillGroup1 />
@@ -2070,7 +2102,7 @@ function PutScreenInHere9() {
 
 function PrototypeReview1() {
   return (
-    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-[579px]" data-name="Prototype review">
+    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-full max-w-[579px]" data-name="Prototype review">
       <img 
         src={imgPrototypeReview1} 
         alt="Unclaimed Property prototype review showing interface screens" 
@@ -2082,9 +2114,13 @@ function PrototypeReview1() {
 
 function HomeCardUp() {
   return (
-    <div className="bg-[#fffdf7] box-border content-stretch flex gap-[80px] items-center px-[62px] py-[56px] relative rounded-[8px] shrink-0" data-name="Home - card - UP">
-      <DescriptionGroup1 />
-      <PrototypeReview1 />
+    <div className="bg-[#fffdf7] relative rounded-[8px] shrink-0 w-full overflow-hidden" data-name="Home - card - UP">
+      <div className="flex flex-row items-center size-full">
+        <div className="box-border content-stretch flex gap-6 md:gap-12 lg:gap-20 items-center px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:py-14 relative w-full">
+          <DescriptionGroup1 />
+          <PrototypeReview1 />
+        </div>
+      </div>
     </div>
   );
 }
@@ -2155,7 +2191,7 @@ function Button5() {
 
 function DescriptionGroup2() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[437px]" data-name="Description group">
       <Timestamp2 />
       <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Transform a taxing compliance obligation to an advantage for businesses to uncover personalized insights</p>
       <PillGroup2 />
@@ -2908,7 +2944,7 @@ function PutScreenInHere14() {
 
 function PrototypeReview2() {
   return (
-    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-[579px]" data-name="Prototype review">
+    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-full max-w-[579px]" data-name="Prototype review">
       <img 
         src={imgPrototypeReview2} 
         alt="Woman working on MacBook Pro showing Sovos Intelligence interface" 
@@ -2920,9 +2956,9 @@ function PrototypeReview2() {
 
 function HomeCardUp1() {
   return (
-    <div className="bg-[#fffdf7] relative rounded-[8px] shrink-0 w-full" data-name="Home - card - UP">
+    <div className="bg-[#fffdf7] relative rounded-[8px] shrink-0 w-full  overflow-hidden" data-name="Home - card - UP">
       <div className="flex flex-row items-center size-full">
-        <div className="box-border content-stretch flex gap-[80px] items-center px-[62px] py-[56px] relative w-full">
+        <div className="box-border content-stretch flex gap-6 md:gap-12 lg:gap-20 items-center px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:py-14 relative w-full">
           <DescriptionGroup2 />
           <PrototypeReview2 />
         </div>
@@ -2992,17 +3028,6 @@ function Button7() {
   );
 }
 
-function DescriptionGroup3() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[437px]" data-name="Description group">
-      <Timestamp3 />
-      <p className="css-l3z3w9 font-['Sora:SemiBold',_sans-serif] font-semibold leading-[normal] min-w-full relative shrink-0 text-[#09543d] text-[32px] tracking-[-0.5px] w-[min-content]">Save statements prepares money and time....</p>
-      <PillGroup3 />
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-[18px] tracking-[-0.5px] w-[min-content]">A pivotal research and design project to support Sovos’ FY26 top initiative by automating their desired outputs and saving individual preparers 10+ hours while working against overwhelming deadlines. An pivotal project to solve Sovos’ most urgent retention project.</p>
-      <Button7 />
-    </div>
-  );
-}
 
 function PutScreenInHere15() {
   return (
@@ -3745,34 +3770,7 @@ function PutScreenInHere19() {
   );
 }
 
-function PrototypeReview3() {
-  return (
-    <div className="bg-[#f0f5f9] h-[386px] overflow-clip relative rounded-[16px] shrink-0 w-[579px]" data-name="Prototype review">
-      <PutScreenInHere15 />
-      <PutScreenInHere16 />
-      <PutScreenInHere17 />
-      <PutScreenInHere18 />
-      <div className="absolute flex inset-[25.42%_76.61%_-39.25%_-33.5%] items-center justify-center">
-        <div className="flex-none h-[329.387px] rotate-[270deg] w-[439.397px]">
-          <PutScreenInHere19 />
-        </div>
-      </div>
-    </div>
-  );
-}
 
-function HomeCardUp2() {
-  return (
-    <div className="bg-[#fffdf7] relative rounded-[8px] shrink-0 w-full" data-name="Home - card - UP">
-      <div className="flex flex-row items-center size-full">
-        <div className="box-border content-stretch flex gap-[80px] items-center px-[62px] py-[56px] relative w-full">
-          <DescriptionGroup3 />
-          <PrototypeReview3 />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function CardsGroup() {
   return (
@@ -3785,13 +3783,20 @@ function CardsGroup() {
   );
 }
 
-function Frame1773() {
+function FeaturedProjectsSection () {
   return (
-    <div id="featured-projects" className="absolute bg-[#09543d] box-border content-stretch flex flex-col gap-[32px] items-center justify-center left-1/2 px-0 py-[56px] rounded-t-lg top-[800px] translate-x-[-50%] w-[100%]">
-      <p className="css-4tff24 font-['Sora:Bold',_sans-serif] font-bold leading-[normal] relative shrink-0 text-[36px] text-white tracking-[-0.5px] w-[1220px]">Featured projects 👀</p>
-      <CardsGroup />
-      <p className="flex css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] left-[calc(50%-328px)] not-italic text-white text-[18px] text-nowrap top-[32px] tracking-[-0.5px] whitespace-pre mt-[32px] mr-[0px]  ml-[0px]">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
-    </div>
+    <section id="featured-projects" className="bg-[#09543d] relative overflow-hidden box-border flex flex-col items-center justify-center w-full rounded-t-lg py-[48px] md:py-[56px] px-4 md:px-8">
+      {/* Background cat doodle aligned with heading left edge, peeking ears initially */}
+      {/* <div className="absolute left-4 md:left-8 lg:left-16 top-0 z-0 pointer-events-none">
+        <CatDoodle />
+      </div> */}
+
+      <div className="w-full max-w-[1220px] mx-auto flex flex-col gap-8 relative z-10">
+        <h2 className="css-4tff24 font-['Sora:Bold',_sans-serif] font-bold leading-[normal] text-[28px] md:text-[32px] lg:text-[36px] text-white tracking-[-0.5px]">Featured projects 👀</h2>
+        <CardsGroup />
+        <p className="css-bqxx5z font-['Source_Sans_Pro:Light',_sans-serif] leading-[normal] not-italic text-white text-[16px] md:text-[18px] tracking-[-0.5px] mt-[24px] text-center md:text-left">{`❤️ Designed and built by Dan to share the joy of creativity`}</p>
+      </div>
+    </section>
   );
 }
 
@@ -3928,17 +3933,21 @@ function NavBarButton3() {
 function Frame7() {
   return (
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0">
-      <WorkButton />
+            {/* Desktop Navigation */}
+      <div className="hidden md:flex gap-[24px] items-center"><WorkButton />
       <AboutButton />
       <ResumeButton />
-      <ContactButton />
+      <ContactButton /></div>
+      
+            {/* Mobile Navigation */}
+      <MobileNav />
     </div>
   );
 }
 
 function NavBar() {
   return (
-    <div className="sticky box-border content-stretch flex items-center justify-between left-0 px-[32px] py-[24px] top-0 w-[100%] z-50" data-name="Nav bar">
+    <div className="sticky box-border content-stretch flex items-center justify-between left-0 sm:px-6 md:px-8 lg:px-16 py-[24px] top-0 w-[100%] z-50" data-name="Nav bar">
       <div className="absolute h-[72.858px] left-[-0.12px] top-0 w-[100%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1441 73">
           <path d={svgPaths.p6fc9b80} fill="var(--fill-0, #FFFDF7)" id="Vector 192" />
@@ -3960,26 +3969,27 @@ export default function Home() {
         image="https://danliu.one/images/home-preview.png"
       />
 
-    <div className="bg-[#fffdf7] relative size-full" data-name="Home">
-      <div className="absolute bg-[#fffdf7] h-[1024px] left-0 top-0 w-screen" data-name="pure color" />
-      <CatDoodle />
-      <Frame1770 />
-      <Frame1772 />
-      <p className="absolute css-l3z3w9 font-['Sora:Light',_sans-serif] font-light leading-[normal] left-[313px] text-[#09543d] text-[16px] text-nowrap top-[695px] tracking-[-0.5px] whitespace-pre">I make things easier, even your taxes.</p>
-      <div className="absolute flex h-[43px] items-center justify-center left-[197px] top-[664px] w-[104px]">
-        <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="h-[43px] relative w-[104px]">
-            <div className="absolute inset-[-0.3%_-0.46%_-7.86%_-0.48%]" style={{ "--stroke-0": "rgba(9, 84, 61, 1)" } as React.CSSProperties}>
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 106 48">
-                <path d={svgPaths.p18824200} fill="var(--stroke-0, #09543D)" id="Vector 3" />
-              </svg>
+    <div className="bg-[#fffdf7] min-h-screen" data-name="Home">
+      <NavBar />
+      
+      <header className="flex flex-col items-center px-4 md:px-8 lg:px-16 py-16">
+        <div className="w-full max-w-[1220px] flex flex-col items-start">
+          <div className="flex flex-col lg:flex-row gap-8 w-full items-center">
+                        <div className="flex-1 min-w-0">
+              <HeroTextGroup />
             </div>
+            <div className="hidden md:hidden lg:block flex-1 min-w-0">
+              <CatGrid />
+            </div>
+
           </div>
         </div>
-      </div>
-      <Frame1773 />
+      </header>
       
-      <NavBar />
+      <main className="w-full min-w-0 justify-center lg:justify-center items-center"><div className="flex w-full max-w-[1220px] mx-auto flex flex-col justify-start lg:justify-start">
+          <CatDoodle />
+        </div><FeaturedProjectsSection /></main>
+      
     </div>
         </>
   );

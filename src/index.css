@@ -63,6 +63,7 @@
     --text-lg: 1.125rem;
     --text-xl: 1.25rem;
     --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
@@ -1482,6 +1483,10 @@
     height: 100%;
   }
 
+    .max-h-\[200px\] {
+    max-height: 200px;
+  }
+
   .max-h-\[285\.535px\] {
     max-height: 285.535px;
   }
@@ -1694,6 +1699,12 @@
     width: 197.13%;
   }
 
+
+   .max-w-\[200px\] {
+    max-width: 200px;
+  }
+
+
   .w-\[204px\] {
     width: 204px;
   }
@@ -1742,6 +1753,10 @@
     width: 437px;
   }
 
+   .max-w-\[437px\] {
+    max-width: 437px;
+  }
+
   .w-\[439\.397px\] {
     width: 439.397px;
   }
@@ -1774,12 +1789,26 @@
     width: 579px;
   }
 
+  .max-w-\[579px\] {
+    max-width: 579px;
+  }
+
+
   .w-\[580px\] {
     width: 580px;
   }
 
+  .max-w-\[580px\] {
+    max-width: 580px;
+  }
+
   .w-\[600px\] {
     width: 600px;
+  }
+
+
+  .max-w-\[640px\] {
+    max-width: 640px;
   }
 
   .w-\[991\.92\%\] {
@@ -1792,6 +1821,10 @@
 
   .w-\[1220px\] {
     width: 1220px;
+  }
+
+  .max-w-\[1220px\] {
+    max-width: 1220px;
   }
 
   .w-\[calc\(1px\*\(\(var\(--transform-inner-height\)\*1\)\+\(var\(--transform-inner-width\)\*0\)\)\)\] {
@@ -1987,6 +2020,10 @@
 
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
 
   .gap-\[1\.33vw\] {
@@ -2258,8 +2295,16 @@
     padding-inline: calc(var(--spacing) * 4);
   }
 
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
+  }
+
+    .px-16 {
+    padding-inline: calc(var(--spacing) * 16);
   }
 
   .px-\[4\.905px\] {
@@ -2294,12 +2339,28 @@
     padding-block: calc(var(--spacing) * 0);
   }
 
+   .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
 
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
+
+  .py-32 {
+    padding-block: calc(var(--spacing) * 32);
   }
 
   .py-\[1\.839px\] {
@@ -3039,6 +3100,7 @@
     }
   }
 
+
   @media (width >= 64rem) {
     .lg\:h-\[772px\] {
       height: 772px;
@@ -3405,7 +3467,7 @@ html {
 .hero-heading {
   font-family: 'Sora', sans-serif;
   font-weight: 600;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: #09543d;
@@ -3419,3 +3481,483 @@ html {
   padding: 0 0.6rem;
 }
 
+
+
+/* ============================================
+  added CSS - test
+   ============================================ */
+   
+/* ============================================
+   MOBILE-FIRST RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Container with responsive padding */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (width >= 40rem) {
+  .container {
+    max-width: 40rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .container {
+    max-width: 48rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .container {
+    max-width: 64rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (width >= 80rem) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media (width >= 96rem) {
+  .container {
+    max-width: 96rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE SPACING
+   ============================================ */
+
+/* Small devices (phones, < 768px) */
+.sm\:px-6 {
+  padding-inline: 1.5rem;
+}
+
+.sm\:py-12 {
+  padding-block: 3rem;
+}
+
+.sm\:text-xl {
+  font-size: 1.25rem;
+}
+
+.sm\:text-2xl {
+  font-size: 1.5rem;
+}
+
+.sm\:text-4xl {
+  font-size: 2.25rem;
+}
+
+.sm\:gap-4 {
+  gap: 1rem;
+}
+
+.sm\:gap-8 {
+  gap: 2rem;
+}
+
+.sm\:gap-12 {
+  gap: 3rem;
+}
+
+.sm\:flex-row {
+  flex-direction: row;
+}
+
+.sm\:w-auto {
+  width: auto;
+}
+
+@media (width >= 40rem) {
+  
+  .sm\:px-6 {
+    padding-inline: 1.5rem;
+  }
+  
+  .sm\:py-12 {
+    padding-block: 3rem;
+  }
+  
+  .sm\:text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+  }
+  
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+  
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+  
+  .sm\:gap-12 {
+    gap: 3rem;
+  }
+  
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+  
+  .sm\:w-auto {
+    width: auto;
+  }
+}
+
+/* ============================================
+   MEDIUM DEVICES (tablets, >= 768px)
+   ============================================ */
+
+@media (width >= 48rem) {
+  .md\:flex {
+    display: flex;
+  }
+  
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:px-8 {
+    padding-inline: 2rem;
+  }
+  
+  .md\:py-16 {
+    padding-block: 4rem;
+  }
+  
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .md\:text-4xl {
+    font-size: 2.25rem;
+  }
+  
+  .md\:gap-12 {
+    gap: 3rem;
+  }
+}
+
+/* ============================================
+   LARGE DEVICES (desktops, >= 1024px)
+   ============================================ */
+
+@media (width >= 64rem) {
+  .lg\:flex {
+    display: flex;
+  }
+  
+  .lg\:hidden {
+    display: none;
+  }
+  
+  .lg\:block {
+    display: block;
+  }
+  
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+  
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+  
+  .lg\:px-16 {
+    padding-inline: 4rem;
+  }
+  
+  .lg\:py-14 {
+    padding-block: 3.5rem;
+  }
+  
+  .lg\:py-20 {
+    padding-block: 5rem;
+  }
+  
+  .lg\:py-24 {
+    padding-block: 6rem;
+  }
+  
+  .lg\:text-\[28px\] {
+    font-size: 28px;
+  }
+  
+  .lg\:text-\[32px\] {
+    font-size: 32px;
+  }
+  
+  .lg\:text-\[36px\] {
+    font-size: 36px;
+  }
+  
+  .lg\:text-\[52px\] {
+    font-size: 52px;
+  }
+  
+  .lg\:gap-20 {
+    gap: 5rem;
+  }
+  
+  .lg\:space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+  
+  .lg\:aspect-\[3\/2\] {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* ============================================
+   RESPONSIVE TEXT UTILITIES
+   ============================================ */
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+/* ============================================
+   RESPONSIVE WIDTH UTILITIES
+   ============================================ */
+
+.max-w-\[580px\] {
+  max-width: 580px;
+}
+
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
+/* ============================================
+   RESPONSIVE LAYOUT UTILITIES
+   ============================================ */
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-20 {
+  gap: 5rem;
+}
+
+/* ============================================
+   ASPECT RATIO UTILITIES
+   ============================================ */
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* ============================================
+   RESPONSIVE GRID UTILITIES
+   ============================================ */
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (width >= 40rem) {
+  .sm\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 64rem) {
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* ============================================
+   MOBILE MENU UTILITIES
+   ============================================ */
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-gray-200 {
+  border-color: rgb(229 231 235);
+}
+
+.hover\:bg-gray-50:hover {
+  background-color: rgb(249 250 251);
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: rgb(243 244 246);
+}
+
+.hover\:opacity-70:hover {
+  opacity: 0.7;
+}
+
+.hover\:opacity-80:hover {
+  opacity: 0.8;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.py-2 {
+  padding-block: 0.5rem;
+}
+
+.px-2 {
+  padding-inline: 0.5rem;
+}
+
+/* ============================================
+   RESPONSIVE PADDING UTILITIES
+   ============================================ */
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-16 {
+  padding: 4rem;
+}
+
+@media (width >= 40rem) {
+  .sm\:p-8 {
+    padding: 2rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .lg\:p-16 {
+    padding: 4rem;
+  }
+}
+
+/* ============================================
+   LEADING (LINE HEIGHT) UTILITIES
+   ============================================ */
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-snug {
+  line-height: 1.375;
+}
+
+/* ============================================
+   MOBILE-SPECIFIC OVERRIDES
+   ============================================ */
+
+@media (width < 48rem) {
+  .hidden {
+    display: none;
+  }
+  
+  /* Hide desktop elements on mobile */
+  .lg\:flex {
+    display: none;
+  }
+  
+  .lg\:block {
+    display: none;
+  }
+}

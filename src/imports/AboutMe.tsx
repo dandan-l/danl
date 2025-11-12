@@ -281,7 +281,7 @@ export default function AboutMe() {
         <PolaroidPictureGroup />
         <Frame70 />
       </div>
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-[18px] text-center tracking-[-0.5px] px-8 py-8">{`❤️ Designed and built by Dan to share the joy of creativity & projects that she’s proud of`}</p>
+      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-[18px] text-center tracking-[-0.5px] px-8 py-8">{`❤️ Designed and built by Dan to share the joy of creativity`}</p>
     </div>
         </>
   );

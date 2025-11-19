@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import svgPaths from "./svg-relpazhn2a";
+import svgPathsIcon from "./svg-giyjha194c";
+
 import svgNewTabPaths from "./svg-fmk4nn8rsv";
 import { ResponsiveNavigation } from "../components/ResponsiveNavBar";
 import imgScreenshot20251002At91804Pm1 from "figma:asset/3d7027870b9712cfcdd37b904d38824f2ec370b3.png";
@@ -17,6 +19,8 @@ import imgScreenshot20251003At42546Pm1 from "figma:asset/04740842c7fd328ab2466bf
 import imgPrototypeReview from "figma:asset/44c89db9907048b327e18a457040d46b54e9a8c1.png";
 import imgPrototypeReview1 from "figma:asset/81a0710bc65173f4531e35a1764ec4fe4e88d111.png";
 import imgPrototypeReview2 from "figma:asset/c6d278d9a48683120233d2201418d63e6c410d6b.png";
+import LocationDoodle from "../assets/LocationDoodle.svg";
+import MailDoodle from "../assets/MailDoodle.svg";
 
 function CatDoodle() {
   const [scrollY, setScrollY] = useState(0);
@@ -463,9 +467,9 @@ function Group1770() {
     // </div>
 
     <h1 className="hero-heading">
-      A <mark>full-stack Product Designer</mark>
-      {" & "}
-      <mark>mentor</mark>
+      Hi, I'm Dan!
+      <br></br>
+      <mark>Strategic Senior Product Designer</mark>
     </h1>
   );
 }
@@ -554,28 +558,101 @@ function HeroTextGroup() {
 
   return (
     <div className="content-stretch flex flex-col gap-[40px] items-start md:px-8 w-full max-w-[580px] px-4">
-      <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-xl md:text-2xl lg:text-[28px] tracking-[-0.5px] w-[min-content]">
-        👋🏼 Hellooooo, my name is Dan Liu.
-      </p>
       <Group1770 />
       <p className="css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] min-w-full not-italic relative shrink-0 text-[#09543d] text-xl md:text-2xl lg:text-[28px] tracking-[-0.5px] w-[min-content]">
-        I transform complex concepts into simple experiences that users and
-        businesses appreciate. Creativity powered by passion to design, vivid
-        imagination and (more than) occasional silliness.
+        I transform complex compliance problems into intuitive designs that
+        people enjoy and businesses appreciate.
       </p>
-      <Frame1771 buttonRef={buttonRef} />
-      {/* <div className="flex items-end gap-4" style={{ marginTop: -arrowLift }}>
-                <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-                  <div className="h-[43px] relative w-[104px]">
-                    <div className="absolute inset-[-0.3%_-0.46%_-7.86%_-0.48%]" style={{ "--stroke-0": "rgba(9, 84, 61, 1)" } as React.CSSProperties}>
-                      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 106 48">
-                        <path d={svgPaths.p18824200} fill="var(--stroke-0, #09543D)" id="Vector 3" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <p className="css-l3z3w9 font-['Sora:Light',_sans-serif] font-light leading-[normal] text-[#09543d] text-[16px] text-nowrap tracking-[-0.5px] whitespace-pre self-end">I make things easier, even your taxes.</p>
-              </div> */}
+
+      {/* email and location combo */}
+      <div className="flex flex-col gap-4">
+        {/* email address */}
+        <div className="flex flex-row gap-4 pl-1">
+          <a className="flex gap-2 item-center css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-base md:text-lg lg:text-[16px] tracking-[-0.5px]">
+            <svg
+              className=" shrink-0 w-[24.543px]"
+              fill="none"
+              preserveAspectRatio="none"
+              viewBox="0 0 27 18"
+            >
+              <g id="contact-doodle">
+                <path
+                  d={svgPaths.p1f9bb280}
+                  id="Vector 159"
+                  stroke="#09543D"
+                  strokeLinecap="round"
+                />
+                <path
+                  d={svgPaths.p31006090}
+                  id="Vector 160"
+                  stroke="#09543D"
+                  strokeLinecap="round"
+                />
+                <path
+                  d={svgPaths.p2e16a480}
+                  id="Vector 161"
+                  stroke="#09543D"
+                  strokeLinecap="round"
+                />
+                <path
+                  d={svgPaths.pfc54e00}
+                  id="Vector 162"
+                  stroke="#09543D"
+                  strokeLinecap="round"
+                />
+                <path
+                  d={svgPaths.p1264f100}
+                  id="Vector 163"
+                  stroke="#09543D"
+                  strokeLinecap="round"
+                />
+              </g>
+            </svg>
+            danliudesigner@gmail.com
+          </a>
+        </div>
+
+        {/* location pin */}
+        <div className="flex flex-row gap-4 pl-1">
+          <a
+            href="https://hoodmaps.com/boulder-neighborhood-map"
+            target="_blank"
+            className="flex gap-2 item-center css-bqxx5z font-['Source_Sans_Pro:Regular',_sans-serif] leading-[normal] not-italic text-[#09543d] text-base md:text-lg lg:text-[16px] tracking-[-0.5px]"
+          >
+            <svg
+              className="shrink-0 w-[17.399px]"
+              fill="none"
+              preserveAspectRatio="none"
+              viewBox="0 0 18 25"
+            >
+              <g id="Location Icon">
+                <path
+                  d={svgPathsIcon.p1a68c060}
+                  id="Vector 216"
+                  stroke="var(--stroke-0, #09543D)"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d={svgPathsIcon.p1593eb00}
+                  id="Vector 217"
+                  stroke="var(--stroke-0, #09543D)"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d={svgPathsIcon.p10d68cc0}
+                  id="Vector 218"
+                  stroke="var(--stroke-0, #09543D)"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                />
+              </g>
+            </svg>
+            Boulder, CO
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
@@ -7647,7 +7724,7 @@ export default function Home() {
       <div className="bg-[#fffdf7] min-h-screen" data-name="Home">
         <ResponsiveNavigation />
 
-        <header className="flex flex-col items-center px-4 mt-8 md:px-8 lg:px-16 py-16">
+        <header className="flex flex-col items-center px-4 mt-12 md:px-8 lg:px-16 py-16">
           <div className="w-full max-w-[1220px] flex flex-col items-start">
             <div className="flex flex-col lg:flex-row gap-8 w-full items-center">
               <div className="flex-1 min-w-0">

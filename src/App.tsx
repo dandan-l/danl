@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./imports/Home";
 import AboutMe from "./imports/AboutMe";
 import EFileMyFormsCaseStudy from "./imports/EFileMyFormsCaseStudy";
+import EFileMyFormsProject from "./imports/eFileMyFormsProject";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
 
@@ -21,18 +22,24 @@ export default function App() {
 
   return (
     <HelmetProvider>
- <Router>
-      <CustomCursorContext.Provider value={{ setCustomCursorVisible }}>
-        <CustomCursor isVisible={customCursorVisible} />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />}  />
-          <Route path="/about" element={<AboutMe />} />
-          <Route path="/projects/efilemyforms" element={<EFileMyFormsCaseStudy />} />
-        </Routes>
-      </CustomCursorContext.Provider>
-    </Router>
+      <Router>
+        <CustomCursorContext.Provider value={{ setCustomCursorVisible }}>
+          <CustomCursor isVisible={customCursorVisible} />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route
+              path="/projects/efilemyforms"
+              element={<EFileMyFormsCaseStudy />}
+            />
+            <Route
+              path="/projects/efilemyformsNew"
+              element={<EFileMyFormsProject />}
+            />
+          </Routes>
+        </CustomCursorContext.Provider>
+      </Router>
     </HelmetProvider>
-   
   );
 }

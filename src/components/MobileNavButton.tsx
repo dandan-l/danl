@@ -20,10 +20,7 @@ export function MobileNav() {
 
       {isOpen && (
         <>
-          <div
-            className="fixed inset-0 bg-black/50 z-40"
-            onClick={closeMenu}
-          />
+          <div className="fixed inset-0 bg-black/50 z-40" onClick={closeMenu} />
           <div className="fixed top-[80px] left-0 right-0 bg-[#fffdf7] shadow-lg z-50 border-t border-[#09543d]/10">
             <nav className="flex flex-col p-4 gap-4">
               <Link

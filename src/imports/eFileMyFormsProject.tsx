@@ -1,10 +1,4 @@
 import svgPaths from "./svg-l2lnvkoxyr";
-import {
-  WorkButton,
-  AboutButton,
-  ResumeButton,
-  ContactButton,
-} from "../components/NavBarButtons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ScrollCursor from "./ScrollCursor";

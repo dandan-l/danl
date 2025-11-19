@@ -3,7 +3,6 @@ import { useState, createContext, useContext } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./imports/Home";
 import AboutMe from "./imports/AboutMe";
-import EFileMyFormsCaseStudy from "./imports/EFileMyFormsCaseStudy";
 import EFileMyFormsProject from "./imports/eFileMyFormsProject";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
@@ -31,10 +30,6 @@ export default function App() {
             <Route path="/about" element={<AboutMe />} />
             <Route
               path="/projects/efilemyforms"
-              element={<EFileMyFormsCaseStudy />}
-            />
-            <Route
-              path="/projects/efilemyformsNew"
               element={<EFileMyFormsProject />}
             />
           </Routes>

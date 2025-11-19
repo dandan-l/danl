@@ -4475,6 +4475,8 @@ html {
     width: calc(100vw - var(--container-padding)  - 8rem);
   }
 
+  
+
   .w-full {
     width: 100%;
   }
@@ -5806,6 +5808,10 @@ html {
   padding-right: var(--container-padding);
   margin: 0 auto;
 }
+
+  .image-gallery-padding {
+    padding-left: calc((100vw - var(--container-padding) - var(--container-max)) * 0.5);
+  }
 
 .image-gallery-title-responsive {
   width: 100% !important;

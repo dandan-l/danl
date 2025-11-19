@@ -10,7 +10,7 @@ export function BeforeAfterDesignScroll() {
     <div className="relative w-full my-8 md:my-12">
       {/* Horizontal scroll container - full width with left padding */}
       <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] overflow-x-auto overflow-y-hidden pb-4 scroll-smooth">
-        <div className="flex gap-6 md:gap-10 min-w-max pl-[var(--container-padding)]">
+        <div className="flex gap-6 md:gap-10 min-w-max image-gallery-padding">
           {/* After Design - New Design System Showcase */}
           <div className="flex-shrink-0 w-[calc(100vw-var(--container-padding)-8rem)] md:w-[calc(100vw-var(--container-padding)-12rem)] lg:w-[1180px]">
             <div className="h-[400px] md:h-[772px] relative rounded-lg overflow-hidden shadow-lg">

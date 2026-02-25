@@ -1,0 +1,282 @@
+/* eFileMyForms Checkout Section */
+.efmf-checkout-section {
+  background-color: var(--color-bg-white);
+  padding: var(--section-padding-y) 0;
+  width: 100%;
+}
+
+.efmf-checkout-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+/* Section Header */
+.efmf-checkout-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-checkout-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-accent);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.efmf-checkout-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-2xl-sm);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Problem/Solution Grid */
+.efmf-checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+
+.efmf-checkout-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-checkout-card-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  text-transform: capitalize;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-checkout-list li {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: var(--spacing-sm);
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-list li::before {
+  content: "○";
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+
+.efmf-checkout-list li strong {
+  color: var(--color-brand-primary);
+  font-weight: normal;
+}
+
+.efmf-checkout-card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-card-description strong {
+  color: var(--color-brand-primary);
+}
+
+/* Comparison Section */
+.efmf-checkout-comparison-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.efmf-checkout-comparison-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-text-dark-grey);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-images-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.efmf-checkout-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+}
+
+.efmf-checkout-image-wrapper:focus {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+.efmf-checkout-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.efmf-checkout-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.efmf-checkout-image-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: center;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-full-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.efmf-checkout-full-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Solution Section */
+.efmf-checkout-solution {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.efmf-checkout-solution-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  text-transform: capitalize;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+
+.efmf-checkout-solution-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Number badge styles are now handled by NumberBadge component */
+.efmf-checkout-solution-number {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-light);
+  width: 41px;
+  height: 41px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  box-shadow: var(--shadow-badge);
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-solution-subtitle {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-checkout-solution-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .efmf-checkout-section {
+    padding: var(--spacing-5xl) 0;
+  }
+
+  .efmf-checkout-title {
+    font-size: var(--text-3xl);
+  }
+
+  .efmf-checkout-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .efmf-checkout-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .efmf-checkout-solution-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .efmf-checkout-container {
+    padding: 0 var(--spacing-xl);
+  }
+}

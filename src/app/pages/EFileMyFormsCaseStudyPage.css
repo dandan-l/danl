@@ -1,0 +1,55 @@
+/* eFileMyForms Case Study Page - Base Styles */
+
+/* Page Container */
+.efilemyforms-case-study-page {
+  width: 100%;
+  max-width: 100vw;
+  /* Removed overflow-x: hidden to allow sticky header to work */
+  background-color: var(--color-bg-white);
+}
+
+/* Main Content Area */
+.efilemyforms-case-study-page main {
+  width: 100%;
+  max-width: 100vw;
+  /* Removed overflow-x: hidden to allow sticky header to work */
+}
+
+/* Skip to Main Link - Accessibility */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background-color: var(--color-brand-primary);
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1rem;
+}
+
+/* Responsive Images */
+.efilemyforms-case-study-page img {
+  /* max-width: 100%; */
+  /* height: auto; */
+  display: block;
+}
+
+/* Ensure no horizontal overflow from any child elements */
+.efilemyforms-case-study-page * {
+  /* max-width: 100%; */
+  box-sizing: border-box;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .efilemyforms-case-study-page {
+    font-size: 16px; /* Prevent text from being too small on mobile */
+  }
+}

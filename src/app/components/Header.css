@@ -1,0 +1,145 @@
+.site-header {
+  background-color: var(--color-bg-cream);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  box-shadow: var(--shadow-xs);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  gap: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-xs) / 2);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-lg);
+  color: var(--color-brand-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+  font-feature-settings: 'lnum', 'tnum';
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing-tight);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+}
+
+.nav-link:hover {
+  background-color: var(--color-overlay-primary-05);
+}
+
+/* Change text color to yellow on hover */
+.nav-link:hover span {
+  color: var(--color-accent-yellow);
+}
+
+.nav-link:active {
+  transform: scale(0.98);
+}
+
+.nav-icon {
+  width: var(--text-xl);
+  height: var(--text-xl);
+  flex-shrink: 0;
+  color: var(--color-brand-primary);
+}
+
+/* Hide yellow hover elements by default */
+.nav-icon .hover-stroke,
+.nav-icon .hover-fill {
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+/* Show yellow hover elements when link is hovered */
+.nav-link:hover .nav-icon .hover-stroke,
+.nav-link:hover .nav-icon .hover-fill {
+  opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .logo {
+    font-size: var(--text-base);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-sm);
+  }
+  
+  .nav-link {
+    font-size: var(--text-xs);
+    padding: calc(var(--spacing-xs) * 1.5);
+  }
+  
+  .nav-link span {
+    display: none;
+  }
+  
+  .nav-icon {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .nav-links {
+    gap: calc(var(--spacing-sm) * 1.5);
+  }
+  
+  .nav-link {
+    font-size: var(--text-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-nav {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .logo {
+    font-size: var(--text-xl);
+  }
+  
+  .nav-links {
+    gap: var(--spacing-lg);
+  }
+  
+  .nav-link {
+    font-size: var(--text-base);
+  }
+}

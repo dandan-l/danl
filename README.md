@@ -1,7 +1,9 @@
-# danl-one
-Dan Liu - portfolio website 2.0
 
- ## Running the code
+  # WebPo
+
+  This is a code bundle for WebPo. The original project is available at https://www.figma.com/design/ptDIbYqkPVVtDDfwAWTjlN/WebPo.
+
+  ## Running the code
 
   Run `npm i` to install the dependencies.
 

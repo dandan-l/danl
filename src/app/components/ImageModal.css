@@ -1,0 +1,115 @@
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-overlay-black-90);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal-overlay);
+  cursor: zoom-out;
+  padding: var(--spacing-xl);
+  animation: fadeIn var(--transition-base);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-modal-close-button {
+  position: fixed;
+  top: var(--spacing-xl);
+  right: var(--spacing-xl);
+  z-index: var(--z-modal-content);
+  background-color: var(--color-overlay-white-90);
+  border: none;
+  border-radius: var(--radius-full);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-all);
+  box-shadow: var(--shadow-modal-button);
+}
+
+.image-modal-close-button:hover {
+  background-color: var(--color-bg-white);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-modal-button-hover);
+}
+
+.image-modal-close-button:active {
+  transform: scale(0.95);
+}
+
+.image-modal-close-button svg {
+  color: var(--color-text-primary);
+}
+
+.image-modal-content {
+  max-width: 95vw;
+  max-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.image-modal-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  transform-origin: center center;
+}
+
+.image-modal-content img.zoomed {
+  cursor: grab !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .image-modal-overlay {
+    padding: var(--spacing-md);
+  }
+
+  .image-modal-close-button {
+    width: 40px;
+    height: 40px;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+
+  .image-modal-close-button svg {
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+  }
+
+  .image-modal-content img {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+}
+
+/* Touch device support */
+@media (hover: none) and (pointer: coarse) {
+  .image-modal-content img {
+    touch-action: none;
+  }
+}

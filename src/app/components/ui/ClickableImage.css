@@ -1,0 +1,29 @@
+/* ClickableImage Component Styles */
+
+.clickable-image-wrapper {
+  cursor: pointer;
+  transition: var(--transition-transform);
+  display: inline-block;
+  position: relative;
+}
+
+.clickable-image-wrapper:hover {
+  transform: translateY(-2px);
+}
+
+.clickable-image-wrapper:focus {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+.clickable-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  transition: var(--transition-all);
+}
+
+.clickable-image-wrapper:hover .clickable-image {
+  box-shadow: var(--shadow-hover);
+}

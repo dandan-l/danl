@@ -1,0 +1,145 @@
+/* eFileMyForms Hero Section */
+.efmf-hero-section {
+  background-color: var(--color-bg-cream);
+  padding: var(--section-padding-y-sm) 0;
+  width: 100%;
+}
+
+.efmf-hero-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+/* Hero Header */
+.efmf-hero-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-hero-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  margin: 0;
+}
+
+.efmf-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+/* Hero Info Grid */
+.efmf-hero-info {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.efmf-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Description section - takes available space, flexible */
+.efmf-info-description {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Item sections - hug content, no excess space */
+.efmf-info-item {
+  flex-shrink: 0;
+}
+
+/* Wide item section - takes available space, flexible */
+.efmf-info-item-wide {
+  flex: 1;
+  min-width: 0;
+}
+
+.efmf-info-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-primary);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.efmf-info-text {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  margin: 0;
+}
+
+/* Hero Image */
+.efmf-hero-image-wrapper {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.efmf-hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* Mobile - Stack columns */
+@media (max-width: 767px) {
+  .efmf-info-description,
+  .efmf-info-item,
+  .efmf-info-item-wide {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .efmf-hero-section {
+    padding: var(--section-padding-y) 0;
+  }
+
+  .efmf-hero-title {
+    font-size: var(--text-5xl);
+  }
+
+  .efmf-info-text {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .efmf-hero-section {
+    padding: var(--spacing-5xl) 0;
+  }
+
+  .efmf-hero-container {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .efmf-hero-title {
+    font-size: var(--text-4xl);
+  }
+}

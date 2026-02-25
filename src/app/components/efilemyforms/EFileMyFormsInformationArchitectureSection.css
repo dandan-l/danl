@@ -1,0 +1,209 @@
+/* eFileMyForms Information Architecture Section */
+.efmf-ia-section {
+  background-color: var(--color-bg-cream);
+  padding: var(--section-padding-y) 0;
+  width: 100%;
+}
+
+.efmf-ia-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+/* Section Header */
+.efmf-ia-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-ia-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-accent);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.efmf-ia-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-2xl-sm);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Problem/Solution Grid */
+.efmf-ia-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+
+.efmf-ia-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-ia-card-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-ia-section .efmf-branding-callouts {
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-ia-section .efmf-branding-callout {
+  flex: 1;
+  min-width: 0;
+}
+
+.efmf-ia-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-ia-list li {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: var(--spacing-sm);
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-ia-list li::before {
+  content: "○";
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+
+.efmf-ia-list li strong {
+  color: var(--color-brand-primary);
+  font-weight: normal;
+}
+
+.efmf-ia-card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-ia-card-description strong {
+  color: var(--color-brand-primary);
+}
+
+/* IA Comparison */
+.efmf-ia-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.efmf-ia-comparison-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.efmf-ia-comparison-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-text-dark-grey);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-ia-images-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.efmf-ia-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.efmf-ia-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.efmf-ia-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.efmf-ia-image-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: center;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .efmf-ia-section {
+    padding: var(--spacing-5xl) 0;
+  }
+
+  .efmf-ia-title {
+    font-size: var(--text-3xl);
+  }
+
+  /* Two column layout for callouts on larger screens */
+  .efmf-ia-section .efmf-branding-callouts {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+
+  .efmf-ia-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .efmf-ia-container {
+    padding: 0 var(--spacing-xl);
+  }
+}

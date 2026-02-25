@@ -1,0 +1,191 @@
+/* eFileMyForms Analysis Section */
+.efmf-analysis-section {
+  background-color: var(--color-bg-cream);
+  padding: var(--section-padding-y) 0;
+  width: 100%;
+}
+
+.efmf-analysis-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+/* Analysis Header */
+.efmf-analysis-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.efmf-analysis-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-accent);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.efmf-analysis-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-2xl-sm);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Insights Grid */
+.efmf-insights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+/* Insight Card */
+.efmf-insight-card {
+  background-color: var(--color-bg-white);
+  border: var(--border-thick) solid var(--color-text-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card-offset);
+  padding-bottom: var(--spacing-xl-sm);
+  position: relative;
+}
+
+.efmf-insight-card-content {
+  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: calc(var(--spacing-lg-sm) * -1);
+}
+
+.efmf-insight-icon {
+  position: absolute;
+  top: calc(var(--spacing-lg) * -1);
+  left: var(--spacing-lg);
+  font-size: var(--text-6xl);
+  line-height: 0;
+  background-color: var(--color-bg-white);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.efmf-insight-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-insight-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+/* Research Container */
+.efmf-research-container {
+  background-color: var(--color-bg-white);
+  border: var(--border-thin) solid var(--color-border-light-beige);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.efmf-research-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-research-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  max-width:100%;
+}
+
+.efmf-research-card {
+  background-color: var(--color-bg-light-grey);
+  border: var(--border-thin) solid var(--color-border-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1 1 100%;
+  min-width: 280px;
+}
+
+.efmf-research-card-title {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.efmf-research-card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .efmf-analysis-section {
+    padding: var(--spacing-5xl) 0;
+  }
+
+  .efmf-analysis-title {
+    font-size: var(--text-3xl);
+  }
+
+  .efmf-insights-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .efmf-research-card {
+    flex: 1 1 calc(50% - var(--spacing-sm));
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .efmf-analysis-container {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .efmf-research-card {
+    flex: 1 1 calc(33.333% - calc(var(--spacing-md) * 0.66));
+  }
+}

@@ -1,0 +1,32 @@
+/* NumberBadge Component Styles */
+
+.number-badge {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-light);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Size variants */
+.number-badge--md {
+  width: var(--badge-size);
+  height: var(--badge-size);
+  font-size: var(--text-xl);
+  box-shadow: var(--shadow-badge);
+}
+
+.number-badge--sm {
+  width: var(--badge-size-sm);
+  height: var(--badge-size-sm);
+  font-size: var(--text-lg);
+  box-shadow: var(--shadow-badge-sm);
+}
+
+.number-badge-text {
+  line-height: 1;
+}

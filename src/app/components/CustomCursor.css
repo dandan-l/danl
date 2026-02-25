@@ -1,0 +1,45 @@
+/* Custom Cursor Styles */
+.cursor {
+  pointer-events: none;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+}
+
+.cursor__ball circle {
+  fill: var(--color-cursor);
+}
+
+.cursor__ball--big {
+  transition: transform var(--transition-slow);
+}
+
+/* Remove the hover class since we're handling scale in JavaScript */
+
+.cursor__ball--small {
+  transition: transform var(--transition-fast);
+}
+
+/* Hide default cursor site-wide */
+body,
+body * {
+  cursor: none !important;
+}
+
+/* Mobile: Show default cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body,
+  body * {
+    cursor: auto !important;
+  }
+  
+  .cursor {
+    display: none;
+  }
+}

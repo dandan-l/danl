@@ -17,10 +17,30 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  build: {
-      target: 'esnext',
-      outDir: 'build',
+   build: {
+    // Optimize chunks
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router'],
+        },
+      },
     },
+    // Optimize asset handling
+    assetsInlineLimit: 4096, // 4kb
+    chunkSizeWarningLimit: 1000,
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+      },
+    },
+  },
+  // Performance optimization
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router'],
+  },
     server: {
       port: 3000,
       open: true,

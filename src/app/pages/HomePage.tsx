@@ -379,7 +379,10 @@ function BlackCatPeek({
   translateY: number;
 }) {
   return (
-    <div className="relative w-full" style={{ height: 0, overflow: "visible" }}>
+    <div
+      className="relative w-full blk-cat-peek-doodle"
+      style={{ height: 0, overflow: "visible" }}
+    >
       <div className="max-w-[1440px] mx-auto relative" style={{ height: 0 }}>
         <div
           ref={catRef}
@@ -632,11 +635,8 @@ export function HomePage() {
                 id="featured-projects-heading"
                 className="featured-projects-title"
               >
-                Featured projects
+                Featured projects 👀
               </h2>
-              <span className="featured-projects-emoji" aria-hidden="true">
-                👀
-              </span>
             </header>
 
             <div className="projects-list">

@@ -177,6 +177,7 @@
 /* Base Styles */
 * {
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 body {

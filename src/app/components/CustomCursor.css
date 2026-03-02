@@ -3,28 +3,39 @@
   pointer-events: none;
 }
 
+
 .cursor__ball {
   position: fixed;
   top: 0;
   left: 0;
-  mix-blend-mode: difference;
   z-index: var(--z-cursor);
   pointer-events: none;
+
+  mix-blend-mode: exclusion;
+
+    /* Safari-specific optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+-webkit-font-smoothing: subpixel-antialiased;
+-moz-osx-font-smoothing:grayscale;
+
+  transform: translate3d(0, 0, 0); /* Force GPU acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
-.cursor__ball circle {
-  fill: var(--color-cursor);
-}
 
 .cursor__ball--big {
-  transition: transform var(--transition-slow);
+  /* Scale from center */
+  transform-origin: center center;
+    /* Prevent pixelation during scaling */
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* Remove the hover class since we're handling scale in JavaScript */
-
-.cursor__ball--small {
-  transition: transform var(--transition-fast);
-}
 
 /* Hide default cursor site-wide */
 body,
@@ -41,5 +52,9 @@ body * {
   
   .cursor {
     display: none;
+  }
+
+  .cursor__ball {
+    will-change: auto;
   }
 }

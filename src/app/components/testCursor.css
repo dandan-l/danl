@@ -1,0 +1,111 @@
+/* Custom Cursor Styles */
+.cursor {
+  pointer-events: none;
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+}
+
+/* This applies to Chrome/Firefox */
+.cursor__ball--big,
+.cursor__ball--small {
+  mix-blend-mode: exclusion;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+   mix-blend-mode: exclusion;  /*not compatible with Safari */
+  z-index: var(--z-cursor);
+  pointer-events: none;
+
+    /* Safari-specific optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+-webkit-font-smoothing: subpixel-antialiased;
+-moz-osx-font-smoothing:grayscale;
+  transform: translate3d(0, 0, 0); /* Force GPU acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* .cursor__ball circle {
+  fill: var(--color-cursor);
+} */
+
+.cursor__ball--big {
+  /* transition: transform var(--transition-slow); */
+
+  /* Transition replaced due to Safari compatibility - handled by JS for smoothness */
+
+  /* Scale from center */
+  transform-origin: center center;
+    /* Prevent pixelation during scaling */
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Remove the hover class since we're handling scale in JavaScript */
+
+.cursor__ball--big svg {
+  /* Ensure SVG renders smoothly */
+  shape-rendering: auto;
+}
+
+
+/* Safari-specific fix for blend mode */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+   .cursor__ball--big svg,
+  .cursor__ball--small svg {
+    /* Force sharp rendering on Safari */
+    shape-rendering: geometricPrecision;
+  }
+    .cursor__ball--big {
+    /* Improve Safari scaling quality */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .cursor__ball {
+    /* Safari gets extra transform optimization */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+    /* Safari only */
+  .cursor__ball--big,
+  .cursor__ball--small {
+    mix-blend-mode: exclusion; /* No inversion */
+  }
+  
+  .cursor__ball circle {
+    fill: #09543d; /* Solid brand color */
+    opacity: 0.85;
+  }
+}
+
+
+/* Hide default cursor site-wide */
+body,
+body * {
+  cursor: none !important;
+}
+
+/* Mobile: Show default cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body,
+  body * {
+    cursor: auto !important;
+  }
+  
+  .cursor {
+    display: none;
+  }
+}

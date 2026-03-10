@@ -636,7 +636,7 @@ export function HomePage() {
                 id="featured-projects-heading"
                 className="featured-projects-title"
               >
-                Featured projects 👀
+                Featured product design projects
               </h2>
             </header>
 

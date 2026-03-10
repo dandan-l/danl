@@ -7,6 +7,7 @@ import imgPrototypeReviewUp1 from "../../assets/images/reportmyup-prototype-revi
 import imgWomanWorkingOnAMacBookPro14 from "../../assets/images/woman-working-macbook.png";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { OtherProjectsSection } from "../components/home/OtherProjectsSection";
 
 const MOTIVATIONAL_QUOTES = [
   "Work smarter, not harder. Sleep when you need to",
@@ -811,6 +812,9 @@ export function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Other Projects Section */}
+        <OtherProjectsSection />
 
         {/* Contact Section */}
         <section

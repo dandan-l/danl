@@ -1,0 +1,257 @@
+/* Other Projects Section */
+.other-projects-section {
+  padding: clamp(40px, 6vh, 80px) 0;
+  background-color: var(--color-bg-cream);
+}
+
+.other-projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 6vw, 80px);
+  margin-bottom: clamp(24px, 4vh, 48px);
+}
+
+.other-projects-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+/* Outer clips overflow so padding on inner track works in all browsers */
+.cards-track-outer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-track {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(16px, 2.5vw, 32px);
+  padding: 0 clamp(24px, 6vw, 80px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  will-change: scroll-position;
+}
+
+.cards-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-track.is-dragging {
+  cursor: grabbing;
+}
+
+.cards-track.is-dragging * {
+  pointer-events: none;
+  user-select: none;
+}
+
+.scroll-progress-wrap {
+  padding: 0 clamp(24px, 6vw, 80px);
+  margin-top: clamp(16px, 2vh, 28px);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.scroll-progress-bar {
+  flex: 1;
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-scrollbar-track);
+}
+
+.scroll-progress-fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-scrollbar-thumb);
+}
+
+.scroll-progress-count {
+  font-family: var(--font-body);
+     font-size: var(--text-base);
+    color: var(--color-text-primary);
+  white-space: nowrap;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Card Styles */
+.other-projects-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 clamp(280px, 38vw, 480px);
+  min-height: clamp(360px, 55vh, 560px);
+  border-radius: 20px;
+  border: var(--border-thin) solid var(--color-overlay-primary-10);
+  background-color: var(--color-bg-white);
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), 
+              transform 0.7s cubic-bezier(0.16,1,0.3,1), 
+              box-shadow var(--transition-slow), 
+              border-color var(--transition-slow);
+}
+
+.other-projects-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: hover) {
+  .other-projects-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .other-projects-card:hover .card-img img {
+    transform: scale(1.06);
+  }
+
+  .other-projects-card:hover .card-arrow {
+    transform: rotate(45deg);
+    background-color: var(--color-brand-primary);
+    border-color: var(--color-brand-primary);
+  }
+
+  .other-projects-card:hover .card-arrow svg {
+    stroke: var(--color-text-light);
+  }
+}
+
+.card-img {
+  width: 100%;
+  height: clamp(200px, 30vh, 320px);
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--color-bg-light);
+  margin: 0;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.card-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--color-bg-light);
+}
+
+.card-body {
+  padding: clamp(16px, 2.5vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-tag {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-weight-regular);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  line-height: 1.2;
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0;
+}
+
+.card-desc {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-meta {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: var(--border-thin) solid var(--color-overlay-primary-40);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-base), 
+              border-color var(--transition-base), 
+              transform var(--transition-base);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card-arrow svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--color-brand-primary);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--transition-base);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .other-projects-card {
+    flex: 0 0 80vw;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  .other-projects-title {
+    font-size: var(--text-2xl-sm);
+  }
+}

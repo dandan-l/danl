@@ -1,0 +1,53 @@
+/* Scroll Hint Component */
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-accent);
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hint-arrow {
+  display: flex;
+  gap: 3px;
+}
+
+.hint-arrow span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  animation: nudge 1.6s ease-in-out infinite;
+}
+
+.hint-arrow span:nth-child(2) {
+  animation-delay: 0.15s;
+  opacity: 0.6;
+}
+
+.hint-arrow span:nth-child(3) {
+  animation-delay: 0.3s;
+  opacity: 0.3;
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(45deg) translate(2px, -2px);
+  }
+}

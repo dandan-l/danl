@@ -528,7 +528,7 @@ export function HomePage() {
 
             <p className="introduction-description">
               I transform complex compliance problems into intuitive designs
-              that people enjoy and business appreciate.
+              that people enjoy and businesses appreciate.
             </p>
 
             {/* Too much interaction on home page, remove this design temporarily */}
@@ -636,7 +636,7 @@ export function HomePage() {
                 id="featured-projects-heading"
                 className="featured-projects-title"
               >
-                Featured product design projects
+                Featured projects
               </h2>
             </header>
 

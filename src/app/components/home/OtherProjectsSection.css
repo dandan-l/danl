@@ -97,7 +97,7 @@
   flex-direction: column;
   flex: 0 0 clamp(280px, 38vw, 480px);
   min-height: clamp(360px, 55vh, 560px);
-  border-radius: 20px;
+  border-radius: var(--radius-md);
   border: var(--border-thin) solid var(--color-overlay-primary-10);
   background-color: var(--color-bg-white);
   position: relative;

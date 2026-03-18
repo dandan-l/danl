@@ -262,7 +262,7 @@ export function OtherProjectsSection() {
       aria-label="Other projects"
     >
       <header className="other-projects-header">
-        <h2 className="other-projects-title">What else did I do?</h2>
+        <h2 className="other-projects-title">Other projects</h2>
         <ScrollHint scrollContainerRef={trackRef} />
       </header>
 

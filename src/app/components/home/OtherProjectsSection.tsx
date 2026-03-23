@@ -2,10 +2,14 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import "./OtherProjectsSection.css";
 import { ScrollHint } from "../ScrollHint";
 import peerbotsPrototype from "../../../assets/images/peerbots-controllerprototype.png";
-import poofySnippet from "../../../assets/images/poofy-snippet.gif";
-import csmlSnippet from "../../../assets/images/csml-website-snippet.gif";
-import christmasCardSnippet from "../../../assets/images/christmas-card-snippet.gif";
-import emojiClockSnippet from "../../../assets/images/emoji-clock-snippet.gif";
+import poofyThumbnail from "../../../assets/images/poofy-thumbnail.png";
+import poofySnippet from "../../../assets/images/poofy-snippet.mp4";
+import csmlThumbnail from "../../../assets/images/csml-website-thumbnail.png";
+import csmlSnippet from "../../../assets/images/csml-website-snippet.mp4";
+import christmasCardThumbnail from "../../../assets/images/christmas-card-thumbnail.png";
+import christmasCardSnippet from "../../../assets/images/christmas-card-snippet.mp4";
+import emojiClockThumbnail from "../../../assets/images/emoji-clock-thumbnail.png";
+import emojiClockSnippet from "../../../assets/images/emoji-clock-snippet.mp4";
 
 interface CardData {
   tag: string;
@@ -36,8 +40,10 @@ const CARD_DATA: CardData[] = [
     title: ":poofy",
     desc: "You might find the poofing familiar... Linh and I built the website to help you wind down and embrace JOMO (Joy of Missing Out).",
     meta: "2021 CU T9Hacks",
-    image: poofySnippet,
+    image: poofyThumbnail,
     imageAlt: ":Poofy website snippet",
+    video: poofySnippet,
+    videoType: "video/mp4",
     link: "https://devpost.com/software/linda-dprsu9",
     openInNewTab: true,
   },
@@ -46,8 +52,10 @@ const CARD_DATA: CardData[] = [
     title: "Celestial and Spaceflight Mechanics Lab",
     desc: "Once upon a time, I built a website for a NASA-affiliated aerospace lab and accidentally studied aerospace.",
     meta: "2021 CU Boulder",
-    image: csmlSnippet,
+    image: csmlThumbnail,
     imageAlt: "Celestial and Spaceflight Mechanics Lab website snippet",
+    video: csmlSnippet,
+    videoType: "video/mp4",
     link: "https://ccar.colorado.edu/scheeres/scheeres/index.html",
     openInNewTab: true,
   },
@@ -56,8 +64,10 @@ const CARD_DATA: CardData[] = [
     title: "My love delivery",
     desc: "Sometimes, I build interactive Christmas card using P5.JS to share joy. Who would've thought to program gravity?",
     meta: "2020 at home",
-    image: christmasCardSnippet,
+    image: christmasCardThumbnail,
     imageAlt: "A snipet of an interactive Christmas card I built in p5.JS",
+    video: christmasCardSnippet,
+    videoType: "video/mp4",
     link: "https://editor.p5js.org/dali0818/full/jaIzcPYrj",
     openInNewTab: true,
   },
@@ -66,9 +76,11 @@ const CARD_DATA: CardData[] = [
     title: "Emoji Clock",
     desc: "I visualized my pandemic weekend schedule with a gaming scheme and fun interactions. A fun yet bleak time back then.",
     meta: "2020 at home",
-    image: emojiClockSnippet,
+    image: emojiClockThumbnail,
     imageAlt:
       "A snipet of an interactive data visualization of my weekend schedule I built in p5.JS",
+    video: emojiClockSnippet,
+    videoType: "video/mp4",
     link: "https://editor.p5js.org/dali0818/full/R6GLAzg5Q",
     openInNewTab: true,
   },

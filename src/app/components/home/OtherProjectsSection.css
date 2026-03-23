@@ -185,6 +185,28 @@
   background-color: var(--color-bg-light);
 }
 
+/* Fullscreen - show entire video */
+.card-img video:fullscreen {
+  object-fit: contain; /* Shows full content */
+    background-color: var(--color-bg-card-overlay);
+
+}
+
+/* Safari/Webkit fullscreen */
+.card-img video:-webkit-full-screen {
+  object-fit: contain;
+}
+
+/* Firefox fullscreen */
+.card-img video:-moz-full-screen {
+  object-fit: contain;
+}
+
+/* MS Edge fullscreen */
+.card-img video:-ms-fullscreen {
+  object-fit: contain;
+}
+
 .card-body {
   padding: clamp(16px, 2.5vw, 24px);
   display: flex;

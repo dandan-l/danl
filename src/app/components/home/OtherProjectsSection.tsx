@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import "./OtherProjectsSection.css";
 import { ScrollHint } from "../ScrollHint";
 import peerbotsPrototype from "../../../assets/images/peerbots-controllerprototype.png";
@@ -7,7 +7,6 @@ import csmlSnippet from "../../../assets/images/csml-website-snippet.gif";
 import christmasCardSnippet from "../../../assets/images/christmas-card-snippet.gif";
 import emojiClockSnippet from "../../../assets/images/emoji-clock-snippet.gif";
 
-// Card data structure
 interface CardData {
   tag: string;
   title: string;
@@ -79,46 +78,61 @@ export function OtherProjectsSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const progressFillRef = useRef<HTMLDivElement>(null);
   const progressCountRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragState = useRef({
-    startX: 0,
-    scrollStart: 0,
-    velX: 0,
-    lastX: 0,
-    lastTime: 0,
-    rafId: 0,
-  });
+  const rafIdRef = useRef<number>(0);
 
-  // Progress bar + card counter
-  const updateProgress = () => {
-    const track = trackRef.current;
-    const progressFill = progressFillRef.current;
-    const progressCount = progressCountRef.current;
+  // Simplified progress update - fixed counter bug
+  const updateProgress = useCallback(() => {
+    if (rafIdRef.current) return;
 
-    if (!track || !progressFill || !progressCount) return;
+    rafIdRef.current = requestAnimationFrame(() => {
+      const track = trackRef.current;
+      const progressFill = progressFillRef.current;
+      const progressCount = progressCountRef.current;
 
-    const max = track.scrollWidth - track.clientWidth;
-    if (max <= 0) return;
-
-    progressFill.style.transform = `scaleX(${track.scrollLeft / max})`;
-
-    // Counter: find card whose offsetLeft is nearest to scrollLeft
-    const cards = track.querySelectorAll(".other-projects-card");
-    let closestIdx = 0,
-      closestDist = Infinity;
-    cards.forEach((c, i) => {
-      const card = c as HTMLElement;
-      const dist = Math.abs(card.offsetLeft - track.scrollLeft);
-      if (dist < closestDist) {
-        closestDist = dist;
-        closestIdx = i;
+      if (!track || !progressFill || !progressCount) {
+        rafIdRef.current = 0;
+        return;
       }
+
+      const scrollLeft = track.scrollLeft;
+      const scrollWidth = track.scrollWidth;
+      const clientWidth = track.clientWidth;
+      const maxScroll = scrollWidth - clientWidth;
+
+      if (maxScroll <= 0) {
+        rafIdRef.current = 0;
+        return;
+      }
+
+      // Progress bar
+      const progress = Math.min(1, scrollLeft / maxScroll);
+      progressFill.style.transform = `scaleX(${progress})`;
+
+      // Fixed counter calculation
+      const cards = Array.from(
+        track.querySelectorAll(".other-projects-card"),
+      ) as HTMLElement[];
+
+      // Find card whose center is closest to viewport center
+      const viewportCenter = scrollLeft + clientWidth / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(cardCenter - viewportCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = i;
+        }
+      });
+
+      progressCount.textContent = `${closestIdx + 1} / ${CARD_DATA.length}`;
+      rafIdRef.current = 0;
     });
+  }, []);
 
-    progressCount.textContent = `${closestIdx + 1} / ${CARD_DATA.length}`;
-  };
-
-  // Card entrance animation
+  // Simple entrance animation
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -127,11 +141,7 @@ export function OtherProjectsSection() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const savedScrollLeft = track.scrollLeft;
             entry.target.classList.add("is-visible");
-            requestAnimationFrame(() => {
-              track.scrollLeft = savedScrollLeft;
-            });
             observer.unobserve(entry.target);
           }
         });
@@ -139,82 +149,29 @@ export function OtherProjectsSection() {
       { root: null, threshold: 0.1 },
     );
 
-    track
-      .querySelectorAll(".other-projects-card")
-      .forEach((c) => observer.observe(c));
+    const cards = track.querySelectorAll(".other-projects-card");
+    cards.forEach((c) => observer.observe(c));
 
     return () => observer.disconnect();
   }, []);
 
-  // Drag to scroll
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const handlePointerDown = (e: PointerEvent) => {
-      if (e.pointerType === "mouse" && e.button !== 0) return;
-      setIsDragging(true);
-      dragState.current.startX = e.clientX;
-      dragState.current.scrollStart = track.scrollLeft;
-      dragState.current.velX = 0;
-      dragState.current.lastX = e.clientX;
-      dragState.current.lastTime = Date.now();
-      track.classList.add("is-dragging");
-      track.setPointerCapture(e.pointerId);
-      cancelAnimationFrame(dragState.current.rafId);
-    };
-
-    const handlePointerMove = (e: PointerEvent) => {
-      if (!isDragging) return;
-      track.scrollLeft =
-        dragState.current.scrollStart - (e.clientX - dragState.current.startX);
-      const now = Date.now();
-      const dt = now - dragState.current.lastTime;
-      if (dt > 0)
-        dragState.current.velX = (e.clientX - dragState.current.lastX) / dt;
-      dragState.current.lastX = e.clientX;
-      dragState.current.lastTime = now;
-    };
-
-    const endDrag = () => {
-      if (!isDragging) return;
-      setIsDragging(false);
-      track.classList.remove("is-dragging");
-      let momentum = dragState.current.velX * 18;
-      const step = () => {
-        if (Math.abs(momentum) < 0.5) return;
-        track.scrollLeft -= momentum;
-        momentum *= 0.92;
-        dragState.current.rafId = requestAnimationFrame(step);
-      };
-      step();
-    };
-
-    const handleContextMenu = (e: Event) => e.preventDefault();
-
-    track.addEventListener("pointerdown", handlePointerDown);
-    track.addEventListener("pointermove", handlePointerMove);
-    track.addEventListener("pointerup", endDrag);
-    track.addEventListener("pointercancel", endDrag);
-    track.addEventListener("contextmenu", handleContextMenu);
-
-    return () => {
-      track.removeEventListener("pointerdown", handlePointerDown);
-      track.removeEventListener("pointermove", handlePointerMove);
-      track.removeEventListener("pointerup", endDrag);
-      track.removeEventListener("pointercancel", endDrag);
-      track.removeEventListener("contextmenu", handleContextMenu);
-    };
-  }, [isDragging]);
-
-  // Scroll event
+  // Scroll event - passive listener
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
     track.addEventListener("scroll", updateProgress, { passive: true });
-    return () => track.removeEventListener("scroll", updateProgress);
-  }, []);
+
+    // Initial update
+    setTimeout(updateProgress, 100);
+
+    return () => {
+      track.removeEventListener("scroll", updateProgress);
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
+    };
+  }, [updateProgress]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -224,9 +181,13 @@ export function OtherProjectsSection() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
       e.preventDefault();
+
       const card = track.querySelector(".other-projects-card") as HTMLElement;
-      const cardW =
-        (card?.offsetWidth || 300) + parseInt(getComputedStyle(track).gap);
+      if (!card) return;
+
+      const gap = parseInt(getComputedStyle(track).gap) || 0;
+      const cardW = card.offsetWidth + gap;
+
       track.scrollBy({
         left: e.key === "ArrowRight" ? cardW : -cardW,
         behavior: "smooth",
@@ -235,25 +196,28 @@ export function OtherProjectsSection() {
 
     track.setAttribute("tabindex", "0");
     track.addEventListener("keydown", handleKeyDown);
-    return () => track.removeEventListener("keydown", handleKeyDown);
+
+    return () => {
+      track.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   // Resize handler
   useEffect(() => {
     let resizeTimer: number;
+
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(updateProgress, 150);
     };
 
-    window.addEventListener("resize", handleResize);
-    setTimeout(updateProgress, 200);
+    window.addEventListener("resize", handleResize, { passive: true });
 
     return () => {
       window.removeEventListener("resize", handleResize);
       clearTimeout(resizeTimer);
     };
-  }, []);
+  }, [updateProgress]);
 
   return (
     <section
@@ -278,14 +242,15 @@ export function OtherProjectsSection() {
               key={i}
               className="other-projects-card"
               role="listitem"
-              style={{ transitionDelay: `${i * 0.07}s` }}
+              style={{ transitionDelay: `${i * 0.05}s` }}
               aria-labelledby={`card-title-${i}`}
             >
               <figure className="card-img">
                 {card.video ? (
                   <video
                     controls
-                    preload="metadata"
+                    preload="none"
+                    poster={card.image}
                     aria-label={card.imageAlt || `${card.title} video`}
                   >
                     <source
@@ -300,6 +265,7 @@ export function OtherProjectsSection() {
                     alt={card.imageAlt}
                     loading="lazy"
                     draggable="false"
+                    decoding="async"
                   />
                 ) : null}
               </figure>
@@ -332,11 +298,11 @@ export function OtherProjectsSection() {
                       >
                         <path
                           d="M0.50001 5.16341C0.581777 5.08164 1.59283 4.90733 4.05926 4.7385C5.55676 4.70186 7.55346 4.76478 8.73446 4.81831C9.91547 4.87185 10.2203 4.91409 10.7208 5.05742"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M10.1493 1.64917C10.3905 1.89038 11.7342 3.2341 13.4315 5.11175C13.9769 5.71512 13.6086 5.82989 13.1771 5.9882C12.1922 6.40135 11.1284 6.81337 10.2091 7.10965C9.78358 7.25648 9.44129 7.39617 8.47883 7.73418"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </a>
@@ -350,11 +316,11 @@ export function OtherProjectsSection() {
                       >
                         <path
                           d="M0.50001 5.16341C0.581777 5.08164 1.59283 4.90733 4.05926 4.7385C5.55676 4.70186 7.55346 4.76478 8.73446 4.81831C9.91547 4.87185 10.2203 4.91409 10.7208 5.05742"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M10.1493 1.64917C10.3905 1.89038 11.7342 3.2341 13.4315 5.11175C13.9769 5.71512 13.6086 5.82989 13.1771 5.9882C12.1922 6.40135 11.1284 6.81337 10.2091 7.10965C9.78358 7.25648 9.44129 7.39617 8.47883 7.73418"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                       </svg>
                     </div>

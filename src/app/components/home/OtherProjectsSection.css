@@ -21,7 +21,7 @@
   font-feature-settings: 'lnum', 'tnum';
 }
 
-/* Outer clips overflow so padding on inner track works in all browsers */
+/* Outer clips overflow */
 .cards-track-outer {
   position: relative;
   overflow: hidden;
@@ -34,26 +34,33 @@
   padding: 0 clamp(24px, 6vw, 80px);
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+  
+  /* REMOVED: scroll-snap-type (causing choppy behavior) */
+  /* scroll-snap-type: x mandatory; */
+  
+  /* Safari optimization */
   -webkit-overflow-scrolling: touch;
-  cursor: grab;
+  scroll-behavior: smooth;
+  
+  /* Remove drag cursor */
+  cursor: default;
+  
+  /* Hide scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
+  
+  /* Performance */
   will-change: scroll-position;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .cards-track::-webkit-scrollbar {
   display: none;
 }
 
-.cards-track.is-dragging {
-  cursor: grabbing;
-}
-
-.cards-track.is-dragging * {
-  pointer-events: none;
-  user-select: none;
-}
+/* REMOVED: Drag-related styles */
+/* .cards-track.is-dragging { ... } */
 
 .scroll-progress-wrap {
   padding: 0 clamp(24px, 6vw, 80px);
@@ -80,12 +87,13 @@
   transition: transform 0.1s linear;
   border-radius: var(--radius-xs);
   background-color: var(--color-scrollbar-thumb);
+  will-change: transform;
 }
 
 .scroll-progress-count {
   font-family: var(--font-body);
-     font-size: var(--text-base);
-    color: var(--color-text-primary);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
   white-space: nowrap;
   min-width: 40px;
   text-align: right;
@@ -102,13 +110,21 @@
   background-color: var(--color-bg-white);
   position: relative;
   overflow: hidden;
-  scroll-snap-align: center;
+  
+  /* REMOVED: scroll-snap-align */
+  /* scroll-snap-align: center; */
+  
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), 
-              transform 0.7s cubic-bezier(0.16,1,0.3,1), 
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), 
+              transform 0.6s cubic-bezier(0.16,1,0.3,1), 
               box-shadow var(--transition-slow), 
               border-color var(--transition-slow);
+  
+  /* Safari optimization */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .other-projects-card.is-visible {
@@ -144,6 +160,7 @@
   overflow: hidden;
   background-color: var(--color-bg-light);
   margin: 0;
+  position: relative;
 }
 
 .card-img img {
@@ -154,6 +171,10 @@
   transition: transform 0.7s cubic-bezier(0.16,1,0.3,1);
   -webkit-user-drag: none;
   pointer-events: none;
+  
+  /* Safari optimization */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .card-img video {

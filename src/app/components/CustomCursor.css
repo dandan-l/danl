@@ -3,37 +3,37 @@
   pointer-events: none;
 }
 
-
 .cursor__ball {
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--z-cursor);
   pointer-events: none;
+  border-radius: 50%;
+  background-color: #f7f8fa;
 
   mix-blend-mode: exclusion;
 
-    /* Safari-specific optimizations */
+  /* GPU acceleration — no preserve-3d, which caused Safari to rasterize
+     the element into a bitmap and blur it when scaled */
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
--webkit-font-smoothing: subpixel-antialiased;
--moz-osx-font-smoothing:grayscale;
-
-  transform: translate3d(0, 0, 0); /* Force GPU acceleration */
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-
 .cursor__ball--big {
-  /* Scale from center */
+  width: 30px;
+  height: 30px;
+  /* Scale from center; no image-rendering needed — CSS shapes are
+     resolution-independent and never rasterize */
   transform-origin: center center;
-    /* Prevent pixelation during scaling */
-  image-rendering: crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.cursor__ball--small {
+  width: 10px;
+  height: 10px;
 }
 
 

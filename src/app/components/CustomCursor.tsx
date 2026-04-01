@@ -154,38 +154,19 @@ export function CustomCursor() {
 
   return (
     <div className="cursor">
+      {/* Plain div — CSS border-radius circles are resolution-independent
+          and never blur when scaled, unlike SVG rasterized inside a 3D layer */}
       <div
         ref={bigBallRef}
         className={`cursor__ball cursor__ball--big ${isHovering ? "cursor__ball--hover" : ""}`}
         aria-hidden="true"
-      >
-        {/* Larger SVG to prevent pixelation when scaled */}
-        <svg height="30" width="30" viewBox="0 0 120 120">
-          <circle
-            cx="60"
-            cy="60"
-            r="48"
-            strokeWidth="0"
-            fill="#f7f8fa"
-          ></circle>
-        </svg>
-      </div>
+      />
 
       <div
         ref={smallBallRef}
         className="cursor__ball cursor__ball--small"
         aria-hidden="true"
-      >
-        <svg height="10" width="10" viewBox="0 0 40 40">
-          <circle
-            cx="20"
-            cy="20"
-            r="16"
-            strokeWidth="0"
-            fill="#f7f8fa"
-          ></circle>
-        </svg>
-      </div>
+      />
     </div>
   );
 }

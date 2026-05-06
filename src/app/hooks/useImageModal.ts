@@ -56,12 +56,10 @@ export function useImageModal(): UseImageModalReturn {
   const [expandedImage, setExpandedImage] = useState<ImageModalState | null>(null);
 
   const handleImageClick = useCallback((src: string, alt: string) => {
-    console.log('Image clicked:', { src, alt });
     setExpandedImage({ src, alt });
   }, []);
 
   const closeModal = useCallback(() => {
-    console.log('Closing modal');
     setExpandedImage(null);
   }, []);
 

@@ -1,36 +1,52 @@
 /**
  * Tag Component
- * 
+ *
  * A badge/tag component for displaying metadata, categories, or labels.
  * Commonly used in hero sections and card headers.
- * 
+ *
  * @example
- * <Tag icon={<CalendarIcon />}>2024</Tag>
  * <Tag>Web Design</Tag>
- * <Tag href="/case-studies">Case Study</Tag>
+ * <Tag href="https://example.com" target="_blank" rel="noopener noreferrer" icon={<ExternalIcon />}>
+ *   Live site
+ * </Tag>
  */
 
-import { ReactNode } from 'react';
-import './Tag.css';
+import { ReactNode } from "react";
+import "./Tag.css";
 
 interface TagProps {
   /** Content of the tag */
   children: ReactNode;
-  /** Optional icon to display before the text */
+  /** Optional icon to display after the text */
   icon?: ReactNode;
-  /** If provided, renders as a link */
+  /** If provided, renders as a native anchor link */
   href?: string;
+  /** Where to open the link — use "_blank" for a new tab */
+  target?: string;
+  /** Relationship attribute — always pass "noopener noreferrer" when target="_blank" */
+  rel?: string;
   /** Custom className for additional styling */
   className?: string;
-  /** Click handler (only used if href is not provided) */
+  /** ARIA role, e.g. "listitem" */
+  role?: string;
+  /** Click handler (only used when href is not provided) */
   onClick?: () => void;
 }
 
-export function Tag({ children, icon, href, className = '', onClick }: TagProps) {
+export function Tag({
+  children,
+  icon,
+  href,
+  target,
+  rel,
+  className = "",
+  role,
+  onClick,
+}: TagProps) {
   const content = (
     <>
-      {icon && <span className="tag-icon">{icon}</span>}
       <span className="tag-text">{children}</span>
+      {icon && <span className="tag-icon">{icon}</span>}
     </>
   );
 
@@ -38,13 +54,12 @@ export function Tag({ children, icon, href, className = '', onClick }: TagProps)
 
   if (href) {
     return (
-      <a 
-        href={href} 
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        role={role}
         className={`tag-link ${tagClasses}`}
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.href = href;
-        }}
       >
         {content}
       </a>
@@ -53,10 +68,11 @@ export function Tag({ children, icon, href, className = '', onClick }: TagProps)
 
   if (onClick) {
     return (
-      <button 
+      <button
         className={`tag-button ${tagClasses}`}
         onClick={onClick}
         type="button"
+        role={role}
       >
         {content}
       </button>
@@ -64,7 +80,7 @@ export function Tag({ children, icon, href, className = '', onClick }: TagProps)
   }
 
   return (
-    <span className={tagClasses}>
+    <span className={tagClasses} role={role}>
       {content}
     </span>
   );

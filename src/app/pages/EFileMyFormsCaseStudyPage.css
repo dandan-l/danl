@@ -15,25 +15,6 @@
   /* Removed overflow-x: hidden to allow sticky header to work */
 }
 
-/* Skip to Main Link - Accessibility */
-.skip-to-main {
-  position: absolute;
-  left: -9999px;
-  z-index: 999;
-  padding: 1rem;
-  background-color: var(--color-brand-primary);
-  color: white;
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-}
-
-.skip-to-main:focus {
-  left: 50%;
-  transform: translateX(-50%);
-  top: 1rem;
-}
-
 /* Responsive Images */
 .efilemyforms-case-study-page img {
   /* max-width: 100%; */

@@ -1,0 +1,166 @@
+/* CaseStudyPersonaSection — generic reusable persona section */
+.cs-persona-section {
+  background-color: var(--color-bg-white);
+  padding: var(--section-padding-y) 0;
+  width: 100%;
+}
+
+.cs-persona-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+/* Section Header */
+.cs-persona-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cs-section-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-accent);
+  margin: 0;
+}
+
+.cs-section-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-2xl-sm);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.cs-section-description {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Persona Grid */
+.cs-persona-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+/* Persona Card */
+.cs-persona-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.cs-persona-content {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card-soft);
+  padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.cs-persona-avatar {
+  position: absolute;
+  top: -2.5rem;
+  left: var(--spacing-xl);
+  width: 4.25rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.cs-persona-name {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.cs-persona-title {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-brand-teal);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.cs-persona-list {
+  list-style: disc;
+  padding-left: var(--spacing-lg);
+  margin: var(--spacing-sm) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.cs-persona-list li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.cs-persona-list li:last-child {
+  margin-bottom: 0;
+}
+
+.cs-persona-type {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .cs-persona-section {
+    padding: var(--spacing-5xl) 0;
+  }
+
+  .cs-section-title {
+    font-size: var(--text-3xl);
+  }
+
+  .cs-section-description {
+    font-size: var(--text-xl);
+  }
+
+  .cs-persona-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .cs-persona-container {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .cs-persona-content {
+    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+  }
+}

@@ -1,0 +1,134 @@
+/* ReportMyUP Long-Term Strategy Section */
+
+.longterm-strategy-section {
+  background-color: var(--color-bg-white);
+  padding: var(--section-padding-y) 0;
+}
+
+.longterm-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Section Header */
+.longterm-strategy-section .section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.longterm-strategy-section .section-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-brand-accent);
+  line-height: 1.2;
+}
+
+.longterm-strategy-section .section-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Strategy Cards */
+.longterm-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.longterm-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.longterm-number {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-light);
+  width: 41px;
+  height: 41px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  box-shadow: var(--shadow-badge);
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.longterm-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-2xl);
+  color: var(--color-brand-primary);
+  text-transform: capitalize;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.longterm-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.longterm-list li {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: var(--spacing-sm);
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+.longterm-list li::before {
+  content: "○";
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+}
+
+/* Journey Diagram */
+.journey-diagram {
+  margin: 0;
+  width: 100%;
+}
+
+.journey-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .longterm-strategy-section .section-title {
+    font-size: var(--text-3xl);
+  }
+
+  .longterm-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .longterm-strategy-section {
+    padding: var(--spacing-5xl) 0;
+  }
+}

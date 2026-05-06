@@ -39,7 +39,6 @@ export function ClickableImage({
   caption
 }: ClickableImageProps) {
   const handleClick = () => {
-    console.log('ClickableImage clicked:', { src, alt });
     onClick(src, alt);
   };
 

@@ -1,45 +1,21 @@
-/* ReportMyUP Challenges Section */
+/* ReportMyUP Challenges Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
 
 .challenges-section {
   background-color: var(--color-bg-white);
   padding: var(--section-padding-y) 0;
 }
 
+/* Challenge titles ("Revenue Leakage", etc.) use the primary green, not the
+   shared accent-pink used by numeric stat values elsewhere */
+.challenges-section .cs-stat-value {
+  color: var(--color-brand-primary);
+}
+
 .challenges-content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl);
-}
-
-.section-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.section-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-brand-accent);
-}
-
-.section-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xl-sm);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin: 0;
-}
-
-.section-description {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
 }
 
 /* Product Comparison */
@@ -73,36 +49,12 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  cursor: zoom-in;
-  transition: transform var(--transition-slow);
-}
-
-.product-image:hover {
-  transform: scale(1.05);
 }
 
 .product-info {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-}
-
-.product-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-lg);
-  line-height: 1.3;
-  color: var(--color-text-primary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.product-description {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-text-muted);
-  font-feature-settings: 'lnum', 'tnum';
 }
 
 /* Metrics Grid */
@@ -112,71 +64,15 @@
   gap: var(--spacing-lg);
 }
 
-.metric-callout {
-  position: relative;
-  padding-left: var(--spacing-md);
-  border-left: var(--border-thick) solid var(--color-border-accent);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.metric-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.3;
-  color: var(--color-brand-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.metric-description {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-text-muted);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 /* Tablet */
 @media (min-width: 768px) {
-  .challenges-section {
-    padding: var(--spacing-5xl) 0;
-  }
-  
-  .section-title {
-    font-size: var(--text-3xl);
-  }
-  
-  .section-description {
-    font-size: var(--text-xl);
-  }
-  
   .product-comparison {
     grid-template-columns: repeat(2, 1fr);
     padding: var(--spacing-xl);
   }
-  
-  .product-title {
-    font-size: var(--text-xl);
-  }
-  
-  .product-description {
-    font-size: var(--text-base);
-  }
-  
+
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .metric-title {
-    font-size: var(--text-2xl);
-  }
-  
-  .metric-description {
-    font-size: var(--text-base);
   }
 }
 
@@ -186,9 +82,16 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-2xl);
   }
-  
+
   .metrics-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .challenges-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

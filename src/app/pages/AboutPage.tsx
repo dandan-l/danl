@@ -173,7 +173,7 @@ export function AboutPage() {
           <section className="about-text-section" aria-labelledby="about-heading">
             <header className="about-header">
               <h1 id="about-heading" className="about-heading">About Dan</h1>
-              <button onClick={handleViewResume} className="resume-button" aria-label="View my resume in a new tab">
+              <button onClick={handleViewResume} className="btn-primary" aria-label="View my resume in a new tab">
                 <span>View my resume</span>
                 <svg className="resume-icon" viewBox="0 0 18.3989 16.2241" fill="none" aria-hidden="true">
                   <path d={svgPaths.p28abf100} stroke="white" strokeLinecap="round"/>

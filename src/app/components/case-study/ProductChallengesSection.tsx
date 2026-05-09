@@ -27,8 +27,8 @@ function ProductCard({ title, description, image, imageAlt, onImageClick }: Prod
         />
       </figure>
       <div className="product-info">
-        <h3 className="product-title">{title}</h3>
-        <p className="product-description">{description}</p>
+        <h3 className="cs-card-title">{title}</h3>
+        <p className="cs-card-body">{description}</p>
       </div>
     </article>
   );
@@ -36,9 +36,9 @@ function ProductCard({ title, description, image, imageAlt, onImageClick }: Prod
 
 function MetricCallout({ title, description }: ChallengesMetric) {
   return (
-    <article className="metric-callout">
-      <h3 className="metric-title">{title}</h3>
-      <p className="metric-description">{description}</p>
+    <article className="cs-callout">
+      <h3 className="cs-stat-value">{title}</h3>
+      <p className="cs-card-body">{description}</p>
     </article>
   );
 }
@@ -56,10 +56,10 @@ export function ProductChallengesSection({
     <section className="challenges-section" aria-labelledby="challenges-title">
       <div className="container">
         <div className="challenges-content">
-          <header className="section-header">
-            <p className="section-label">{label}</p>
-            <h2 id="challenges-title" className="section-title">{title}</h2>
-            <p className="section-description">{description}</p>
+          <header className="cs-section-header">
+            <p className="cs-label">{label}</p>
+            <h2 id="challenges-title" className="cs-title">{title}</h2>
+            <p className="cs-description">{description}</p>
           </header>
 
           <div className="product-comparison" role="region" aria-label="Product comparison">

@@ -22,7 +22,9 @@
   /* Text Colors */
   --color-text-primary: #000000;
   --color-text-secondary: #51596D;
-  --color-text-muted: #51596d;
+  --color-text-warm-muted: #5c6166;    /* project metadata, secondary labels */
+  --color-text-placeholder: #999ea3;   /* separator dots, faded labels */
+  --color-text-accent-dark: #451e0e;   /* text on accent/pink backgrounds */
   --color-text-light: #ffffff;
   --color-text-dark-grey: #2c2c2c;
   
@@ -31,7 +33,6 @@
   --color-border-dark: #000000;
   --color-border-white: #ffffff;
   --color-border-accent: var(--color-brand-accent);
-  --color-border-light-beige: #e6e3df;
  
 
   /* Overlay Colors (with opacity) */
@@ -125,7 +126,6 @@
   --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
   --shadow-modal-button: 0 2px 8px var(--color-overlay-black-20);
   --shadow-modal-button-hover: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-card-soft-warm: -0.643px -0.965px 6.433px 0.965px rgba(0, 0, 0, 0.1), 1.93px 1.93px 2.573px 0px rgba(0, 0, 0, 0.24);
   --shadow-image-complex: 0px 0px 0px 0.26px rgba(0,0,0,0.23), 0px 4.155px 12.466px 0px rgba(0,0,0,0.35);
   --shadow-elevated: 0px 4.938px 14.815px 0px rgba(0,0,0,0.35);
   
@@ -177,7 +177,6 @@
 /* Base Styles */
 * {
   box-sizing: border-box;
-  cursor: none !important;
 }
 
 body {
@@ -452,21 +451,21 @@ a:focus-visible {
   height: var(--border-thick);
   width: 100%;
   background-color: var(--color-brand-primary);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 
 .divider-vertical {
   width: var(--border-thick);
   height: 100%;
   background-color: var(--color-brand-primary);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 
 .divider-accent {
   height: var(--border-thick);
   width: 100%;
   background-color: var(--color-brand-accent);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 
 /* Text Utilities */
@@ -501,8 +500,80 @@ a:focus-visible {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+
+/* ============================================================
+   BUTTONS — Site-wide pill button components
+   ============================================================ */
+
+/**
+ * .btn-primary
+ * Green pill button. Primary CTAs across all pages.
+ * Used on: HomePage (project cards), AboutPage (resume), case study CTAs
+ */
+.btn-primary {
+  background: var(--color-brand-primary);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-base);
+  letter-spacing: -0.5px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-feature-settings: 'lnum', 'tnum';
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+}
+
+.btn-primary:hover {
+  background: #0a6449;
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+/**
+ * .btn-accent
+ * Pink/accent pill button. Secondary CTAs and contact section.
+ * Used on: HomePage contact section
+ */
+.btn-accent {
+  background: var(--color-brand-accent-light);
+  color: #451e0e;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-feature-settings: 'lnum', 'tnum';
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+}
+
+.btn-accent:hover {
+  background: #ffc4ef;
+}
+
+.btn-accent:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
 }

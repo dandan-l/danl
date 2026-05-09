@@ -45,13 +45,13 @@ export function ProjectOutcomeSection({
   return (
     <section className="efmf-result-section" aria-labelledby="efmf-result-heading">
       <div className="efmf-result-container">
-        <div className="efmf-result-header">
-          <p className="efmf-result-label">{label}</p>
-          <h2 id="efmf-result-heading" className="efmf-result-title">{title}</h2>
-        </div>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="efmf-result-heading" className="cs-title">{title}</h2>
+        </header>
 
         <div className="efmf-result-delivery">
-          <h3 className="efmf-result-delivery-title">{deliveryTitle}</h3>
+          <h3 className="cs-callout-title">{deliveryTitle}</h3>
           <ul className="efmf-result-delivery-list">
             {deliveryItems.map((item, index) => (
               <li key={index}>{item}</li>
@@ -60,31 +60,31 @@ export function ProjectOutcomeSection({
         </div>
 
         <div className="efmf-result-reviews">
-          <h3 className="efmf-result-reviews-title">{reviewsTitle}</h3>
+          <h3 className="cs-callout-title">{reviewsTitle}</h3>
           <div className="efmf-result-reviews-grid">
             {reviews.map((review, index) => (
               <div key={index} className="efmf-result-quote-card">
-                <p className="efmf-result-quote-text">{review.text}</p>
-                <p className="efmf-result-quote-author">{review.author}</p>
+                <p className="cs-card-body">{review.text}</p>
+                <p className="cs-card-title">{review.author}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div className="efmf-result-viral">
-          <h3 className="efmf-result-viral-title">{viralTitle}</h3>
+          <h3 className="cs-callout-title">{viralTitle}</h3>
           <div className="efmf-result-viral-content">
             <div className="efmf-result-stats">
               <div className="efmf-result-stats-grid">
                 {stats.map((stat, index) => (
                   <div key={index} className="efmf-result-stat-card">
-                    <p className="efmf-result-stat-value">{stat.value}</p>
+                    <p className="cs-stat-value">{stat.value}</p>
                     <p className="efmf-result-stat-label">{stat.label}</p>
                   </div>
                 ))}
               </div>
               <div className="efmf-result-stat-card efmf-result-stat-card-special">
-                <p className="efmf-result-stat-value">{specialStat.value}</p>
+                <p className="cs-stat-value">{specialStat.value}</p>
                 <p className="efmf-result-stat-label">{specialStat.label}</p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export function ProjectOutcomeSection({
         </div>
 
         <div className="efmf-result-challenges">
-          <h3 className="efmf-result-challenges-title">{challengesTitle}</h3>
+          <h3 className="cs-callout-title">{challengesTitle}</h3>
           <div className="efmf-result-challenges-content">
             <div className="efmf-result-challenges-text">
               {challengesParagraphs.map((para, index) => (
@@ -119,7 +119,7 @@ export function ProjectOutcomeSection({
         </div>
 
         <div className="efmf-result-legacy">
-          <h3 className="efmf-result-legacy-title">{legacyTitle}</h3>
+          <h3 className="cs-callout-title">{legacyTitle}</h3>
           <div className="efmf-result-legacy-images">
             {legacyImages.map((img, index) => (
               <img

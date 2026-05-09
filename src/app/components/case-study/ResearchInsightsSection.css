@@ -1,8 +1,9 @@
-/* eFileMyForms Analysis Section */
+/* eFileMyForms Analysis Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
+
 .efmf-analysis-section {
   background-color: var(--color-bg-cream);
   padding: var(--section-padding-y) 0;
-  width: 100%;
 }
 
 .efmf-analysis-container {
@@ -12,33 +13,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3xl);
-}
-
-/* Analysis Header */
-.efmf-analysis-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.efmf-analysis-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-brand-accent);
-  line-height: 1.2;
-  margin: 0;
-}
-
-.efmf-analysis-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xl-sm);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin: 0;
 }
 
 /* Insights Grid */
@@ -82,29 +56,10 @@
   max-height: 56px;
 }
 
-.efmf-insight-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.2;
-  color: var(--color-brand-primary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-insight-description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 /* Research Container */
 .efmf-research-container {
   background-color: var(--color-bg-white);
-  border: var(--border-thin) solid var(--color-border-light-beige);
+  border: var(--border-thin) solid var(--color-border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
   display: flex;
@@ -112,21 +67,11 @@
   gap: var(--spacing-lg);
 }
 
-.efmf-research-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 .efmf-research-grid {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-md);
-  max-width:100%;
+  max-width: 100%;
 }
 
 .efmf-research-card {
@@ -150,25 +95,8 @@
   font-feature-settings: 'lnum', 'tnum';
 }
 
-.efmf-research-card-description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 /* Tablet */
 @media (min-width: 768px) {
-  .efmf-analysis-section {
-    padding: var(--spacing-5xl) 0;
-  }
-
-  .efmf-analysis-title {
-    font-size: var(--text-3xl);
-  }
-
   .efmf-insights-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
@@ -187,5 +115,12 @@
 
   .efmf-research-card {
     flex: 1 1 calc(33.333% - calc(var(--spacing-md) * 0.66));
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .efmf-analysis-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

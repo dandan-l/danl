@@ -2,3 +2,27 @@
 @source '../**/*.{js,ts,jsx,tsx}';
 
 @import 'tw-animate-css';
+
+/**
+ * Portfolio design tokens wired into Tailwind's theme.
+ * This maps tokens.css values so Tailwind utility classes (rounded-*, bg-surface-*)
+ * resolve to the correct portfolio values at runtime via CSS custom properties.
+ * Add new mappings here as Tailwind utilities are adopted in TSX files.
+ */
+@theme inline {
+  /*
+   * @theme inline tells Tailwind v4 to emit these values directly into
+   * utility classes rather than registering them as :root CSS variables.
+   * The var() references here are NOT circular — Tailwind emits them
+   * literally (e.g. .rounded-lg { border-radius: var(--radius-lg); })
+   * and the browser resolves them at runtime against tokens.css.
+   */
+
+  /* Border radius — maps rounded-sm/md/lg to portfolio scale in tokens.css */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+
+  /* Surface colors — maps bg-surface-* utilities used in HomePage.tsx */
+  --color-surface-cream: var(--color-bg-cream);
+}

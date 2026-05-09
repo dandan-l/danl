@@ -32,17 +32,17 @@ export function CheckoutFlowSection({
   return (
     <section className="efmf-checkout-section" aria-labelledby="efmf-checkout-heading">
       <div className="efmf-checkout-container">
-        <div className="efmf-checkout-header">
-          <p className="efmf-checkout-label">{label}</p>
-          <h2 id="efmf-checkout-heading" className="efmf-checkout-title">{title}</h2>
-        </div>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="efmf-checkout-heading" className="cs-title">{title}</h2>
+        </header>
 
         <div className="efmf-ia-card">
-          <h3 className="efmf-ia-card-title">{problemTitle}</h3>
+          <h3 className="cs-callout-title">{problemTitle}</h3>
           <div className="efmf-branding-callouts">
             <div className="efmf-branding-callout">
-              <h4 className="efmf-branding-callout-title">{problemCalloutTitle}</h4>
-              <p className="efmf-branding-callout-description">{problemDescription}</p>
+              <h4 className="cs-callout-title cs-callout-title--brand">{problemCalloutTitle}</h4>
+              <p className="cs-card-body">{problemDescription}</p>
             </div>
           </div>
         </div>
@@ -63,13 +63,13 @@ export function CheckoutFlowSection({
         </div>
 
         <div className="efmf-checkout-solution">
-          <h3 className="efmf-checkout-solution-title">{solutionsTitle}</h3>
+          <h3 className="cs-callout-title cs-callout-title--brand">{solutionsTitle}</h3>
           <div className="efmf-checkout-solution-grid">
             {solutions.map((solution, index) => (
               <div key={index} className="efmf-checkout-solution-card">
                 <NumberBadge number={solution.number} />
-                <h4 className="efmf-checkout-solution-subtitle">{solution.subtitle}</h4>
-                <p className="efmf-checkout-solution-description">{solution.description}</p>
+                <h4 className="cs-card-title cs-card-title--brand">{solution.subtitle}</h4>
+                <p className="cs-card-body">{solution.description}</p>
               </div>
             ))}
           </div>

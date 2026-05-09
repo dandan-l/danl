@@ -52,18 +52,20 @@ export function MigrationSection({
   return (
     <section className="migration-section" aria-labelledby="migration-heading">
       <div className="migration-container container">
-        <header className="section-header">
-          <p className="section-label">{label}</p>
-          <h2 id="migration-heading" className="section-title">{title}</h2>
-          <p className="section-description">{description}</p>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="migration-heading" className="cs-title">{title}</h2>
+          <p className="cs-description">{description}</p>
         </header>
 
         <div className="strategy-cards">
           {strategies.map((strategy) => (
             <article key={strategy.number} className="strategy-card">
-              <div className="strategy-number" aria-hidden="true">{strategy.number}.</div>
-              <h3 className="strategy-title">{strategy.title}</h3>
-              <ul className="strategy-list">
+              <div className="number-badge number-badge--md" aria-hidden="true">
+                <span className="number-badge-text">{strategy.number}.</span>
+              </div>
+              <h3 className="cs-card-title cs-card-title--brand">{strategy.title}</h3>
+              <ul className="cs-list">
                 {strategy.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
@@ -75,8 +77,8 @@ export function MigrationSection({
         <div className="user-flow-section">
           <div className="user-flow-card">
             <header className="user-flow-header">
-              <h3 className="user-flow-title">{userFlow.title}</h3>
-              <p className="user-flow-description">{userFlow.description}</p>
+              <h3 className="cs-card-title">{userFlow.title}</h3>
+              <p className="cs-card-body">{userFlow.description}</p>
             </header>
             <img
               src={userFlow.image}
@@ -98,15 +100,15 @@ export function MigrationSection({
               />
             </div>
             <div className="deliverable-content email-content">
-              <h3 className="deliverable-title">{emailDeliverable.title}</h3>
-              <p className="deliverable-description">{emailDeliverable.description}</p>
+              <h3 className="cs-card-title">{emailDeliverable.title}</h3>
+              <p className="cs-card-body">{emailDeliverable.description}</p>
             </div>
           </article>
 
           <article className="deliverable-card demo-card">
             <div className="deliverable-content demo-content">
-              <h3 className="deliverable-title">{demoDeliverable.title}</h3>
-              <p className="deliverable-description">{demoDeliverable.description}</p>
+              <h3 className="cs-card-title">{demoDeliverable.title}</h3>
+              <p className="cs-card-body">{demoDeliverable.description}</p>
             </div>
             <div className="demo-videos-container">
               <div className="demo-videos" role="group" aria-label="Feature demonstration videos">

@@ -37,21 +37,21 @@ export function SignupFlowSection({
       aria-labelledby="efmf-signup-heading"
     >
       <div className="efmf-signup-container">
-        <div className="efmf-signup-header">
-          <p className="efmf-signup-label">{label}</p>
-          <h2 id="efmf-signup-heading" className="efmf-signup-title">
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="efmf-signup-heading" className="cs-title">
             {title}
           </h2>
-        </div>
+        </header>
 
         <div className="efmf-ia-card">
-          <h3 className="efmf-ia-card-title">{problemTitle}</h3>
+          <h3 className="cs-callout-title">{problemTitle}</h3>
           <div className="efmf-branding-callouts">
             <div className="efmf-branding-callout">
-              <h4 className="efmf-branding-callout-title">
+              <h4 className="cs-callout-title cs-callout-title--brand">
                 {problemCalloutTitle}
               </h4>
-              <p className="efmf-branding-callout-description">
+              <p className="cs-card-body">
                 {problemDescription}
               </p>
             </div>
@@ -68,15 +68,15 @@ export function SignupFlowSection({
         </div>
 
         <div className="efmf-signup-solution">
-          <h3 className="efmf-signup-solution-title">{solutionsTitle}</h3>
+          <h3 className="cs-callout-title cs-callout-title--brand">{solutionsTitle}</h3>
           <div className="efmf-signup-solution-grid">
             {solutions.map((solution, index) => (
               <div key={index} className="efmf-signup-solution-card">
                 <NumberBadge number={solution.number} />
-                <h4 className="efmf-signup-solution-subtitle">
+                <h4 className="cs-card-title cs-card-title--brand">
                   {solution.subtitle}
                 </h4>
-                <p className="efmf-signup-description">
+                <p className="cs-card-body">
                   {solution.description}
                 </p>
               </div>
@@ -93,7 +93,7 @@ export function SignupFlowSection({
           />
         </div>
 
-        <p className="efmf-signup-description">{bottomDescription}</p>
+        <p className="cs-card-body">{bottomDescription}</p>
       </div>
       {expandedImage && (
         <ImageModal

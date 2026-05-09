@@ -1,8 +1,9 @@
-/* eFileMyForms Signup Section */
+/* eFileMyForms Signup Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
+
 .efmf-signup-section {
   background-color: var(--color-bg-cream);
   padding: var(--section-padding-y) 0;
-  width: 100%;
 }
 
 .efmf-signup-container {
@@ -12,33 +13,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl);
-}
-
-/* Section Header */
-.efmf-signup-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.efmf-signup-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-brand-accent);
-  line-height: 1.2;
-  margin: 0;
-}
-
-.efmf-signup-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xl-sm);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin: 0;
 }
 
 /* Problem/Solution Grid */
@@ -54,78 +28,11 @@
   gap: var(--spacing-md);
 }
 
-.efmf-signup-card-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-  color: var(--color-brand-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-signup-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.efmf-signup-list li {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  display: flex;
-  gap: var(--spacing-sm);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-signup-list li::before {
-  content: "○";
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  flex-shrink: 0;
-  color: var(--color-text-secondary);
-}
-
-.efmf-signup-list li strong {
-  color: var(--color-brand-primary);
-  font-weight: normal;
-}
-
-.efmf-signup-card-description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-signup-card-description strong {
-  color: var(--color-brand-primary);
-}
-
 /* Comparison Section */
 .efmf-signup-comparison-section {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-}
-
-.efmf-signup-comparison-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.2;
-  color: var(--color-text-dark-grey);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
 }
 
 .efmf-signup-comparison-image {
@@ -149,17 +56,6 @@
   gap: var(--spacing-lg);
 }
 
-.efmf-signup-solution-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-  color: var(--color-brand-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 .efmf-signup-solution-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -172,52 +68,8 @@
   gap: var(--spacing-md);
 }
 
-/* Number badge styles are now handled by NumberBadge component */
-.efmf-signup-solution-number {
-  background-color: var(--color-brand-primary);
-  color: var(--color-text-light);
-  width: 41px;
-  height: 41px;
-  border-radius: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  box-shadow: var(--shadow-badge);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-signup-solution-subtitle {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.2;
-  color: var(--color-brand-primary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-signup-description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 /* Tablet */
 @media (min-width: 768px) {
-  .efmf-signup-section {
-    padding: var(--spacing-5xl) 0;
-  }
-
-  .efmf-signup-title {
-    font-size: var(--text-3xl);
-  }
-
   .efmf-signup-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -231,5 +83,12 @@
 @media (min-width: 1024px) {
   .efmf-signup-container {
     padding: 0 var(--spacing-xl);
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .efmf-signup-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

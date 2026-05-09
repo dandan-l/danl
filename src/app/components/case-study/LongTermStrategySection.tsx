@@ -30,17 +30,19 @@ export function LongTermStrategySection({
   return (
     <section className="longterm-strategy-section" aria-labelledby="longterm-heading">
       <div className="longterm-container container">
-        <header className="section-header">
-          <p className="section-label">{label}</p>
-          <h2 id="longterm-heading" className="section-title">{title}</h2>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="longterm-heading" className="cs-title">{title}</h2>
         </header>
 
         <div className="longterm-cards">
           {cards.map((card) => (
             <article key={card.number} className="longterm-card">
-              <div className="longterm-number" aria-hidden="true">{card.number}.</div>
-              <h3 className="longterm-title">{card.title}</h3>
-              <ul className="longterm-list">
+              <div className="number-badge number-badge--md" aria-hidden="true">
+                <span className="number-badge-text">{card.number}.</span>
+              </div>
+              <h3 className="cs-card-title cs-card-title--brand">{card.title}</h3>
+              <ul className="cs-list">
                 {card.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}

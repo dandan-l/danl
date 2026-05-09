@@ -1,6 +1,6 @@
 /* About Page Styles */
 .about-page {
-  background-color: #fffdf7;
+  background-color: var(--color-bg-cream);
   min-height: 100vh;
   /* padding-bottom: 80px; */
 }
@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
+  padding-top: var(--spacing-2xl);
   width: 410px;
   height: 456px;
   margin: 0 auto;
@@ -36,9 +36,9 @@
   width: 350px;
   height: 381px;
   border-radius: 200px 200px 0 0;
-  border: 2px solid black;
+  border: var(--border-medium) solid var(--color-border-dark);
   overflow: hidden;
-  background-color: white;
+  background-color: var(--color-bg-white);
 }
 
 .profile-photo {
@@ -136,17 +136,17 @@
   position: relative;
   width: 409.5px;
   height: 496.5px;
-  background-color: white;
+  background-color: var(--color-bg-white);
   box-shadow: 4.5px 9px 12px 0px rgba(158, 122, 14, 0.16);
-  border-radius: 8px;
-  padding: 16px 16px 60px 16px;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-md) 60px var(--spacing-md);
 }
 
 .polaroid-background {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 .polaroid-texture {
@@ -161,7 +161,7 @@
   position: relative;
   width: 100%;
   height: 430px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -178,9 +178,9 @@
   right: 0;
   text-align: center;
   font-family: 'Figma Hand', cursive, sans-serif;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: 28px;
-  color: black;
+  color: var(--color-text-primary);
   letter-spacing: -1.061px;
 }
 
@@ -206,7 +206,7 @@
 .about-text-section {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--spacing-lg);
 }
 
 .about-header {
@@ -216,35 +216,13 @@
 }
 
 .about-heading {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
   font-size: 36px;
-  color: #09543d;
+  color: var(--color-brand-primary);
   letter-spacing: -0.5px;
   margin: 0;
   font-feature-settings: 'lnum', 'tnum';
-}
-
-.resume-button {
-  background-color: #09543d;
-  color: white;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: -0.5px;
-  padding: 8px 24px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  font-feature-settings: 'lnum', 'tnum';
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: background-color 0.2s ease;
-}
-
-.resume-button:hover {
-  background-color: #0a6449;
 }
 
 .resume-icon {
@@ -253,9 +231,9 @@
 }
 
 .about-bio {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;
-  color: #09543d;
+  font-family: var(--font-body);
+  font-size: var(--text-2xl);
+  color: var(--color-brand-primary);
   letter-spacing: -0.5px;
   line-height: 1.5;
   font-feature-settings: 'lnum', 'tnum';
@@ -270,7 +248,7 @@
 }
 
 .about-bio a {
-  color: #09543d;
+  color: var(--color-brand-primary);
   text-decoration: underline;
   text-decoration-skip-ink: none;
 }
@@ -285,9 +263,9 @@
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
-  color: #09543d;
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-brand-primary);
   letter-spacing: -0.5px;
   font-feature-settings: 'lnum', 'tnum';
 }
@@ -316,14 +294,14 @@
   .about-header {
     /* flex-direction: column;
     align-items: flex-start; */
-    gap: 16px;
+    gap: var(--spacing-md);
   }
 }
 
 @media (max-width: 768px) {
   .about-content {
     padding-top: 80px;
-    gap: 40px;
+    gap: var(--spacing-2xl);
   }
 
   .polaroid-picture {
@@ -336,7 +314,7 @@
   }
 
   .polaroid-caption {
-    font-size: 24px;
+    font-size: var(--text-2xl);
   }
 
   .about-heading {
@@ -344,7 +322,7 @@
   }
 
   .about-bio {
-    font-size: 20px;
+    font-size: var(--text-xl);
   }
 
   .vine-decoration {
@@ -373,14 +351,14 @@
   }
 
   .about-heading {
-    font-size: 24px;
+    font-size: var(--text-2xl);
   }
 
   .about-bio {
-    font-size: 18px;
+    font-size: var(--text-lg);
   }
 
   .about-footer-text {
-    font-size: 16px;
+    font-size: var(--text-base);
   }
 }

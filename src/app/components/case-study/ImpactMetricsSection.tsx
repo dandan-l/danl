@@ -10,18 +10,18 @@ export interface ImpactMetricsSectionProps {
 
 function StatCard({ value, label }: ImpactStat) {
   return (
-    <article className="stat-card">
-      <p className="stat-value">{value}</p>
-      <p className="stat-label">{label}</p>
+    <article className="cs-stat-card">
+      <p className="cs-stat-value">{value}</p>
+      <p className="cs-stat-label">{label}</p>
     </article>
   );
 }
 
 function ImpactCallout({ title, description }: ImpactCalloutData) {
   return (
-    <article className="impact-callout">
-      <h3 className="impact-callout-title">{title}</h3>
-      <p className="impact-callout-description">{description}</p>
+    <article className="cs-callout">
+      <h3 className="cs-callout-title cs-callout-title--light">{title}</h3>
+      <p className="cs-card-body cs-card-body--light">{description}</p>
     </article>
   );
 }
@@ -31,9 +31,9 @@ export function ImpactMetricsSection({ label, title, stats, callouts }: ImpactMe
     <section className="impact-section" aria-labelledby="impact-title">
       <div className="container">
         <div className="impact-content">
-          <header className="impact-header">
-            <p className="impact-label">{label}</p>
-            <h2 id="impact-title" className="impact-title">{title}</h2>
+          <header className="cs-section-header">
+            <p className="cs-label">{label}</p>
+            <h2 id="impact-title" className="cs-title cs-title--light">{title}</h2>
           </header>
 
           <div className="stats-grid" role="list">

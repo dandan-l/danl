@@ -1,0 +1,449 @@
+/**
+ * Case Study Shared Stylesheet
+ *
+ * Shared classes for all case study pages and components.
+ * Imported once via CaseStudyPageTemplate — every case study
+ * section gets these automatically.
+ *
+ * RULES:
+ *  - This file owns all *typographic* and *structural* styling for
+ *    shared patterns. Component CSS files own only layout that is
+ *    unique to that component (grid columns, specific spacing, etc.).
+ *  - To override a shared class for a dark-background section, add
+ *    a one-line scoped rule in the component's own CSS file, e.g.:
+ *      .migration-section .cs-title { color: var(--color-text-light); }
+ *  - Never add layout-specific rules (widths, grids, margins between
+ *    sections) to this file.
+ *
+ * TABLE OF CONTENTS
+ *  1. Layout — Section wrapper, container, section header group
+ *  2. Typography — Labels, titles, descriptions, card text, stats
+ *  3. Component Patterns — Callout block, stat card, list, image states
+ *  4. Buttons — Primary and accent pill buttons (used site-wide)
+ */
+
+
+/* ============================================================
+   1. LAYOUT
+   ============================================================ */
+
+/**
+ * .cs-section
+ * Outer <section> element. Provides consistent vertical padding.
+ * Add a background modifier (.cs-section--white, --cream, --dark)
+ * or set background directly in the component CSS.
+ */
+.cs-section {
+  padding: var(--section-padding-y) 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .cs-section {
+    padding: var(--spacing-5xl) 0;
+  }
+}
+
+/* Background variants */
+.cs-section--white  { background: var(--color-bg-white); }
+.cs-section--cream  { background: var(--color-bg-cream); }
+.cs-section--dark   { background: var(--color-bg-dark); color: var(--color-text-light); }
+
+
+/**
+ * .cs-container
+ * Centered content wrapper inside a section.
+ * Stacks children vertically with consistent gap.
+ */
+.cs-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+@media (min-width: 1024px) {
+  .cs-container {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+
+/**
+ * .cs-section-header
+ * Flex column wrapper that holds a label + title + optional description.
+ * Use inside .cs-container as the first child of any section.
+ */
+.cs-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+
+/* ============================================================
+   2. TYPOGRAPHY
+   ============================================================ */
+
+/**
+ * .cs-label
+ * Eyebrow / section label — small uppercase text that introduces a section.
+ * Default color: brand-accent (pink).
+ */
+.cs-label {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-brand-accent);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/** Reduced-opacity variant for labels on primary-colored backgrounds (hero metadata) */
+.cs-label--muted {
+  opacity: 0.6;
+}
+
+
+/**
+ * .cs-title
+ * Section heading (h2 level). Light-background default.
+ */
+.cs-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-2xl-sm);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cs-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/** For sections with dark/green backgrounds */
+.cs-title--light {
+  color: var(--color-text-light);
+}
+
+/** Hero variant — larger, brand-primary color */
+.cs-title--hero {
+  font-size: var(--text-3xl);
+  color: var(--color-brand-primary);
+}
+
+@media (min-width: 768px) {
+  .cs-title--hero {
+    font-size: var(--text-5xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cs-title--hero {
+    font-size: var(--text-4xl);
+  }
+}
+
+
+/**
+ * .cs-description
+ * Body paragraph text that sits below a section title.
+ */
+.cs-description {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cs-description {
+    font-size: var(--text-xl);
+  }
+}
+
+/** For sections with dark/green backgrounds */
+.cs-description--light {
+  color: var(--color-text-light);
+}
+
+
+/**
+ * .cs-hero-meta-text
+ * Value text in the hero metadata grid (role, timeline, collaborators).
+ */
+.cs-hero-meta-text {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-brand-primary);
+  margin: 0;
+}
+
+
+/**
+ * .cs-card-title
+ * h3-level heading inside any card or sub-section block.
+ */
+.cs-card-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+@media (min-width: 768px) {
+  .cs-card-title {
+    font-size: var(--text-xl);
+  }
+}
+
+/** Variant where the card sits on a dark background */
+.cs-card-title--light {
+  color: var(--color-text-light);
+}
+
+/** Variant tinted with brand-primary (green) */
+.cs-card-title--brand {
+  color: var(--color-brand-primary);
+}
+
+
+/**
+ * .cs-card-body
+ * Descriptive body text inside any card.
+ */
+.cs-card-body {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+@media (min-width: 768px) {
+  .cs-card-body {
+    font-size: var(--text-base);
+  }
+}
+
+/** For cards on dark backgrounds */
+.cs-card-body--light {
+  color: var(--color-text-light);
+}
+
+
+/**
+ * .cs-stat-value
+ * Large numeric display (e.g. "$4.79M", "95%").
+ */
+.cs-stat-value {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  color: var(--color-brand-accent);
+  text-transform: capitalize;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+
+/**
+ * .cs-stat-label
+ * Label text beneath a stat value.
+ */
+.cs-stat-label {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  color: var(--color-text-light);
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+@media (min-width: 768px) {
+  .cs-stat-label {
+    font-size: var(--text-xl);
+  }
+}
+
+/** For stat labels on light backgrounds */
+.cs-stat-label--dark {
+  color: var(--color-text-primary);
+}
+
+
+/**
+ * .cs-callout-title
+ * Title inside a left-border accent callout block.
+ */
+.cs-callout-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+@media (min-width: 768px) {
+  .cs-callout-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/** For callouts on dark backgrounds */
+.cs-callout-title--light {
+  color: var(--color-text-light);
+}
+
+/** For callouts using brand-primary colour */
+.cs-callout-title--brand {
+  color: var(--color-brand-primary);
+}
+
+
+/**
+ * .cs-image-caption
+ * Small caption text beneath or beside images.
+ */
+.cs-image-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+  font-feature-settings: 'lnum', 'tnum';
+}
+
+
+/* ============================================================
+   3. COMPONENT PATTERNS
+   ============================================================ */
+
+/**
+ * .cs-callout
+ * Left-border accent block for quotes, callouts, and highlighted stats.
+ */
+.cs-callout {
+  position: relative;
+  padding-left: var(--spacing-md);
+  border-left: var(--border-thick) solid var(--color-border-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+
+/**
+ * .cs-stat-card
+ * Dark tile card containing a stat value + label.
+ * Used in metrics grids on dark-background sections.
+ */
+.cs-stat-card {
+  background: var(--color-bg-card-overlay);
+  border: var(--border-thin) solid var(--color-text-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .cs-stat-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+
+/**
+ * .cs-list
+ * Styled unordered list with a custom hollow-circle bullet via ::before.
+ */
+.cs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cs-list li {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  font-feature-settings: 'lnum', 'tnum';
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.cs-list li::before {
+  content: "○";
+  flex-shrink: 0;
+  color: var(--color-brand-accent);
+  font-size: var(--text-xs);
+  margin-top: 0.25em;
+}
+
+/** For lists on dark backgrounds */
+.cs-list--light li {
+  color: var(--color-text-light);
+}
+
+
+/**
+ * .cs-img-hover
+ * Standard image scale-up on hover.
+ * Apply to the <img> element (not the wrapper).
+ */
+.cs-img-hover {
+  transition: transform var(--transition-slow);
+}
+
+.cs-img-hover:hover {
+  transform: scale(1.05);
+}
+
+
+/**
+ * .cs-img-clickable
+ * Extends .cs-img-hover with a zoom-in cursor for images that open a modal.
+ * Note: prefer the <ClickableImage> component where keyboard support is needed.
+ */
+.cs-img-clickable {
+  cursor: zoom-in;
+  transition: transform var(--transition-slow);
+}
+
+.cs-img-clickable:hover {
+  transform: scale(1.05);
+}
+
+
+/* ============================================================
+   4. BUTTONS
+   Moved to tokens.css — available site-wide without
+   needing to import this file.
+   ============================================================ */

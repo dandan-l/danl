@@ -13,9 +13,9 @@ export interface CaseStudyMetricsSectionProps {
 
 function MetricCard({ value, label }: MetricData) {
   return (
-    <article className="cs-metric-card">
-      <p className="cs-metric-value">{value}</p>
-      <p className="cs-metric-label">{label}</p>
+    <article className="cs-stat-card">
+      <p className="cs-stat-value">{value}</p>
+      <p className="cs-stat-label">{label}</p>
     </article>
   );
 }
@@ -24,9 +24,9 @@ export function CaseStudyMetricsSection({ label, title, metrics }: CaseStudyMetr
   return (
     <section className="cs-metrics-section" aria-labelledby="cs-metrics-heading">
       <div className="cs-metrics-container container">
-        <header className="cs-metrics-header">
-          <p className="cs-metrics-label">{label}</p>
-          <h2 id="cs-metrics-heading" className="cs-metrics-title">{title}</h2>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="cs-metrics-heading" className="cs-title cs-title--light">{title}</h2>
         </header>
 
         <div className="cs-metrics-grid">

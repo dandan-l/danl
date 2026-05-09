@@ -1,8 +1,9 @@
-/* CaseStudyPersonaSection — generic reusable persona section */
+/* CaseStudyPersonaSection — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
+
 .cs-persona-section {
   background-color: var(--color-bg-white);
   padding: var(--section-padding-y) 0;
-  width: 100%;
 }
 
 .cs-persona-container {
@@ -12,40 +13,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl);
-}
-
-/* Section Header */
-.cs-persona-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.cs-section-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-brand-accent);
-  margin: 0;
-}
-
-.cs-section-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xl-sm);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin: 0;
-}
-
-.cs-section-description {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
 }
 
 /* Persona Grid */
@@ -136,18 +103,6 @@
 
 /* Tablet */
 @media (min-width: 768px) {
-  .cs-persona-section {
-    padding: var(--spacing-5xl) 0;
-  }
-
-  .cs-section-title {
-    font-size: var(--text-3xl);
-  }
-
-  .cs-section-description {
-    font-size: var(--text-xl);
-  }
-
   .cs-persona-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-2xl);
@@ -162,5 +117,12 @@
 
   .cs-persona-content {
     padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .cs-persona-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

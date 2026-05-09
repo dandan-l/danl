@@ -38,10 +38,10 @@ export function CaseStudyPersonaSection({ label, title, description, personas }:
   return (
     <section className="cs-persona-section" aria-labelledby="cs-persona-heading">
       <div className="cs-persona-container container">
-        <header className="cs-persona-header">
-          <p className="cs-section-label">{label}</p>
-          <h2 id="cs-persona-heading" className="cs-section-title">{title}</h2>
-          <p className="cs-section-description">{description}</p>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="cs-persona-heading" className="cs-title">{title}</h2>
+          <p className="cs-description">{description}</p>
         </header>
 
         <div className="cs-persona-grid">

@@ -29,19 +29,19 @@ export function ImageComparisonSection({
   return (
     <section className="efmf-ia-section" aria-labelledby="efmf-ia-heading">
       <div className="efmf-ia-container">
-        <div className="efmf-ia-header">
-          <p className="efmf-ia-label">{label}</p>
-          <h2 id="efmf-ia-heading" className="efmf-ia-title">{title}</h2>
-        </div>
+        <header className="cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="efmf-ia-heading" className="cs-title">{title}</h2>
+        </header>
 
         <div className="efmf-ia-grid">
           <div className="efmf-ia-card">
-            <h3 className="efmf-ia-card-title">{problemsTitle}</h3>
+            <h3 className="cs-callout-title">{problemsTitle}</h3>
             <div className="efmf-branding-callouts">
               {problems.map((item, index) => (
                 <div key={index} className="efmf-branding-callout">
-                  <h4 className="efmf-branding-callout-title">{item.title}</h4>
-                  <p className="efmf-branding-callout-description">{item.description}</p>
+                  <h4 className="cs-callout-title cs-callout-title--brand">{item.title}</h4>
+                  <p className="cs-card-body">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -66,12 +66,12 @@ export function ImageComparisonSection({
 
           <div className="efmf-ia-grid">
             <div className="efmf-ia-card">
-              <h3 className="efmf-ia-card-title">{solutionsTitle}</h3>
+              <h3 className="cs-callout-title">{solutionsTitle}</h3>
               <div className="efmf-branding-callouts">
                 {solutions.map((item, index) => (
                   <div key={index} className="efmf-branding-callout">
-                    <h4 className="efmf-branding-callout-title">{item.title}</h4>
-                    <p className="efmf-branding-callout-description">{item.description}</p>
+                    <h4 className="cs-callout-title cs-callout-title--brand">{item.title}</h4>
+                    <p className="cs-card-body">{item.description}</p>
                   </div>
                 ))}
               </div>

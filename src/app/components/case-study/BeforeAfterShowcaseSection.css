@@ -1,8 +1,9 @@
-/* eFileMyForms Branding Section */
+/* eFileMyForms Branding Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
+
 .efmf-branding-section {
   background-color: var(--color-bg-white);
   padding: var(--section-padding-y) 0;
-  width: 100%;
 }
 
 .efmf-branding-container {
@@ -12,33 +13,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl);
-}
-
-/* Section Header */
-.efmf-branding-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.efmf-branding-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-brand-accent);
-  line-height: 1.2;
-  margin: 0;
-}
-
-.efmf-branding-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xl-sm);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  margin: 0;
 }
 
 /* Problem/Solution Grid */
@@ -54,17 +28,6 @@
   gap: var(--spacing-md);
 }
 
-.efmf-branding-card-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-  color: var(--color-text-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 /* Callouts Container */
 .efmf-branding-callouts {
   display: flex;
@@ -72,7 +35,7 @@
   gap: var(--spacing-md);
 }
 
-/* Individual Callout */
+/* Individual Callout — uses ::before for rounded left border accent */
 .efmf-branding-callout {
   position: relative;
   padding-left: var(--spacing-md);
@@ -92,77 +55,6 @@
   border-radius: var(--radius-xs);
 }
 
-.efmf-branding-callout-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-  color: var(--color-brand-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-branding-callout-description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-branding-callout-description strong {
-  color: var(--color-brand-primary);
-  font-weight: var(--font-weight-bold);
-}
-
-.efmf-branding-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.efmf-branding-list li {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  gap: var(--spacing-sm);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-branding-list li::before {
-  content: "○";
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  flex-shrink: 0;
-  color: var(--color-text-secondary);
-  margin-right: var(--spacing-sm);
-}
-
-.efmf-branding-list li strong {
-  color: var(--color-brand-primary);
-  font-weight: normal;
-}
-
-.efmf-branding-card-description {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.efmf-branding-card-description strong {
-  color: var(--color-brand-primary);
-}
-
 /* Design Showcase */
 .efmf-design-showcase {
   position: relative;
@@ -177,25 +69,10 @@
   margin-right: calc(var(--container-padding) * -1);
 }
 
-.efmf-design-showcase::-webkit-scrollbar {
-  height: 12px;
-}
-
-.efmf-design-showcase::-webkit-scrollbar-track {
-  background: var(--color-scrollbar-track);
-  border-radius: var(--radius-sm);
-  margin-right: var(--spacing-md);
-}
-
-.efmf-design-showcase::-webkit-scrollbar-thumb {
-  background: var(--color-scrollbar-thumb);
-  border-radius: var(--radius-sm);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.efmf-design-showcase::-webkit-scrollbar-thumb:hover {
-  background: var(--color-scrollbar-thumb-hover);
-}
+.efmf-design-showcase::-webkit-scrollbar { height: 12px; }
+.efmf-design-showcase::-webkit-scrollbar-track { background: var(--color-scrollbar-track); border-radius: var(--radius-sm); margin-right: var(--spacing-md); }
+.efmf-design-showcase::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); border-radius: var(--radius-sm); border: 2px solid rgba(255,255,255,0.3); }
+.efmf-design-showcase::-webkit-scrollbar-thumb:hover { background: var(--color-scrollbar-thumb-hover); }
 
 .efmf-design-showcase-image {
   flex-shrink: 0;
@@ -207,7 +84,7 @@
 
 .efmf-before-design-container {
   background-color: var(--color-bg-white);
-  border: var(--border-thin) solid var(--color-border-light-beige);
+  border: var(--border-thin) solid var(--color-border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   display: flex;
@@ -235,23 +112,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.efmf-before-design-scroll::-webkit-scrollbar {
-  height: 10px;
-}
-
-.efmf-before-design-scroll::-webkit-scrollbar-track {
-  background: var(--color-scrollbar-track-secondary);
-  border-radius: var(--radius-sm);
-}
-
-.efmf-before-design-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-scrollbar-thumb-secondary);
-  border-radius: var(--radius-sm);
-}
-
-.efmf-before-design-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--color-scrollbar-thumb-secondary-hover);
-}
+.efmf-before-design-scroll::-webkit-scrollbar { height: 10px; }
+.efmf-before-design-scroll::-webkit-scrollbar-track { background: var(--color-scrollbar-track-secondary); border-radius: var(--radius-sm); }
+.efmf-before-design-scroll::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb-secondary); border-radius: var(--radius-sm); }
+.efmf-before-design-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-scrollbar-thumb-secondary-hover); }
 
 .efmf-before-design-image {
   flex-shrink: 0;
@@ -264,14 +128,6 @@
 
 /* Tablet */
 @media (min-width: 768px) {
-  .efmf-branding-section {
-    padding: var(--spacing-5xl) 0;
-  }
-
-  .efmf-branding-title {
-    font-size: var(--text-3xl);
-  }
-
   .efmf-branding-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -281,5 +137,12 @@
 @media (min-width: 1024px) {
   .efmf-branding-container {
     padding: 0 var(--spacing-xl);
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .efmf-branding-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

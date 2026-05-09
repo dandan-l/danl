@@ -11,10 +11,10 @@ export interface RootCauseSectionProps {
 function AnalysisCard({ title, items }: RootCauseCard) {
   return (
     <article className="analysis-card">
-      <h3 className="analysis-card-title">{title}</h3>
-      <ul className="analysis-list">
+      <h3 className="cs-card-title cs-card-title--brand">{title}</h3>
+      <ul className="cs-list">
         {items.map((item, index) => (
-          <li key={index} className="analysis-list-item">{item}</li>
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </article>
@@ -31,10 +31,10 @@ export function RootCauseSection({
     <section className="root-cause-section" aria-labelledby="root-cause-title">
       <div className="container">
         <div className="root-cause-content">
-          <header className="section-header">
-            <p className="section-label">{label}</p>
-            <h2 id="root-cause-title" className="section-title">{title}</h2>
-            <p className="section-description">{description}</p>
+          <header className="cs-section-header">
+            <p className="cs-label">{label}</p>
+            <h2 id="root-cause-title" className="cs-title">{title}</h2>
+            <p className="cs-description">{description}</p>
           </header>
 
           <div className="analysis-cards-grid" role="list">

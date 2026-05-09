@@ -20,13 +20,13 @@ function DesignHighlightCard({ number, title, image, imageAlt, imagePosition = '
   return (
     <article className={`design-highlight ${imagePosition === 'left' ? 'design-highlight-reverse' : ''}`}>
       <div className="design-highlight-text">
-        <div className="design-highlight-badge" aria-hidden="true">
-          <span>{number}.</span>
+        <div className="number-badge number-badge--md" aria-hidden="true">
+          <span className="number-badge-text">{number}.</span>
         </div>
-        <h3 className="design-highlight-title">{title}</h3>
+        <h3 className="cs-card-title cs-card-title--brand">{title}</h3>
       </div>
       <figure className="design-highlight-image-wrapper">
-        <img src={image} alt={imageAlt} className="design-highlight-image" onClick={onImageClick} />
+        <img src={image} alt={imageAlt} className="design-highlight-image cs-img-clickable" onClick={onImageClick} />
       </figure>
     </article>
   );
@@ -45,8 +45,8 @@ export function DesignHighlightsSection({
       <div className="container">
         <div className="design-highlights-content">
           <header className="design-highlights-header">
-            <p className="section-label">{label}</p>
-            <h2 id="design-highlights-title" className="section-title">{title}</h2>
+            <p className="cs-label">{label}</p>
+            <h2 id="design-highlights-title" className="cs-title">{title}</h2>
           </header>
 
           <div className="design-highlights-list">

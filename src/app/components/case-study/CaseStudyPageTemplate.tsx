@@ -19,6 +19,7 @@
 import { ReactNode } from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
+import '../../../styles/case-study-patterns.css';
 
 interface CaseStudyPageTemplateProps {
   /** Section components to render inside <main> */

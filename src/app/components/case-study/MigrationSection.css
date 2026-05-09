@@ -1,4 +1,5 @@
-/* ReportMyUP Migration Section */
+/* ReportMyUP Migration Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
 
 .migration-section {
   background-color: var(--color-bg-cream);
@@ -11,38 +12,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-}
-
-/* Section Header */
-.migration-section .section-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.migration-section .section-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
-  color: var(--color-brand-accent);
-  line-height: 1.2;
-}
-
-.migration-section .section-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-3xl);
-  color: var(--color-text-primary);
-  margin: 0;
-}
-
-.migration-section .section-description {
-  font-family: var(--font-body);
-  font-size: var(--text-xl);
-  color: var(--color-text-dark-grey);
-  line-height: 1.5;
 }
 
 /* Strategy Cards */
@@ -58,58 +27,6 @@
   gap: var(--spacing-sm);
 }
 
-.strategy-number {
-  background-color: var(--color-brand-primary);
-  color: var(--color-text-light);
-  width: 41px;
-  height: 41px;
-  border-radius: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  box-shadow: var(--shadow-badge);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.strategy-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-2xl);
-  color: var(--color-brand-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.strategy-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.strategy-list li {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-text-secondary);
-  display: flex;
-  gap: var(--spacing-sm);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.strategy-list li::before {
-  content: "○";
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  flex-shrink: 0;
-}
-
 /* User Flow Section */
 .user-flow-section {
   width: 100%;
@@ -117,7 +34,7 @@
 
 .user-flow-card {
   background-color: var(--color-bg-white);
-  border: var(--border-thin) solid var(--color-border-light-beige);
+  border: var(--border-thin) solid var(--color-border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   display: flex;
@@ -129,22 +46,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-}
-
-.user-flow-title {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.user-flow-description {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  font-feature-settings: 'lnum', 'tnum';
 }
 
 .user-flow-image {
@@ -166,7 +67,7 @@
   overflow-x: auto;
   padding-right: var(--spacing-md);
   margin-right: calc(var(--spacing-md) * -1);
-    scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
+  scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
 }
 
 .deliverable-card {
@@ -203,7 +104,7 @@
   width: 320px;
   height: 364px;
   object-fit: contain;
-  box-shadow: var(--shadow-card-soft-warm);
+  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
   display: block;
   cursor: zoom-in;
@@ -229,22 +130,6 @@
   flex-shrink: 0;
 }
 
-.deliverable-title {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-sm);
-  color: var(--color-text-primary);
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.deliverable-description {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 .demo-videos-container {
   display: flex;
   align-items: flex-end;
@@ -261,20 +146,16 @@
 .demo-video {
   height: 364px;
   object-fit: contain;
-  box-shadow: var(--shadow-card-soft-warm);
+  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
   display: block;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (min-width: 768px) {
   .design-deliverables {
     padding-right: var(--spacing-lg);
     margin-right: calc(var(--spacing-lg) * -1);
-  }
-
-  .migration-section {
-    padding: var(--spacing-5xl) 0;
   }
 }
 
@@ -286,34 +167,14 @@
 }
 
 @media (max-width: 768px) {
-  .migration-section .section-title {
-    font-size: var(--text-3xl);
-  }
-
-  .migration-section .section-description {
-    font-size: var(--text-lg);
-  }
-
   .strategy-cards {
     grid-template-columns: 1fr;
   }
+}
 
-  .design-deliverables {
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .deliverable-card {
-    height: 388px;
-    flex-shrink: 0;
-  }
-
-  .email-card {
-    flex-direction: row;
-  }
-
-  .email-image {
-    width: 320px;
-    height: 364px;
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .migration-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

@@ -694,7 +694,7 @@ export function HomePage() {
                     ecommerce portfolio.{" "}
                   </p>
 
-                  <Link to="/efilemyforms" className="project-button">
+                  <Link to="/efilemyforms" className="btn-primary">
                     View project
                   </Link>
                 </div>
@@ -742,7 +742,7 @@ export function HomePage() {
                     Unclaimed Property’s conversion.{" "}
                   </p>
 
-                  <Link to="/reportmyup" className="project-button">
+                  <Link to="/reportmyup" className="btn-primary">
                     View project
                   </Link>
                 </div>
@@ -792,7 +792,7 @@ export function HomePage() {
                   </p>
 
                   <a
-                    className="project-button"
+                    className="btn-primary"
                     href="https://sovos.com/compliance-cloud/sovos-intelligence/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -947,7 +947,7 @@ export function HomePage() {
             <div className="contact-buttons">
               <a
                 href="https://adplist.org/mentors/dan-liu"
-                className="contact-button"
+                className="btn-accent"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -955,7 +955,7 @@ export function HomePage() {
               </a>
 
               <a
-                className="contact-button"
+                className="btn-accent"
                 href="mailto:danliudesigner@gmail.com?subject=Beep-boop, contact from Dan's website!&body=Hello, this is {name}. %0D%0 I'd love to connect on {topics}."
               >
                 Email me to say hi

@@ -38,7 +38,6 @@ body {
   margin: 0;
   padding: 0;
   isolation: auto; /* added this for the custom cursor */
-  cursor: none !important;
 }
 
 /* Image loading optimization */
@@ -46,6 +45,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Site-wide button classes (.btn-primary, .btn-accent) are defined in
+   src/styles/tokens.css and available on every page. */
 
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {

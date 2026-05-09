@@ -23,10 +23,10 @@ export function PrototypeVideoSection({
   return (
     <section className="efmf-prototype-section" aria-labelledby="efmf-prototype-heading">
       <div className="efmf-prototype-container">
-        <div className="efmf-prototype-header">
-          <p className="efmf-prototype-label">{label}</p>
-          <h2 id="efmf-prototype-heading" className="efmf-prototype-title">{title}</h2>
-        </div>
+        <header className="efmf-prototype-header cs-section-header">
+          <p className="cs-label">{label}</p>
+          <h2 id="efmf-prototype-heading" className="cs-title">{title}</h2>
+        </header>
 
         <div className="efmf-prototype-image-wrapper">
           <video
@@ -44,24 +44,24 @@ export function PrototypeVideoSection({
 
         <div className="efmf-branding-grid">
           <div className="efmf-branding-card">
-            <h3 className="efmf-branding-card-title">{problemsTitle}</h3>
+            <h3 className="cs-callout-title">{problemsTitle}</h3>
             <div className="efmf-branding-callouts">
               {problems.map((item, index) => (
                 <div key={index} className="efmf-branding-callout">
-                  <h4 className="efmf-branding-callout-title">{item.title}</h4>
-                  <p className="efmf-branding-callout-description">{item.description}</p>
+                  <h4 className="cs-callout-title cs-callout-title--brand">{item.title}</h4>
+                  <p className="cs-card-body">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="efmf-branding-card">
-            <h3 className="efmf-branding-card-title">{solutionTitle}</h3>
+            <h3 className="cs-callout-title">{solutionTitle}</h3>
             <div className="efmf-branding-callouts">
               {solutions.map((item, index) => (
                 <div key={index} className="efmf-branding-callout">
-                  <h4 className="efmf-branding-callout-title">{item.title}</h4>
-                  <p className="efmf-branding-callout-description">{item.description}</p>
+                  <h4 className="cs-callout-title cs-callout-title--brand">{item.title}</h4>
+                  <p className="cs-card-body">{item.description}</p>
                 </div>
               ))}
             </div>

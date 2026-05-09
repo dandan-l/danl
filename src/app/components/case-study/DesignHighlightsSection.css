@@ -1,4 +1,5 @@
-/* ReportMyUP Design Highlights Section */
+/* ReportMyUP Design Highlights Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
 
 .design-highlights-section {
   background-color: var(--color-bg-white);
@@ -44,34 +45,6 @@
   max-width: 100%;
 }
 
-.design-highlight-badge {
-  background-color: var(--color-brand-primary);
-  color: var(--color-text-light);
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-badge);
-  flex-shrink: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.design-highlight-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.3;
-  color: var(--color-brand-primary);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 .design-highlight-image-wrapper {
   margin: 0;
   padding: 0;
@@ -86,12 +59,6 @@
   height: auto;
   display: block;
   object-fit: cover;
-  cursor: zoom-in;
-  transition: transform var(--transition-slow);
-}
-
-.design-highlight-image:hover {
-  transform: scale(1.05);
 }
 
 .design-highlights-result {
@@ -100,28 +67,20 @@
 
 /* Tablet */
 @media (min-width: 768px) {
-  .design-highlights-section {
-    padding: var(--spacing-5xl) 0;
-  }
-  
   .design-highlight {
     flex-direction: row;
     gap: var(--spacing-2xl);
   }
-  
+
   .design-highlight-reverse {
     flex-direction: row-reverse;
   }
-  
+
   .design-highlight-text {
     flex: 0 0 45%;
     max-width: 500px;
   }
-  
-  .design-highlight-title {
-    font-size: var(--text-2xl);
-  }
-  
+
   .design-highlight-image-wrapper {
     flex: 1;
     max-width: 55%;
@@ -133,17 +92,24 @@
   .design-highlights-list {
     gap: var(--spacing-5xl);
   }
-  
+
   .design-highlight {
     gap: var(--spacing-3xl);
   }
-  
+
   .design-highlight-text {
     flex: 0 0 40%;
   }
-  
+
   .design-highlight-image-wrapper {
     flex: 1;
     max-width: 60%;
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .design-highlights-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

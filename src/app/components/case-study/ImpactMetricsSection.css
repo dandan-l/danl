@@ -1,4 +1,5 @@
-/* ReportMyUP Impact Section */
+/* ReportMyUP Impact Section — layout only */
+/* Typography uses shared classes from case-study-patterns.css */
 
 .impact-section {
   background-color: var(--color-bg-dark);
@@ -12,64 +13,11 @@
   gap: var(--spacing-2xl);
 }
 
-.impact-header {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.impact-label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-brand-accent);
-}
-
-.impact-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--text-2xl-sm);
-  line-height: 1.2;
-  color: var(--color-text-light);
-  margin: 0;
-}
-
 /* Statistics Grid */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
-}
-
-.stat-card {
-  background-color: var(--color-bg-card-overlay);
-  border: var(--border-thin) solid var(--color-border-white);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg) var(--spacing-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.stat-value {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-  color: var(--color-brand-accent);
-  text-transform: capitalize;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.stat-label {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-lg);
-  line-height: 1.3;
-  color: var(--color-text-light);
-  font-feature-settings: 'lnum', 'tnum';
 }
 
 /* Impact Callouts */
@@ -79,67 +27,10 @@
   gap: var(--spacing-lg);
 }
 
-.impact-callout {
-  position: relative;
-  padding-left: var(--spacing-md);
-  border-left: var(--border-thick) solid var(--color-border-accent);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.impact-callout-title {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--text-xl);
-  line-height: 1.3;
-  color: var(--color-text-light);
-  text-transform: capitalize;
-  margin: 0;
-  font-feature-settings: 'lnum', 'tnum';
-}
-
-.impact-callout-description {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-text-light);
-  font-feature-settings: 'lnum', 'tnum';
-}
-
 /* Tablet */
 @media (min-width: 768px) {
-  .impact-section {
-    padding: var(--spacing-5xl) 0;
-  }
-  
-  .impact-title {
-    font-size: var(--text-3xl);
-  }
-  
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-  }
-  
-  .stat-card {
-    padding: var(--spacing-lg) var(--spacing-md);
-  }
-  
-  .stat-value {
-    font-size: var(--text-2xl);
-  }
-  
-  .stat-label {
-    font-size: var(--text-xl);
-  }
-  
-  .impact-callout-title {
-    font-size: var(--text-2xl);
-  }
-  
-  .impact-callout-description {
-    font-size: var(--text-base);
   }
 }
 
@@ -147,5 +38,12 @@
 @media (min-width: 1024px) {
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop — match .cs-section spacing */
+@media (min-width: 768px) {
+  .impact-section {
+    padding: var(--spacing-5xl) 0;
   }
 }

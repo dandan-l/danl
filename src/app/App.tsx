@@ -1,6 +1,7 @@
 import { RouterProvider } from "react-router";
 import { router } from "./routes";
 import { CustomCursor } from "./components/CustomCursor";
+import { Analytics } from "@vercel/analytics/next";
 import "../styles/tokens.css";
 import "../styles/global.css";
 
@@ -9,6 +10,7 @@ export default function App() {
     <>
       <CustomCursor />
       <RouterProvider router={router} />
+      <Analytics />
     </>
   );
 }

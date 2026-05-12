@@ -1,0 +1,70 @@
+/* Stat Future Vision Section — layout only */
+
+.stat-fv-showcase {
+  border-radius: var(--radius-md);
+  background: var(--color-brand-accent-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-fv-video-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-fv-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stat-fv-sidebar {
+    padding: var(--spacing-xl);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.stat-fv-sidebar-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xl);
+  color: var(--color-brand-pink-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.stat-fv-sidebar-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .stat-fv-showcase {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .stat-fv-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    justify-content: center;
+      padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-sm);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-fv-sidebar {
+    width: 340px;
+  }
+
+  .stat-fv-sidebar-title {
+    font-size: var(--text-2xl);
+  }
+}

@@ -47,6 +47,12 @@ export interface CaseStudyHeroProps {
   /** Hero image source and alt text */
   heroImage: { src: string; alt: string };
   /**
+   * Optional video source (mp4). When provided, renders a looping
+   * autoplay video instead of the static heroImage <img>.
+   * heroImage.alt is still used as the accessible label.
+   */
+  heroVideo?: string;
+  /**
    * Background colour of the image wrapper.
    * Defaults to var(--color-bg-white).
    * Pass var(--color-bg-cream) when the image blends better with
@@ -65,6 +71,7 @@ export function CaseStudyHero({
   timeline,
   collaborators,
   heroImage,
+  heroVideo,
   imageBackground = 'var(--color-bg-white)',
 }: CaseStudyHeroProps) {
   return (
@@ -106,11 +113,23 @@ export function CaseStudyHero({
           className="cs-hero-image-wrapper"
           style={{ backgroundColor: imageBackground }}
         >
-          <img
-            src={heroImage.src}
-            alt={heroImage.alt}
-            className="cs-hero-image"
-          />
+          {heroVideo ? (
+            <video
+              src={heroVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="cs-hero-image"
+              aria-label={heroImage.alt}
+            />
+          ) : (
+            <img
+              src={heroImage.src}
+              alt={heroImage.alt}
+              className="cs-hero-image"
+            />
+          )}
         </figure>
 
       </div>

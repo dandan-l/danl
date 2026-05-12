@@ -7,6 +7,10 @@
   --color-brand-accent-light: #ffd4f5;
   --color-accent-yellow: #FECA05;
   --color-brand-teal: #017780;
+  --color-brand-blue: #0070B8;
+  --color-brand-blue-light: #DBF2FF;
+  --color-brand-blue-pill: #ebf7ff;
+  --color-brand-pink-dark: #A3007D;
   
   /* Background Colors */
   --color-bg-cream: #fffdf7;
@@ -114,6 +118,7 @@
   
   /* Shadows */
   --shadow-xs: 0 1px 3px var(--color-overlay-black-05);
+  --shadow-soft: 0 2px 8px 0 var(--color-overlay-black-10);
   --shadow-sm: -0.643px -0.965px 6.433px 0.965px var(--color-overlay-black-10), 1.93px 1.93px 2.573px 0px rgba(0,0,0,0.24);
   --shadow-md: 0 4px 6px -1px var(--color-overlay-black-10), 0 2px 4px -1px var(--color-overlay-black-05);
   --shadow-lg: 0 10px 15px -3px var(--color-overlay-black-10), 0 4px 6px -2px var(--color-overlay-black-05);

@@ -1,0 +1,15 @@
+/* Stat Background Section — layout only */
+
+.stat-background-diagram-wrapper {
+  margin: 0;
+  padding: 0;
+  /* border: var(--border-thin) solid var(--color-border-light); */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.stat-background-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+}

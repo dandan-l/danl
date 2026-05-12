@@ -1,0 +1,42 @@
+/* Stat Behind the Scenes Section — layout only */
+
+.stat-bts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.stat-bts-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-cream);
+}
+
+.stat-bts-item--bordered {
+  border: var(--border-thin) solid var(--color-border-light);
+}
+
+.stat-bts-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Interview row — always side by side, same height */
+.stat-bts-interview-row {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: stretch;
+}
+
+.stat-bts-interview-item {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-bts-interview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

@@ -1,0 +1,22 @@
+/* Stat Impact Section — layout only */
+
+.stat-impact-callouts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.stat-impact-callout-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .stat-impact-callout-title {
+    font-size: var(--text-2xl);
+  }
+}

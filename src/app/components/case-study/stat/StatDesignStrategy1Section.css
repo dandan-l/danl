@@ -1,0 +1,158 @@
+/* Stat Design Strategy 1 Section — layout only */
+
+/* Main showcase card */
+.stat-ds1-showcase {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  /* background-color: var(--color-bg-cream); */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stat-ds1-showcase-video-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-ds1-showcase-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stat-ds1-showcase-sidebar {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  /* background: rgba(255, 255, 255, 0.85); */
+}
+
+.stat-ds1-showcase-sidebar-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xl);
+  color: var(--color-brand-blue);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.stat-ds1-showcase-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.stat-ds1-showcase-sidebar-item {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  padding-left: 0;
+}
+
+/* Feature cards — horizontal scroll on mobile/tablet, 3-col on desktop */
+.stat-ds1-features-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.stat-ds1-features-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.stat-ds1-features-row {
+  display: flex;
+  gap: var(--spacing-md);
+  min-width: max-content;
+}
+
+.stat-ds1-feature-card {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--color-brand-blue-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-ds1-feature-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stat-ds1-feature-body {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.stat-ds1-feature-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-base);
+  color: var(--color-brand-blue);
+  margin: 0;
+}
+
+.stat-ds1-feature-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.26;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .stat-ds1-showcase {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .stat-ds1-showcase-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) 0;
+  }
+
+  .stat-ds1-feature-card {
+    width: 320px;
+  }
+}
+
+/* Desktop — let cards fill the container naturally */
+@media (min-width: 1024px) {
+  .stat-ds1-features-scroll {
+    overflow-x: visible;
+  }
+
+  .stat-ds1-features-row {
+    min-width: 0;
+  }
+
+  .stat-ds1-feature-card {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  .stat-ds1-showcase-sidebar {
+    width: 300px;
+  }
+
+  .stat-ds1-showcase-sidebar-title {
+    font-size: var(--text-2xl);
+  }
+}

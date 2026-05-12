@@ -1,0 +1,180 @@
+/* Stat Design Strategy 2 Section — layout only */
+
+/* Mode comparison panel — unified blue background */
+.stat-ds2-modes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  background: var(--color-brand-blue-light);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+}
+
+/* Arrow — visible on mobile, rotated 90° so it points up/down for stacked layout */
+.stat-ds2-modes-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: rotate(90deg);
+}
+
+/* Desktop — CSS Grid: images and arrow share row 1, bodies in row 2.
+   Arrow height = image height, so align-items: center pins it to true image center. */
+@media (min-width: 768px) {
+  .stat-ds2-modes {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--spacing-md);
+    row-gap: var(--spacing-md);
+    /* padding already set above */
+  }
+
+  /* Row 1: left image | arrow | right image */
+  .stat-ds2-modes > img:first-of-type  { grid-column: 1; grid-row: 1; }
+  .stat-ds2-modes-arrow                { grid-column: 2; grid-row: 1; display: flex; align-items: center; padding: 0; transform: rotate(0deg); }
+  .stat-ds2-modes > img:last-of-type   { grid-column: 3; grid-row: 1; }
+
+  /* Row 2: left body | (empty) | right body */
+  .stat-ds2-modes > div:nth-of-type(1) { grid-column: 1; grid-row: 2; } /* left body */
+  .stat-ds2-modes > div:nth-of-type(2) { grid-column: 2; grid-row: 1; } /* arrow (already placed above) */
+  .stat-ds2-modes > div:nth-of-type(3) { grid-column: 3; grid-row: 2; } /* right body */
+}
+
+/* Mode images */
+.stat-ds2-mode-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Body content below each image */
+.stat-ds2-mode-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Product info row: title + pills on the same horizontal line */
+.stat-ds2-mode-info-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.stat-ds2-mode-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  color: var(--color-brand-blue);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.stat-ds2-mode-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+/* Pill style — light blue fill, 4px radius, no border */
+.stat-ds2-mode-tag {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-brand-blue);
+  background: var(--color-brand-blue-pill);
+  border-radius: 4px;
+  padding: 4px var(--spacing-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+}
+
+.stat-ds2-mode-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Dialog card */
+.stat-ds2-dialog-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stat-ds2-dialog-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.stat-ds2-dialog-image {
+  width: 100%;
+  max-width: 872px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-ds2-dialog-sidebar {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.stat-ds2-dialog-sidebar-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xl);
+  color: var(--color-brand-blue);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.stat-ds2-dialog-sidebar-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .stat-ds2-dialog-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .stat-ds2-dialog-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-ds2-dialog-sidebar {
+    width: 340px;
+  }
+
+  .stat-ds2-dialog-sidebar-title {
+    font-size: var(--text-2xl);
+  }
+}

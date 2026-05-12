@@ -1,0 +1,10 @@
+/* Statutory Reporting page — scoped tokens and overrides */
+
+/*
+  --stat-hero-img-bg: the light-blue background used in the hero image card.
+  Matches the baby-blue cloud background used throughout the design.
+  Referenced via heroSection.imageBackground = 'var(--stat-hero-img-bg)'.
+*/
+:root {
+  --stat-hero-img-bg: #dceeff;
+}

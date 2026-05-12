@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ReportMyUPPage } from "./pages/ReportMyUPPage";
 import { EFileMyFormsCaseStudyPage } from "./pages/EFileMyFormsCaseStudyPage";
+import { StatutoryReportingPage } from "./pages/StatutoryReportingPage";
 import { RootLayout } from "./components/RootLayout";
 
 export const router = createBrowserRouter([
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "/efilemyforms",
         Component: EFileMyFormsCaseStudyPage,
+      },
+      {
+        path: "/statutory-reporting",
+        Component: StatutoryReportingPage,
       },
       // Redirects for old URLs
       {

@@ -1,0 +1,99 @@
+/* Stat Pain Section (Data Entry Pain + Formatting Pain) — layout only */
+
+/* Composite image card */
+.stat-pain-composite-wrapper {
+  margin: 0;
+  border: var(--border-thin) solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-light);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  align-items: center;
+}
+
+.stat-pain-composite-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  position: relative;
+}
+
+/* Main media container (video + timer overlay) */
+.stat-pain-main-media {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-pain-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 750px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Timer overlay — positioned outside the video boundary */
+.stat-pain-timer {
+  position: absolute;
+  bottom: calc(var(--spacing-4xl) * -1);
+  right: calc(var(--spacing-5xl) * -1);
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* Flow diagram — uses CSS custom property set per-instance */
+.stat-pain-flow {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: var(--stat-pain-flow-max-width, 200px);
+  margin: var(--spacing-md) auto 0;
+}
+
+/* Caption row */
+.stat-pain-caption {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-xl); /* 20px */
+  line-height: 1;
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md); /* 16px */
+  white-space: nowrap;
+  padding: var(--spacing-xl) 0 0 0;
+  margin: 0;
+}
+
+.stat-pain-caption-sep {
+  color: var(--color-text-secondary);
+}
+
+/* Tablet+ — side-by-side layout */
+@media (min-width: 768px) {
+  .stat-pain-composite-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .stat-pain-main-media {
+    flex: 1;
+  }
+
+  .stat-pain-flow {
+    max-width: var(--stat-pain-flow-max-width, 200px);
+    flex-shrink: 0;
+    margin: 0;
+    align-self: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-pain-timer {
+    width: 140px;
+  }
+}

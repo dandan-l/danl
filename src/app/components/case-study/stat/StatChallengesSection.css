@@ -1,0 +1,41 @@
+/* Stat Challenges Section — layout only */
+
+/* Diagram card */
+.stat-challenges-diagram-wrapper {
+  margin: 0;
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-lg);
+  border: var(--border-thin) solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.stat-challenges-diagram-caption {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-lg);
+  color: var(--color-brand-primary);
+  text-align: center;
+  margin: 0;
+}
+
+.stat-challenges-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Callout cards row */
+.stat-challenges-callouts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .stat-challenges-callouts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

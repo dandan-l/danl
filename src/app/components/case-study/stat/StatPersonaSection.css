@@ -1,0 +1,19 @@
+/* Stat Persona Section — layout only */
+
+.stat-persona-diagram-wrapper {
+  margin: 0;
+  padding: var(--spacing-xl);
+  border: var(--border-thin) solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-persona-diagram {
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  display: block;
+}

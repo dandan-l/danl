@@ -1,0 +1,50 @@
+/* Stat HMW Section — layout only */
+
+.stat-hmw-section {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-bg-dark);
+  padding: var(--spacing-3xl) 0;
+}
+
+.stat-hmw-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-hmw-card {
+  background: var(--color-overlay-white-90);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  /* max-width: 880px; */
+  width: 100%;
+}
+
+.stat-hmw-label {
+  /* inherits cs-label pink/accent color — no override needed */
+}
+
+.stat-hmw-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .stat-hmw-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stat-hmw-title {
+    font-size: var(--text-3xl);
+  }
+}

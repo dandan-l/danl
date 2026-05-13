@@ -186,7 +186,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;  /* Prevents safari flex bug */
-  gap: 80px;
+  gap: 40px;
   align-items: start; /* Prevents safari flex bug */
   overflow: hidden;
   /* padding: 40px; */

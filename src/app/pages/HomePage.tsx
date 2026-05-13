@@ -642,7 +642,104 @@ export function HomePage() {
             </header>
 
             <div className="projects-list">
-              {/* Project 1: eFileMyForms */}
+              {/* Project 1: Statutory Reporting */}
+              <article className="project-card bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
+                <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
+                  <div className="project-metadata flex items-center gap-4 flex-wrap">
+                    <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
+                      <span className="text-[#5c6166]">Jul 2025</span>
+                      <span className="text-[#999ea3]"> - </span>
+                      <span className="text-[#5c6166]">Current</span>
+                    </div>
+                    <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
+                      {"•"}
+                    </span>
+                    <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
+                      Statutory Reporting
+                    </span>
+                  </div>
+
+                  <h3 className="project-title">
+                    Redesigned Notes editor to help insurance preparers finish faster and reduce churn
+                  </h3>
+
+                  <div className="project-tags">
+                    <span className="project-tag">Product Design</span>
+                    <span className="project-tag">B2B SaaS</span>
+                    <span className="project-tag">Design Lead</span>
+                  </div>
+
+                  <p className="project-description">
+                    Research-driven redesign of the Notes editor in Sovos Statutory Reporting — the tool insurance preparers use to create financial statements.
+                  </p>
+
+                  <Link to="/statutory-reporting" className="btn-primary">
+                    View project
+                  </Link>
+                </div>
+
+                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
+                  <video
+                    src={vidStatFullUi}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label="Demo of the new Notes form mode showing focused data entry without formatting distractions"
+                    className="project-image w-full h-full object-cover block"
+                  />
+                </div>
+              </article>
+
+              {/* Project 2: ReportMyUP */}
+              <article className="project-card reverse bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
+                <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
+                  <div className="project-metadata flex items-center gap-4 flex-wrap">
+                    <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
+                      <span className="text-[#5c6166]">2024</span>
+                      <span className="text-[#999ea3]"> - </span>
+                      <span className="text-[#5c6166]">Current</span>
+                    </div>
+                    <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
+                      {"•"}
+                    </span>
+                    <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
+                      ReportMyUP
+                    </span>
+                  </div>
+
+                  <h3 className="project-title">
+                    Pivot from struggling launch to $4.79M revenue opportunity
+                  </h3>
+
+                  <div className="project-tags">
+                    <span className="project-tag">B2B</span>
+                    <span className="project-tag">Unclaimed Property</span>
+                    <span className="project-tag">Design Strategy</span>
+                    <span className="project-tag">Growth</span>
+                  </div>
+
+                  <p className="project-description">
+                    Iterated cross-department pivot strategist within tight
+                    constraints and complex platform architecture to grow
+                    Unclaimed Property's conversion.{" "}
+                  </p>
+
+                  <Link to="/reportmyup" className="btn-primary">
+                    View project
+                  </Link>
+                </div>
+
+                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
+                  <img
+                    src={imgPrototypeReviewUp1}
+                    alt="ReportMyUP platform interface screenshots"
+                    className="project-image w-full h-full object-cover block"
+                  />
+                </div>
+              </article>
+
+              {/* Project 3: eFileMyForms */}
               <article className="project-card bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
                 <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
                   <div className="project-metadata flex items-center gap-4 flex-wrap">
@@ -652,7 +749,7 @@ export function HomePage() {
                       <span className="text-[#5c6166]">2023</span>
                     </div>
                     <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
-                      {"\u2022"}
+                      {"•"}
                     </span>
                     <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
                       eFileMyForms Redesign
@@ -704,161 +801,6 @@ export function HomePage() {
                   <img
                     src={imgPrototypeReviewEfmf}
                     alt="eFileMyForms platform interface screenshots"
-                    className="project-image w-full h-full object-cover block"
-                  />
-                </div>
-              </article>
-
-              {/* Project 2: ReportMyUP */}
-              <article className="project-card reverse bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
-                <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
-                  <div className="project-metadata flex items-center gap-4 flex-wrap">
-                    <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
-                      <span className="text-[#5c6166]">2024</span>
-                      <span className="text-[#999ea3]"> - </span>
-                      <span className="text-[#5c6166]">Current</span>
-                    </div>
-                    <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
-                      {"\u2022"}
-                    </span>
-                    <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
-                      ReportMyUP
-                    </span>
-                  </div>
-
-                  <h3 className="project-title">
-                    Pivot from struggling launch to $4.79M revenue opportunity
-                  </h3>
-
-                  <div className="project-tags">
-                    <span className="project-tag">B2B</span>
-                    <span className="project-tag">Unclaimed Property</span>
-                    <span className="project-tag">Design Strategy</span>
-                    <span className="project-tag">Growth</span>
-                  </div>
-
-                  <p className="project-description">
-                    Iterated cross-department pivot strategist within tight
-                    constraints and complex platform architecture to grow
-                    Unclaimed Property’s conversion.{" "}
-                  </p>
-
-                  <Link to="/reportmyup" className="btn-primary">
-                    View project
-                  </Link>
-                </div>
-
-                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
-                  <img
-                    src={imgPrototypeReviewUp1}
-                    alt="ReportMyUP platform interface screenshots"
-                    className="project-image w-full h-full object-cover block"
-                  />
-                </div>
-              </article>
-
-              {/* Project 3: Personalized Insights */}
-              <article className="project-card bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
-                <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
-                  <div className="project-metadata flex items-center gap-4 flex-wrap">
-                    <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
-                      <span className="text-[#5c6166]">2025</span>
-                      <span className="text-[#999ea3]"> - </span>
-                      <span className="text-[#5c6166]">Current</span>
-                    </div>
-                    <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
-                      {"\u2022"}
-                    </span>
-                    <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
-                      Sovos Intelligence
-                    </span>
-                  </div>
-
-                  <h3 className="project-title">
-                    Transform a compliance obligation to an advantage to uncover
-                    personalized insights
-                  </h3>
-
-                  <div className="project-tags">
-                    <span className="project-tag">B2B</span>
-                    <span className="project-tag">AI</span>
-                    <span className="project-tag">Vision Strategy</span>
-                    <span className="project-tag">Large Data</span>
-                  </div>
-
-                  <p className="project-description">
-                    Design Sovos’ 1st AI product, Sovos Intelligence, to expand
-                    service offerings to help businesses grow in unprecedented
-                    speeds and privacy in mind.{" "}
-                  </p>
-
-                  <a
-                    className="btn-primary"
-                    href="https://sovos.com/compliance-cloud/sovos-intelligence/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View website
-                  </a>
-                </div>
-
-                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
-                  <img
-                    src={imgWomanWorkingOnAMacBookPro14}
-                    alt="Person working on a MacBook showing personalized insights"
-                    className="project-image w-full h-full object-cover block"
-                  />
-                </div>
-              </article>
-
-              {/* Project 4: Statutory Reporting */}
-              <article className="project-card reverse bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
-                <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
-                  <div className="project-metadata flex items-center gap-4 flex-wrap">
-                    <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
-                      <span className="text-[#5c6166]">2025</span>
-                      <span className="text-[#999ea3]"> - </span>
-                      <span className="text-[#5c6166]">Current</span>
-                    </div>
-                    <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
-                      {"•"}
-                    </span>
-                    <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
-                      Statutory Reporting
-                    </span>
-                  </div>
-
-                  <h3 className="project-title">
-                    Redesigned Notes editor to help insurance preparers finish
-                    faster and reduce churn
-                  </h3>
-
-                  <div className="project-tags">
-                    <span className="project-tag">B2B</span>
-                    <span className="project-tag">FinTech</span>
-                    <span className="project-tag">AI</span>
-                    <span className="project-tag">Design Strategy</span>
-                  </div>
-
-                  <p className="project-description">
-                    Research-driven redesign of the Notes editor in Sovos
-                    Statutory Reporting — the tool insurance preparers use to
-                    create financial statements.
-                  </p>
-
-                  <Link to="/statutory-reporting" className="btn-primary">
-                    View project
-                  </Link>
-                </div>
-
-                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
-                  <video
-                    src={vidStatFullUi}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-label="Demo of the new Notes form mode showing focused data entry without formatting distractions"
                     className="project-image w-full h-full object-cover block"
                   />
                 </div>

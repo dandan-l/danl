@@ -256,34 +256,7 @@
   font-style: italic;
 }
 
-.card-arrow {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
-  border: var(--border-thin) solid var(--color-overlay-primary-40);
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color var(--transition-base), 
-              border-color var(--transition-base), 
-              transform var(--transition-base);
-  text-decoration: none;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.card-arrow svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: var(--color-brand-primary);
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke var(--transition-base);
-  pointer-events: none;
-}
+/* .card-arrow base styles are defined globally in src/styles/global.css */
 
 @media (max-width: 600px) {
   .other-projects-card {

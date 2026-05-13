@@ -49,6 +49,55 @@ img {
 /* Site-wide button classes (.btn-primary, .btn-accent) are defined in
    src/styles/tokens.css and available on every page. */
 
+/* ============================================================
+   CARD ARROW — shared circular arrow button used across pages
+   (OtherProjectsSection, PasswordGate, etc.)
+   ============================================================ */
+
+.card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  /* border: var(--border-thick) solid var(--color-brand-primary); */
+  background-color: var(--color-brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              transform var(--transition-base);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card-arrow svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--color-text-light);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--transition-base);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .card-arrow:hover {
+    transform: rotate(45deg);
+    background-color: var(#0a6449);
+    /* border-color: var(--color-brand-primary); */
+  }
+}
+
+@media (focus-visible: focus-visible) {
+  .card-arrow:focus-visible {
+   outline: 2px solid var(--color-brand-accent);
+  outline-offset: 2px;
+  }
+}
+
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,

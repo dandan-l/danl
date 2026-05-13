@@ -5,6 +5,7 @@ import {
   formattingPainSectionHeader,
   formattingPainComposite,
 } from '../../content/stat';
+import { PasswordGate } from '../components/PasswordGate';
 import { CaseStudyPageTemplate } from '../components/case-study/CaseStudyPageTemplate';
 import { CaseStudyHero } from '../components/case-study/CaseStudyHero';
 import { Tag } from '../components/ui';
@@ -34,6 +35,7 @@ const externalLinkIcon = (
 
 export function StatutoryReportingPage() {
   return (
+    <PasswordGate>
     <CaseStudyPageTemplate>
       <CaseStudyHero
         {...heroSection}
@@ -82,5 +84,6 @@ export function StatutoryReportingPage() {
       <StatFutureVisionSection />
       <StatBehindTheScenesSection />
     </CaseStudyPageTemplate>
+    </PasswordGate>
   );
 }

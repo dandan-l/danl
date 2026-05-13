@@ -5,6 +5,7 @@ import svgPaths from "../../imports/svg-q8lj8xj9ju";
 import imgPrototypeReviewEfmf from "../../assets/images/efilemyforms-prototype-review.png";
 import imgPrototypeReviewUp1 from "../../assets/images/reportmyup-prototype-review.png";
 import imgWomanWorkingOnAMacBookPro14 from "../../assets/images/woman-working-macbook.png";
+import vidStatFullUi from "../../assets/images/statutoryreporting-full-ui.mp4";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { OtherProjectsSection } from "../components/home/OtherProjectsSection";
@@ -805,6 +806,59 @@ export function HomePage() {
                   <img
                     src={imgWomanWorkingOnAMacBookPro14}
                     alt="Person working on a MacBook showing personalized insights"
+                    className="project-image w-full h-full object-cover block"
+                  />
+                </div>
+              </article>
+
+              {/* Project 4: Statutory Reporting */}
+              <article className="project-card reverse bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
+                <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
+                  <div className="project-metadata flex items-center gap-4 flex-wrap">
+                    <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
+                      <span className="text-[#5c6166]">2025</span>
+                      <span className="text-[#999ea3]"> - </span>
+                      <span className="text-[#5c6166]">Current</span>
+                    </div>
+                    <span className="text-[#999ea3] font-body text-[18px] tracking-[-0.5px]">
+                      {"•"}
+                    </span>
+                    <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
+                      Statutory Reporting
+                    </span>
+                  </div>
+
+                  <h3 className="project-title">
+                    Redesigned Notes editor to help insurance preparers finish
+                    faster and reduce churn
+                  </h3>
+
+                  <div className="project-tags">
+                    <span className="project-tag">B2B</span>
+                    <span className="project-tag">FinTech</span>
+                    <span className="project-tag">AI</span>
+                    <span className="project-tag">Design Strategy</span>
+                  </div>
+
+                  <p className="project-description">
+                    Research-driven redesign of the Notes editor in Sovos
+                    Statutory Reporting — the tool insurance preparers use to
+                    create financial statements.
+                  </p>
+
+                  <Link to="/statutory-reporting" className="btn-primary">
+                    View project
+                  </Link>
+                </div>
+
+                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
+                  <video
+                    src={vidStatFullUi}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label="Demo of the new Notes form mode showing focused data entry without formatting distractions"
                     className="project-image w-full h-full object-cover block"
                   />
                 </div>

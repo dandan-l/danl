@@ -56,6 +56,7 @@ export function StatPainSection({
                 muted
                 loop
                 playsInline
+                controls
                 aria-label={videoLabel}
                 className="stat-pain-video"
               />

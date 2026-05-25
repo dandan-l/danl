@@ -23,6 +23,10 @@ import imgProductRoadmap from '../assets/images/statutoryreporting-product-roadm
 import imgInterviewBqr from '../assets/images/statutoryreporting-interview-bqr.png';
 import imgInterviewClients from '../assets/images/statutoryreporting-interview-clients.png';
 import imgBabyBloudBg from '../assets/images/babyblueCloudBG.png';
+import imgFullUiThumbnail from '../assets/images/statutoryreporting-full-ui-thumbnail.png';
+import imgNoteNotApplicableThumbnail from '../assets/images/statutoryreporting-note-not-applicable-thumbnail.png';
+import imgNoteReuseDataThumbnail from '../assets/images/statutoryreporting-note-reuse-data-thumbnail.png';
+import imgNoteNavShortcutThumbnail from '../assets/images/statutoryreporting-note-navigation-shortcut-thumbnail.png';
 import vidFullUi from '../assets/images/statutoryreporting-full-ui.mp4';
 import vidDataEntryProcess from '../assets/images/statutoryreporting-data-entry-process.mp4';
 import vidPageBreakProcess from '../assets/images/statutoryreporting-page-break-process.mov';
@@ -252,6 +256,7 @@ export const designStrategy1SectionHeader = {
 export const designStrategy1Showcase = {
   video: vidFullUi,
   videoLabel: 'Demo of the new Notes form mode showing focused data entry without formatting distractions',
+  thumbnail: imgFullUiThumbnail,
   bgImage: imgBabyBloudBg,
   sidebarTitle: 'Focused data entry view',
   sidebarItems: [
@@ -265,6 +270,7 @@ export const designStrategy1Showcase = {
 export interface DesignStrategy1Feature {
   video: string;
   videoLabel: string;
+  thumbnail: string;
   title: string;
   description: string;
 }
@@ -273,18 +279,21 @@ export const designStrategy1Features: DesignStrategy1Feature[] = [
   {
     video: vidNoteNotApplicable,
     videoLabel: 'Demo of the Not Applicable checkbox shortcut',
+    thumbnail: imgNoteNotApplicableThumbnail,
     title: 'Not applicable shortcut',
     description: 'Why take 5 steps to hide rows and type "Not applicable" when a single checkbox gets the job done?',
   },
   {
     video: vidNoteReuseData,
     videoLabel: 'Demo of the reuse previous data feature',
+    thumbnail: imgNoteReuseDataThumbnail,
     title: 'Reuse previous data',
     description: 'Finding and entering the same data for every company for every statement can be annoying, unless you can reuse it in one click.',
   },
   {
     video: vidNoteNavShortcut,
     videoLabel: 'Demo of the navigation shortcuts feature',
+    thumbnail: imgNoteNavShortcutThumbnail,
     title: 'Navigation shortcuts',
     description: 'Preparers used to return to the main statement page to switch Notes. Now every Note is one click away.',
   },

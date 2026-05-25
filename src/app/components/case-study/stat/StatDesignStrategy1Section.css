@@ -10,6 +10,17 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  cursor: pointer;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.stat-ds1-showcase--inactive {
+  /* opacity: 0.5; */
+}
+
+.stat-ds1-showcase--inactive:hover {
+  /* opacity: 0.75; */
+  transform: scale(1.01);
 }
 
 .stat-ds1-showcase-video-wrapper {
@@ -81,6 +92,17 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.stat-ds1-feature-card--inactive {
+  /* opacity: 0.5; */
+}
+
+.stat-ds1-feature-card--inactive:hover {
+  /* opacity: 0.75; */
+  transform: scale(1.02);
 }
 
 .stat-ds1-feature-video {

@@ -18,7 +18,6 @@ export function StatFutureVisionSection() {
               muted
               loop
               playsInline
-              controls
               aria-label={futureVisionShowcase.videoLabel}
               className="stat-fv-video"
             />

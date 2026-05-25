@@ -120,7 +120,6 @@ export function CaseStudyHero({
               muted
               loop
               playsInline
-              controls
               className="cs-hero-image"
               aria-label={heroImage.alt}
             />

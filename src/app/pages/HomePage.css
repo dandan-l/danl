@@ -177,6 +177,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xl);
+  padding: var(--spacing-sm);  /* room for hover scale to breathe */
 }
 
 /* Project Card */
@@ -189,7 +190,21 @@
   gap: 40px;
   align-items: start; /* Prevents safari flex bug */
   overflow: hidden;
-  /* padding: 40px; */
+  position: relative;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.project-card:hover {
+  transform: scale(1.015);
+  box-shadow: var(--shadow-hover);
+  z-index: var(--z-raised);
+}
+
+.project-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-raised);
+  border-radius: var(--radius-md);
 }
 
 .project-card.reverse {
@@ -264,36 +279,55 @@
   gap: var(--spacing-xs);
 }
 
-.project-tag .arrow-icon {
-  width: 18px;
-  height: 18px;
+.project-divider {
+  width: 100%;
+  height: var(--border-thin);
+  background-color: var(--color-border-light);
+  flex-shrink: 0;
 }
 
-.project-description {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
+.project-metrics {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.project-metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.project-metric-value {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xl);
   color: var(--color-brand-primary);
-  letter-spacing: -0.5px;
   font-feature-settings: 'lnum', 'tnum';
-  line-height: 1.5;
-  margin: 0;
+  line-height: 1;
+}
+
+.project-metric-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-feature-settings: 'lnum', 'tnum';
+  line-height: 1;
 }
 
 .project-image-container {
   position: relative;
-  aspect-ratio: 2316 / 1544;
+  aspect-ratio: 16 / 9; /* mobile: natural aspect ratio so image has height */
   min-width: 304px;
-  /* align-items: stretch; */
-  align-self: stretch;  /* Prevents safari flex bug & make sure it fills height */
+  align-self: stretch;
   min-height: 0;  /* Prevents safari flex bug */
-  height: 100%; /* fill the grid cell height but this will crop the image */
 }
 
 .project-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  /* border-radius: var(--radius-sm); */
   display: block;  /* Prevents safari flex bug */
 }
 
@@ -382,8 +416,27 @@
     min-height: 684px;
   }
 
+  .project-info {
+    align-self: center;
+  }
+
+  .project-card,
+  .project-card.reverse {
+    --text-3xl: 2rem;
+    min-height: 420px;
+    grid-template-columns: 1fr 611px;
+  }
+
   .project-image-container {
-    width: 721px;
+    aspect-ratio: unset;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1220px) {
+  .project-info {
+    min-width: 569px;
   }
 }
 

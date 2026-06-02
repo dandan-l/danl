@@ -5,7 +5,7 @@ import svgPaths from "../../imports/svg-q8lj8xj9ju";
 import imgPrototypeReviewEfmf from "../../assets/images/efilemyforms-prototype-review.png";
 import imgPrototypeReviewUp1 from "../../assets/images/reportmyup-prototype-review.png";
 import imgWomanWorkingOnAMacBookPro14 from "../../assets/images/woman-working-macbook.png";
-import vidStatFullUi from "../../assets/images/statutoryreporting-full-ui.mp4";
+import imgStatPrototypeReview from "../../assets/images/stat-prototype-review.png";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { OtherProjectsSection } from "../components/home/OtherProjectsSection";
@@ -645,10 +645,11 @@ export function HomePage() {
             <div className="projects-list">
               {/* Project 1: Statutory Reporting */}
               <article className="project-card bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
+                <Link to="/statutory-reporting" className="project-card-link" aria-label="View Statutory Reporting project" />
                 <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
                   <div className="project-metadata flex items-center gap-4 flex-wrap">
                     <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
-                      <span className="text-[#5c6166]">Jul 2025</span>
+                      <span className="text-[#5c6166]">2025</span>
                       <span className="text-[#999ea3]"> - </span>
                       <span className="text-[#5c6166]">Current</span>
                     </div>
@@ -656,47 +657,50 @@ export function HomePage() {
                       {"•"}
                     </span>
                     <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
-                      Statutory Reporting
+                      Statutory Reporting Redesign
                     </span>
                   </div>
 
                   <h3 className="project-title">
-                    Redesigned Notes editor to help insurance preparers finish
-                    faster and reduce churn
+                    Redesigned a compliance editor to stop churn and give preparers time back
                   </h3>
 
                   <div className="project-tags">
-                    <span className="project-tag">Product Design</span>
                     <span className="project-tag">B2B SaaS</span>
-                    <span className="project-tag">Design Lead</span>
+                    <span className="project-tag">Research + strategy</span>
+                    <span className="project-tag">AI vision</span>
                   </div>
 
-                  <p className="project-description">
-                    Research-driven redesign of the Notes editor in Sovos
-                    Statutory Reporting — the tool insurance preparers use to
-                    create financial statements.
-                  </p>
+                  <div className="project-divider" />
 
-                  <Link to="/statutory-reporting" className="btn-primary">
-                    View project
-                  </Link>
+                  <div className="project-metrics">
+                    <div className="project-metric">
+                      <span className="project-metric-value">13%</span>
+                      <span className="project-metric-label">market share impacted</span>
+                    </div>
+                    <div className="project-metric">
+                      <span className="project-metric-value">13,021</span>
+                      <span className="project-metric-label">cases researched</span>
+                    </div>
+                    <div className="project-metric">
+                      <span className="project-metric-value">"Helping big time"</span>
+                      <span className="project-metric-label">client quote</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
-                  <video
-                    src={vidStatFullUi}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-label="Demo of the new Notes form mode showing focused data entry without formatting distractions"
-                    className="project-image w-full h-full object-cover block"
+                <div className="project-image-container">
+                  <img
+                    src={imgStatPrototypeReview}
+                    alt="Statutory Reporting Notes editor interface"
+                    className="project-image"
                   />
                 </div>
               </article>
 
               {/* Project 2: ReportMyUP */}
               <article className="project-card reverse bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
+                <Link to="/reportmyup" className="project-card-link" aria-label="View ReportMyUP project" />
                 <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
                   <div className="project-metadata flex items-center gap-4 flex-wrap">
                     <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
@@ -708,7 +712,7 @@ export function HomePage() {
                       {"•"}
                     </span>
                     <span className="project-name text-[#5c6166] font-body text-[18px] tracking-[-0.5px]">
-                      ReportMyUP
+                      ReportMyUP Redesign
                     </span>
                   </div>
 
@@ -717,34 +721,41 @@ export function HomePage() {
                   </h3>
 
                   <div className="project-tags">
-                    <span className="project-tag">B2B</span>
-                    <span className="project-tag">Unclaimed Property</span>
-                    <span className="project-tag">Design Strategy</span>
+                    <span className="project-tag">B2B SaaS</span>
+                    <span className="project-tag">Service + architecture design</span>
                     <span className="project-tag">Growth</span>
                   </div>
 
-                  <p className="project-description">
-                    Iterated cross-department pivot strategist within tight
-                    constraints and complex platform architecture to grow
-                    Unclaimed Property's conversion.{" "}
-                  </p>
+                  <div className="project-divider" />
 
-                  <Link to="/reportmyup" className="btn-primary">
-                    View project
-                  </Link>
+                  <div className="project-metrics">
+                    <div className="project-metric">
+                      <span className="project-metric-value">5,233%</span>
+                      <span className="project-metric-label">signup increase</span>
+                    </div>
+                    <div className="project-metric">
+                      <span className="project-metric-value">1,564</span>
+                      <span className="project-metric-label">customers migrated</span>
+                    </div>
+                    <div className="project-metric">
+                      <span className="project-metric-value">$4.79M</span>
+                      <span className="project-metric-label">revenue opportunity</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
+                <div className="project-image-container">
                   <img
                     src={imgPrototypeReviewUp1}
                     alt="ReportMyUP platform interface screenshots"
-                    className="project-image w-full h-full object-cover block"
+                    className="project-image"
                   />
                 </div>
               </article>
 
               {/* Project 3: eFileMyForms */}
               <article className="project-card bg-surface-cream rounded-lg items-stretch overflow-hidden max-w-[1220px] mx-auto w-full">
+                <Link to="/efilemyforms" className="project-card-link" aria-label="View eFileMyForms project" />
                 <div className="project-info gap-4 p-6 md:p-10 lg:pl-[62px] lg:pr-8 lg:py-10 w-full lg:w-[499px] shrink-0">
                   <div className="project-metadata flex items-center gap-4 flex-wrap">
                     <div className="project-timestamp flex items-center gap-1 font-body text-[18px] tracking-[-0.5px]">
@@ -761,51 +772,38 @@ export function HomePage() {
                   </div>
 
                   <h3 className="project-title">
-                    Made tax filing easy and modern for stressed small business
-                    owners
+                    Made tax filing easy and modern for stressed small business owners
                   </h3>
 
                   <div className="project-tags">
-                    <span className="project-tag">
-                      NPS 15
-                      <svg
-                        className="arrow-icon"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                      >
-                        <path d={svgPaths.pf7cbf00} fill="#09543D" />
-                      </svg>
-                    </span>
-                    <span className="project-tag">
-                      ARR 23%
-                      <svg
-                        className="arrow-icon"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                      >
-                        <path d={svgPaths.pf7cbf00} fill="#09543D" />
-                      </svg>
-                    </span>
-                    <span className="project-tag">E-commerce</span>
-                    <span className="project-tag">Tax Filing</span>
+                    <span className="project-tag">E-commerce tax filing</span>
+                    <span className="project-tag">End-to-end</span>
+                    <span className="project-tag">Security design</span>
                   </div>
 
-                  <p className="project-description">
-                    My design for Sovos' first ecommerce product sparked market
-                    expansion and became the design blueprint for their global
-                    ecommerce portfolio.{" "}
-                  </p>
+                  <div className="project-divider" />
 
-                  <Link to="/efilemyforms" className="btn-primary">
-                    View project
-                  </Link>
+                  <div className="project-metrics">
+                    <div className="project-metric">
+                      <span className="project-metric-value">23%</span>
+                      <span className="project-metric-label">ARR Growth</span>
+                    </div>
+                    <div className="project-metric">
+                      <span className="project-metric-value">+44%</span>
+                      <span className="project-metric-label">new signups</span>
+                    </div>
+                    <div className="project-metric">
+                      <span className="project-metric-value">+15pt</span>
+                      <span className="project-metric-label">NPS increase</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="project-image-container w-full lg:w-[721px] lg:shrink-0">
+                <div className="project-image-container">
                   <img
                     src={imgPrototypeReviewEfmf}
                     alt="eFileMyForms platform interface screenshots"
-                    className="project-image w-full h-full object-cover block"
+                    className="project-image"
                   />
                 </div>
               </article>
